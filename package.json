@@ -15,7 +15,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "webpack": "^4.10.2",
-    "webpack-cli": "^2.1.2"
+    "webpack-cli": "^2.1.5"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -30,13 +30,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dchen323/IGClone.git"
+    "url": "git+https://github.com/dchen323/InstaFriends.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dchen323/IGClone/issues"
+    "url": "https://github.com/dchen323/InstaFriends/issues"
   },
-  "homepage": "https://github.com/dchen323/IGClone#readme"
+  "homepage": "https://github.com/dchen323/InstaFriends#readme"
 }
