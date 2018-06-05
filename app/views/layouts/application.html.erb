@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IgClone</title>
+    <title>InstaFriends</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
+  <% if logged_in? %>
+    <script type="text/javascript">
+      window.currentUser = {
+        "id": <%= current_user.id %>,
+        "username": "<%= current_user.username%>",
+        "name": "<%= current_user.name%>",
+        "img_url": "<%=current_user.img_url%>"
+      }
+    </script>
+  <% end %>
   <body>
     <%= yield %>
   </body>
