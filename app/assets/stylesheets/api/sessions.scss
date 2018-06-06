@@ -1,25 +1,126 @@
 // Place all the styles related to the api::sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-div img h2 p form button input span ul li {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font: inherit;
-  color: inherit;
 
+.signup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FAFAFA;
+  width: 1137px;
+  height: 786px;
+  font-family: sans-serif;
 }
 
-.login-picture{
-  position: relative;
+.signup-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.login-picture1{
-  
+.login-picture1 {
+  height: 74%;
+  width: 33%;
+  margin-right: 2.5%;
 }
 
-img {
-  height: 20%;
-  width: 20%;
+.signup-form {
+  height: 500px;
+  width: 350px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #dcdee2;
+}
+
+.title{
+  font-size: 50px;
+  font-family: 'Grand Hotel', cursive;
+  margin-top: 7%;
+}
+
+.signup-button {
+  height: 28px;
+  background: #1991F4;
+  color: white;
+  width: 75%;
+  text-align: center;
+  border-radius: 4px;
+  margin-top: 5%;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+::placeholder{
+  padding-left: 10px;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%
+}
+
+.terms {
+  width: 60%;
+  color: #7a7d7f;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+}
+
+.field{
+  background: #FAFAFA;
+  height: 36px;
+  width: 73%;
+  border: 1px solid #dcdee2;
+  margin: 1%;
+  padding-left: 1.5%;
+}
+
+.have-account {
+  border: 1px solid #dcdee2;
+  margin-top: 3%;
+  height: 68px;
+  width: 350px;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.login-redir {
+  padding-left: 1%;
+  color: #1991F4;
+}
+
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #FAFAFA;
+  width: 1137px;
+  height: 786px;
+  font-family: sans-serif;
+}
+
+.login-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background: #FFFFFF;
+  height: 50%;
+  width: 350px;
+  margin-top: 1%;
+  border: 1px solid #dcdee2
 }
