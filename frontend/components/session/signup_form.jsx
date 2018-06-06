@@ -32,7 +32,7 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul className="signup-errors">
+      <ul className="login-errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -47,7 +47,7 @@ class SignupForm extends React.Component {
       <div className="signup">
         <img src='https://s20.postimg.cc/9lsqu622l/for_Daniel2.png'
           className="login-picture1"></img>
-        <div class="signup-box">
+        <div className="signup-box">
           <div className="signup-form">
             <h2 className="title">InstaFriends</h2>
             <button className="signup-button" onClick={this.handleGuest}>Log in with Demo User</button>

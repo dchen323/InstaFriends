@@ -4,6 +4,8 @@ class User < ApplicationRecord
   validates :username, :session_token, uniqueness: true
   before_validation :ensure_session_token
 
+  has_many :pictures
+
   attr_reader :password
 
   def password=(password)
