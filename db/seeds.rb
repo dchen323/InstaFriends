@@ -9,3 +9,9 @@
 User.delete_all
 
 guest = User.create({username: "gunther", name: "Gunther", password: 'password'})
+ross = User.create({username: 'dr_ross', name: "Ross Geller", password: "password1"})
+rachel = User.create({username: 'rach', name: "Rachel Green", password: "password1"})
+joey = User.create({username: 'drake_ramoray', name: "Joey Tribbiani", password: "password1"})
+chandler = User.create({username: 'bing', name: "Chandler Bing", password: "password1"})
+monica = User.create({username: 'chef_geller', name: "Monica Geller", password: "password1"})
+phoebe = User.create({username: 'smelly_cat', name: "Phoebe Buffay", password: "password1"})
