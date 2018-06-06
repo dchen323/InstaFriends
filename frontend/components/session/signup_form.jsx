@@ -26,7 +26,7 @@ class SignupForm extends React.Component {
 
   handleGuest(e){
     e.preventDefault();
-    const user = merge(this.state, {username: "guest1", password: 'password'});
+    const user = merge(this.state, {username: "gunther", password: 'password'});
     this.props.login(user);
   }
 

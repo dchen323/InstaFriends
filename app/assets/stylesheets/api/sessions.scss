@@ -140,8 +140,8 @@
   font-size: 14px;
 }
 
-@media only screen and (max-width: 50%) {
-  img {
+@media only screen and (max-width: 600px) {
+  .login-picture1 {
     display: none;
   }
 }
