@@ -7,11 +7,10 @@ class LoginForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: '',
+      password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
-    this.errorClear = this.errorClear.bind(this);
   }
 
   update(field) {
@@ -20,11 +19,6 @@ class LoginForm extends React.Component {
 
   componentDidMount(){
     this.props.removeErrors();
-  }
-
-  errorClear(e) {
-    e.preventDefault();
-    this.setState({errors:[]});
   }
 
   handleSubmit(e) {
