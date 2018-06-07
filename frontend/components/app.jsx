@@ -1,17 +1,21 @@
 import React from 'react';
 import{Route,Redirect,Switch,Link} from 'react-router-dom';
+import NavBar from './navbar/nav_bar_container';
 import WelcomeContainer from './welcome/welcome_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import UserProfileContainer from './user/user_profile_container';
 import {AuthRoute, ProtectedRoute} from '../utils/route_util';
 
 const App = () => (
   <div>
     <main>
+      <ProtectedRoute path="/" component={NavBar} />
       <Switch>
         <AuthRoute path="/login" component={LoginFormContainer}/>
         <AuthRoute path="/signup" component={SignupFormContainer}/>
-        <ProtectedRoute path="/" component={WelcomeContainer}/>
+        <ProtectedRoute path="/user/:userId" component={UserProfileContainer}/>
+        <ProtectedRoute component={WelcomeContainer}/>
       </Switch>
     </main>
   </div>
