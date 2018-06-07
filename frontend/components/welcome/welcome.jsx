@@ -13,3 +13,13 @@ const Welcome = ({currentUser,logout,history}) => (
 );
 
 export default Welcome;
+
+// upload(e){
+//   e.preventDefault();
+//   cloudinary.openUploadWidget(window.cloudinary_options,
+//     (error,images) => {
+//       if (error === null){
+//
+//       }
+//     });
+//   }

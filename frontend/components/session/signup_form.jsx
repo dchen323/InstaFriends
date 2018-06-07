@@ -8,7 +8,7 @@ class SignupForm extends React.Component {
     this.state = {
       username: '',
       name: '',
-      password: ''
+      password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
@@ -16,6 +16,10 @@ class SignupForm extends React.Component {
 
   update(field) {
     return e => this.setState({[field]: e.target.value});
+  }
+
+  componentDidMount(){
+    this.props.removeErrors();
   }
 
   handleSubmit(e) {
@@ -62,9 +66,9 @@ class SignupForm extends React.Component {
                 onChange={this.update("password")} className="field"
                 placeholder="Password"></input>
               <input type="submit" value="Sign Up" className="signup-button"></input>
-              <br></br>
               <p className="terms">By signing up, you agree to our Terms,Data Policy and Cookies Policy.</p>
             </form>
+          <br></br>
             {this.renderErrors()}
           </div>
           <div className="have-account">

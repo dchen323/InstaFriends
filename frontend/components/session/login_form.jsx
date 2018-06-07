@@ -7,14 +7,24 @@ class LoginForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
+    this.errorClear = this.errorClear.bind(this);
   }
 
   update(field) {
     return e => this.setState({[field]: e.target.value});
+  }
+
+  componentDidMount(){
+    this.props.removeErrors();
+  }
+
+  errorClear(e) {
+    e.preventDefault();
+    this.setState({errors:[]});
   }
 
   handleSubmit(e) {
@@ -42,6 +52,11 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    let errorClass = "";
+    if (this.props.errors.length > 0) {
+      errorClass = "invalid";
+    }
+
     const isEnabled = this.state.username.length > 0 &&
       this.state.password.length > 0;
     let disabled;
@@ -54,10 +69,12 @@ class LoginForm extends React.Component {
           <h2 className="title">InstaFriends</h2>
           <form className="form-box" onSubmit={this.handleSubmit}>
             <input type="text" value={this.state.username}
-              onChange={this.update("username")} className="field"
+              onChange={this.update("username")}
+              className={`field ${errorClass}`}
               placeholder="username"></input>
             <input type="password" value={this.state.password}
-              onChange={this.update("password")} className="field"
+              onChange={this.update("password")}
+              className={`field ${errorClass}`}
               placeholder="Password"></input>
             <button className={`signup-button ${disabled}`} disabled={!isEnabled}>Log In</button>
             <button className="signup-button" onClick={this.handleGuest}>Log in with Demo User</button>
@@ -67,7 +84,7 @@ class LoginForm extends React.Component {
           <div>
             <div className="have-account">
               <p>Don't an account?</p>
-              <Link to="/signup" className='login-redir'>Sign up</Link>
+              <Link to="/signup" className="login-redir"> Sign up</Link>
             </div>
           </div>
       </div>

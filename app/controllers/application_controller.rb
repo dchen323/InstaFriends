@@ -21,6 +21,14 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    return nil unless current_user
+    unless current_user
+      render json: ["You must be logged in."] , status: 403
+    end
+  end
+
+  def authenticate_user
+    unless current_user.id == Picture.find(params[:id]).user.id
+      render json: ["You do not own this entity"], status: 403
+    end
   end
 end
