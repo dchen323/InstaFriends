@@ -2,8 +2,9 @@ import {connect} from 'react-redux';
 import {fetchUser} from '../../actions/user_actions';
 import UserProfile from './user_profile';
 
-const mapStateToProps = ({entities: {users}}, ownProps) => ({
-  user: users[ownProps.match.params.userId]
+const mapStateToProps = ({entities: {users, pictures}}, ownProps) =>({
+  user: users[ownProps.match.params.userId],
+  pictures: pictures
 });
 
 const mapDispatchToProps = dispatch => ({

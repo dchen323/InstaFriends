@@ -6,7 +6,6 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -15,7 +14,8 @@
   <script type="text/javascript">
     window.cloudinary_options = {
       cloud_name: '<%= ENV["CLOUD_NAME"] %>',
-      upload_preset: '<%= ENV["UPLOAD_PRESET"] %>'
+      upload_preset: '<%= ENV["UPLOAD_PRESET"] %>',
+      cloud_url: '<%=ENV["CLOUD_URL"] %>'
     }
   </script>
   <% if logged_in? %>

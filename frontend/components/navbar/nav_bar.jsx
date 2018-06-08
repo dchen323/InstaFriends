@@ -21,7 +21,7 @@ class NavBar extends React.Component {
             <span className="nav-icon">
               <i className="far fa-compass icon2"></i>
               <i className="far fa-heart icon2"></i>
-              <Link to={`user/${this.props.currentUser.id}`}><i className="far fa-user icon2 "></i></Link>
+              <Link to={`/user/${this.props.currentUser.id}`}><i className="far fa-user icon2 "></i></Link>
             </span>
           </nav>
         </div>
