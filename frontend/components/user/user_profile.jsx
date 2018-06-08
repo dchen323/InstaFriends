@@ -56,7 +56,7 @@ class UserProfile extends React.Component {
   render(){
     let length = Object.values(this.props.pictures).length;
     const pictures = Object.values(this.props.pictures).map(picture => (
-      <PictureIndexItem key={picture.id}
+      <PictureIndexItem
         picture={picture} />
     ));
     return(
