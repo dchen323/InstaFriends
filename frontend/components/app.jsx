@@ -1,5 +1,6 @@
 import React from 'react';
 import{Route,Redirect,Switch,Link} from 'react-router-dom';
+import Modal from './modal/modal';
 import NavBar from './navbar/nav_bar_container';
 import WelcomeContainer from './welcome/welcome_container';
 import LoginFormContainer from './session/login_form_container';

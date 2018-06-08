@@ -11,7 +11,7 @@ export default class PictureUploadForm extends React.Component {
     };
   }
 
-  omImageDrop(files){
+  onImageDrop(files){
     this.setState({uploadedFile: files[0]});
     this.handleImageUpload(files[0]);
   }
@@ -30,8 +30,8 @@ export default class PictureUploadForm extends React.Component {
     return(
       <Dropzone
         multiple={false}
-        accept="*/jpg, */png, */jpeg"
-        onDrop={this.onImageDrop.bind(this)}>
+        accept=".jpg,.png"
+        onDrop={file => this.onImageDrop(file)}>
         <p>Drop an image or click to select a file to upload.</p>
       </Dropzone>
     );

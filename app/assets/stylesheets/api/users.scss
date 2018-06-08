@@ -168,19 +168,9 @@ input.nav-search[type="text"]{
   font-size: 24px;
 }
 
-.user-content2 {
+.user-content2, .user-content3 {
   display: flex;
   flex-direction: row;
-}
-
-.user-content3 {
-  display: flex;
-  flex-direction: row;
-}
-
-.user-content2 {
-  display: flex;
-  justify-content: flex-start;
 }
 
 .add-photo {
