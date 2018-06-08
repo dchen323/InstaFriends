@@ -1,3 +1,52 @@
 // Place all the styles related to the Api::Pictures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.photo-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  background: #FAFAFA
+}
+
+.modal-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.photo-uploader {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center
+}
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 240px;
+  height: 40px;
+  margin: 10px;
+  background: #1991F4;
+  color: white;
+  border-radius: 8px;
+}
+
+.preview-pic {
+  height: 300px;
+  width: 300px;
+}
+
+.close-modal {
+  text-align: center;
+  border: 3px solid #dcdee2;
+  width: 80px;
+  height: 40px;
+  border-radius: 4px;
+}

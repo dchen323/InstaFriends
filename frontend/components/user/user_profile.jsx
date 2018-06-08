@@ -1,18 +1,21 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {PictureIndexItem} from '../picture/picture_index_item';
+import {PictureIndexItems} from '../picture/picture_index_items';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import PictureUploadForm from '../picture/pic_upload_form';
+import PictureUploadFormContainer from '../picture/picture_upload_form_container';
+import {merge} from 'lodash';
 
-const customStyles = {
+let customStyles = {
   content : {
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    width: "900px",
+    height: "600px"
   }
 };
 
@@ -22,11 +25,11 @@ class UserProfile extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      modalType: ''
     };
 
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
@@ -35,18 +38,17 @@ class UserProfile extends React.Component {
     Modal.setAppElement(document.getElementById('photo-add'));
   }
 
-  componentWillReceiveProp(nextProp){
-    if(this.props.user.id !== nextProp.match.params.userId){
+  componentWillReceiveProps(nextProp){
+    if(this.props.user && this.props.user.id !== parseInt(nextProp.match.params.userId)){
       this.props.fetchUser(nextProp.match.params.userId);
     }
   }
 
-  openModal() {
-    this.setState({modalIsOpen:true});
-  }
-
-  afterOpenModal(){
-    this.subtitle.style.color = '#f00';
+  openModal(field) {
+    return () => {
+      this.setState({modalIsOpen:true,
+      modalType : field});
+    };
   }
 
   closeModal() {
@@ -54,11 +56,29 @@ class UserProfile extends React.Component {
   }
 
   render(){
+    if(this.props.user === undefined){
+      return (<div></div>);
+    }
     let length = Object.values(this.props.pictures).length;
-    const pictures = Object.values(this.props.pictures).map(picture => (
-      <PictureIndexItem
-        picture={picture} />
+    const pictures = Object.values(this.props.pictures).map((picture, idx) => (
+      <PictureIndexItems key={idx}
+        picture={picture}
+        openModal={this.openModal}/>
     ));
+    let modal;
+    if (this.state.modalType === 'Add Photo'){
+      customStyles = merge(customStyles, {content: {
+        width: "50%", height: "90%", background: "#FAFAFA"
+      }});
+      modal = (<div className="photo-modal">
+                <h2 className="modal-add" >Add Photo</h2>
+                <PictureUploadFormContainer />
+                <button onClick={this.closeModal}
+                  className="close-modal">Close</button>
+                </div>);
+    }else if (this.state.modalType === 'Show Photo'){
+      modal = (<div>Filler</div>);
+    }
     return(
       <div className="user">
         <header className="profile-box">
@@ -77,18 +97,13 @@ class UserProfile extends React.Component {
             <div className="user-content3">
               <h4 className="user-name">{this.props.user.name}</h4>
               <button className="add-photo" id="photo-add"
-                onClick={this.openModal}>Add Photo</button>
+                onClick={this.openModal("Add Photo")}>Add Photo</button>
                 <Modal
-            isOpen={this.state.modalIsOpen}
-            onAfterOpen={this.afterOpenModal}
-            onRequestClose={this.closeModal}
-            style={customStyles}
-            contentLabel="Add Photo"
-          >
-
-            <h2 ref={subtitle => this.subtitle = subtitle}>Add Photo</h2>
-            <PictureUploadForm />
-            <button onClick={this.closeModal}>Close</button>
+                  isOpen={this.state.modalIsOpen}
+                  onRequestClose={this.closeModal}
+                  style={customStyles}
+                  contentLabel="Modal">
+          {modal}
           </Modal>
             </div>
           </div>

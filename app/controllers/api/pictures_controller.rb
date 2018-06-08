@@ -14,6 +14,7 @@ class Api::PicturesController < ApplicationController
 
   def create
     @picture = Picture.new(picture_parmas)
+    @picture[:user_id] = current_user.id
     if @picture.save
       render json: @picture
     else

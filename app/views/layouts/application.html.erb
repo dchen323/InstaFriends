@@ -13,11 +13,9 @@
   <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
   <script type="text/javascript">
    window.CLOUDINARY_OPTIONS = {
-     cloud_name: "<%=ENV['CLOUD_NAME']%>",
      upload_preset: "<%= ENV['UPLOAD_PRESET'] %>",
      cloud_url: "<%=ENV['CLOUD_URL']%>"
    };
-   console.log(window.CLOUDINARY_OPTIONS)
  </script>
   </script>
   <% if logged_in? %>
@@ -26,7 +24,7 @@
         "id": <%= current_user.id %>,
         "username": "<%= current_user.username%>",
         "name": "<%= current_user.name%>",
-        "img_url": "<%=current_user.img_url%>"
+        "imgUrl": "<%=current_user.img_url%>"
       }
     </script>
   <% end %>

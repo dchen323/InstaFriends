@@ -7,7 +7,8 @@ export default class PictureUploadForm extends React.Component {
     super(props);
 
     this.state = {
-      uploadFileCloudinaryURL: ''
+      uploadFileCloudinaryURL: '',
+      caption: ''
     };
   }
 
@@ -17,27 +18,48 @@ export default class PictureUploadForm extends React.Component {
   }
 
   handleImageUpload(file) {
-    let upload = request.post(window.cloudinary_options.cloud_url)
-                  .field('upload_preset', window.cloudinary_options.upload_preset)
+    let upload = request.post(window.CLOUDINARY_OPTIONS.cloud_url)
+                  .field('upload_preset', window.CLOUDINARY_OPTIONS.upload_preset)
                   .field('file', file);
-    debugger
     upload.end((err,response) => {
+      if(err) {
+        console.error(err);
+      }
       if(response.body.secure_url !== '' ) {
-        debugger
         this.setState({uploadFileCloudinaryUrl: response.body.secure_url});
-      }else{
-        console.log(err);
       }
     });
   }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.uploadPicture(this.state).then(() => this.props.history
+      .push(`/users/${this.props.match.params.userId}`));
+  }
+
+  update(field){
+    return e => this.setState({[field]: e.target.value});
+  }
+
   render() {
     return(
-      <Dropzone
-        multiple={false}
-        accept=".jpg,.png"
-        onDrop={file => this.onImageDrop(file)}>
-        <p>Drop an image or click to select a file to upload.</p>
-      </Dropzone>
+      <div className="photo-uploader">
+        <content>Picture Preview</content>
+        <img src={this.state.uploadFileCloudinaryUrl} className="preview-pic"/>
+        <form onSumbit={this.handleSubmit.bind(this)}>
+          <Dropzone
+            multiple={false}
+            accept="image/*"
+            onDrop={file => this.onImageDrop(file)}
+            className>
+            <p className='upload-button'>Click to select a file to upload.</p>
+            <input type="text" className="caption-box"
+              onChange={this.update("caption").bind(this)}
+              value ={this.state.caption}></input>
+            <input type="submit" value="Upload"/>
+          </Dropzone>
+        </form>
+      </div>
     );
   }
 }
