@@ -20,9 +20,13 @@ export default class PictureUploadForm extends React.Component {
     let upload = request.post(window.cloudinary_options.cloud_url)
                   .field('upload_preset', window.cloudinary_options.upload_preset)
                   .field('file', file);
+    debugger
     upload.end((err,response) => {
-      if(err === null ) {
+      if(response.body.secure_url !== '' ) {
+        debugger
         this.setState({uploadFileCloudinaryUrl: response.body.secure_url});
+      }else{
+        console.log(err);
       }
     });
   }
