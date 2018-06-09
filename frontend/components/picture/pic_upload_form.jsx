@@ -8,8 +8,8 @@ export default class PictureUploadForm extends React.Component {
     this.state = { picture: {
       img_url: '',
       caption: ''
-
-      }
+      },
+      modalIsOpen: true
     };
   }
 
@@ -33,10 +33,9 @@ export default class PictureUploadForm extends React.Component {
   }
 
   handleSubmit(e){
-    console.log(this.state.picture);
     e.preventDefault();
-    this.props.uploadPicture(this.state.picture).then(() => this.props.history
-      .push(`/users/${this.props.match.params.userId}`));
+    this.props.uploadPicture(this.state.picture);
+    this.props.closeModal();
   }
 
   update(field){

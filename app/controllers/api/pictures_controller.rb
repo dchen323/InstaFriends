@@ -16,7 +16,7 @@ class Api::PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
     if @picture.save
-      render json: @picture
+      render :show
     else
       render json: @picture.errors.full_messages, status: 422
     end
@@ -25,7 +25,7 @@ class Api::PicturesController < ApplicationController
   def update
     @picture = Picture.find(params[:id])
     if @picture.update(picture_params)
-      render json: @picture
+      render :show
     else
       render json: @picture.errors.full_messages, status: 422
     end

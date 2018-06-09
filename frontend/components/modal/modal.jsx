@@ -7,7 +7,8 @@ export const UserModal = ({modalType,closeModal}) => {
     return (
         <div className="photo-modal">
           <h2 className="modal-add" >Add Photo</h2>
-          <PictureUploadFormContainer />
+          <PictureUploadFormContainer
+            closeModal={closeModal} />
           <button onClick={() => closeModal()}
             className="close-modal">Close</button>
         </div>
