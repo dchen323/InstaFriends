@@ -6,8 +6,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   font-family: sans-serif;
   background: #FAFAFA
+}
+
+.upload-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .modal-add {
@@ -36,14 +44,36 @@
   background: #1991F4;
   color: white;
   border-radius: 8px;
+  z-index: 10;
+}
+
+.upload-button:hover{
+  cursor: pointer;
 }
 
 .preview-pic {
-  height: 300px;
-  width: 300px;
+  height: 270px;
+  width: 270px;
+  margin: 10px;
+}
+
+.dropzone {
+  height: 30px;
+  width: 257px;
+  background: red;
+}
+
+.caption-box {
+  border: 2px solid #dcdee2;
+  height: 50px;
+  width: 257px;
+  padding-left: 10px;
+  overflow: scroll;
+  resize:none;
 }
 
 .close-modal {
+  position: relative;
   text-align: center;
   border: 3px solid #dcdee2;
   width: 80px;

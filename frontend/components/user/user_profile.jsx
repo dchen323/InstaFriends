@@ -60,7 +60,7 @@ class UserProfile extends React.Component {
       return (<div></div>);
     }
     let length = Object.values(this.props.pictures).length;
-    const pictures = Object.values(this.props.pictures).map((picture, idx) => (
+    const pictures = this.props.pictures.map((picture, idx) => (
       <PictureIndexItems key={idx}
         picture={picture}
         openModal={this.openModal}/>

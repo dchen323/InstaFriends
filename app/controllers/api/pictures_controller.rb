@@ -1,6 +1,6 @@
 class Api::PicturesController < ApplicationController
   before_action :require_login
-  before_action :authenticate_user, only: [:create, :update, :destroy]
+  before_action :authenticate_user, only: [:update, :destroy]
 
   def index
   end
@@ -13,8 +13,9 @@ class Api::PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new(picture_parmas)
-    @picture[:user_id] = current_user.id
+    debugger
+    @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
     if @picture.save
       render json: @picture
     else
@@ -39,7 +40,8 @@ class Api::PicturesController < ApplicationController
   private
 
   def picture_params
-    params.require(:picture).permit(:user_id,:img_url,:caption)
+    p params
+    params.require(:picture).permit(:img_url,:caption)
   end
 
 end

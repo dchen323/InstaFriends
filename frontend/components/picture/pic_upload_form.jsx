@@ -5,10 +5,11 @@ import request from 'superagent';
 export default class PictureUploadForm extends React.Component {
   constructor(props){
     super(props);
-
-    this.state = {
-      uploadFileCloudinaryURL: '',
+    this.state = { picture: {
+      img_url: '',
       caption: ''
+
+      }
     };
   }
 
@@ -26,38 +27,42 @@ export default class PictureUploadForm extends React.Component {
         console.error(err);
       }
       if(response.body.secure_url !== '' ) {
-        this.setState({uploadFileCloudinaryUrl: response.body.secure_url});
+        this.setState({picture: { img_url: response.body.secure_url}});
       }
     });
   }
 
   handleSubmit(e){
+    console.log(this.state.picture);
     e.preventDefault();
-    this.props.uploadPicture(this.state).then(() => this.props.history
+    this.props.uploadPicture(this.state.picture).then(() => this.props.history
       .push(`/users/${this.props.match.params.userId}`));
   }
 
   update(field){
-    return e => this.setState({[field]: e.target.value});
+    return e => this.setState({picture: {[field]: e.target.value}});
   }
 
   render() {
     return(
       <div className="photo-uploader">
-        <content>Picture Preview</content>
-        <img src={this.state.uploadFileCloudinaryUrl} className="preview-pic"/>
-        <form onSumbit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit.bind(this)}
+          className="upload-form">
+          <content>Picture Preview</content>
+          <img src={this.state.picture.img_url} className="preview-pic"/>
+          <textarea type="text" className="caption-box"
+            onChange={this.update("caption").bind(this)}
+            value ={this.state.picture.caption}
+            placeholder="Caption..."></textarea>
           <Dropzone
             multiple={false}
             accept="image/*"
             onDrop={file => this.onImageDrop(file)}
-            className>
+            className="dropzone">
             <p className='upload-button'>Click to select a file to upload.</p>
-            <input type="text" className="caption-box"
-              onChange={this.update("caption").bind(this)}
-              value ={this.state.caption}></input>
-            <input type="submit" value="Upload"/>
           </Dropzone>
+            <input type="submit" value="Upload"
+              className="upload-button"/>
         </form>
       </div>
     );

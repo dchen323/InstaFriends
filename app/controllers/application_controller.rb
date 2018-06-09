@@ -27,6 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user
+
     unless current_user.id == Picture.find(params[:id]).user.id
       render json: ["You do not own this entity"], status: 403
     end

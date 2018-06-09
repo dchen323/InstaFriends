@@ -2,10 +2,11 @@ import {connect} from 'react-redux';
 import {fetchUser} from '../../actions/user_actions';
 import UserProfile from './user_profile';
 import {openModal, closeModal} from '../../actions/modal_actions';
+import {sortPictures} from '../../reducers/selectors';
 
 const mapStateToProps = ({entities: {users, pictures}}, ownProps) =>({
   user: users[ownProps.match.params.userId],
-  pictures: pictures
+  pictures: sortPictures(pictures)
 });
 
 const mapDispatchToProps = dispatch => ({
