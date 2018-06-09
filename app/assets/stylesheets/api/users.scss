@@ -197,8 +197,6 @@ input.nav-search[type="text"]{
 
 
 .picture-container {
-  // display: flex;
-  // flex-direction: row;
   margin-top: 20px;
   width: 70%;
   height: 250px;
@@ -219,8 +217,8 @@ input.nav-search[type="text"]{
 
 .posted-picture{
   overflow: hidden;
-  height: 270px;
-  width: 270px;
+  height: 240px;
+  width: 240px;
 
 }
 
@@ -237,6 +235,10 @@ input.nav-search[type="text"]{
 
   .nav-main {
     margin-left: 50px;
+  }
+
+  .post-pic {
+    margin: 3px;
   }
 
 }

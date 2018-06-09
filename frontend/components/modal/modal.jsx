@@ -1,5 +1,6 @@
 import React from 'react';
-import PictureUploadFormContainer from '../picture/picture_upload_form_container';
+import PictureUploadFormContainer
+  from '../picture/picture_upload_form_container';
 
 export const UserModal = ({modalType,closeModal}) => {
   if (modalType === "Add Photo"){
