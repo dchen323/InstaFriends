@@ -10,13 +10,10 @@ export const fetchPicture = (userId,id) => (
   })
 );
 
-export const uploadPicture = picture => {
-  debugger
-  return (
+export const uploadPicture = picture => (
     $.ajax({
       method: 'POST',
       url: "/api/pictures",
       data: { picture }
     })
-  );
-};
+);

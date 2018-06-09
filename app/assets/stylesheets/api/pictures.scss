@@ -37,14 +37,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin: 20px 0;
   width: 240px;
   height: 40px;
   margin: 10px;
   background: #1991F4;
   color: white;
   border-radius: 8px;
-  z-index: 10;
 }
 
 .upload-button:hover{
@@ -58,9 +57,15 @@
 }
 
 .dropzone {
-  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.dropzone-box {
+  height: 47px;
   width: 257px;
-  background: red;
+  background: none;
 }
 
 .caption-box {

@@ -54,15 +54,17 @@ export default class PictureUploadForm extends React.Component {
             onChange={this.update("caption").bind(this)}
             value ={this.state.picture.caption}
             placeholder="Caption..."></textarea>
-          <Dropzone
-            multiple={false}
-            accept="image/*"
-            onDrop={file => this.onImageDrop(file)}
-            className="dropzone">
-            <p className='upload-button'>Click to select a file to upload.</p>
-          </Dropzone>
+          <div className="dropzone">
+            <Dropzone
+              multiple={false}
+              accept="image/*"
+              onDrop={file => this.onImageDrop(file)}
+              className="dropzone-box">
+              <p className='upload-button'>Click to select a file to upload.</p>
+            </Dropzone>
             <input type="submit" value="Upload"
               className="upload-button"/>
+          </div>
         </form>
       </div>
     );
