@@ -13,7 +13,6 @@ class Api::PicturesController < ApplicationController
   end
 
   def create
-    debugger
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
     if @picture.save

@@ -1,39 +1,17 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
-import { connect } from 'react-redux';
-import PictureUploadForm from '../picture/pic_upload_form';
+import PictureUploadFormContainer from '../picture/picture_upload_form_container';
 
-function Modal({modal, closeModal}) {
-  if (!modal) {
-    return null;
+export const UserModal = ({modalType,closeModal}) => {
+  if (modalType === "Add Photo"){
+    return (
+        <div className="photo-modal">
+          <h2 className="modal-add" >Add Photo</h2>
+          <PictureUploadFormContainer />
+          <button onClick={() => closeModal()}
+            className="close-modal">Close</button>
+        </div>
+      );
+  }else if (modalType ==="Show Photo"){
+    return(<div>Filler</div>);
   }
-  let component;
-  switch (modal) {
-    case 'Add Photo':
-      component = <PictureUploadForm />;
-      break;
-    default:
-      return null;
-  }
-  return (
-    <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
-        { component }
-      </div>
-    </div>
-  );
-}
-
-const mapStateToProps = state => {
-  return {
-    modal: state.ui.modal
-  };
 };
-
-const mapDispatchToProps = dispatch => {
-  return {
-    closeModal: () => dispatch(closeModal())
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
