@@ -33,7 +33,7 @@ class UserProfile extends React.Component {
 
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
-    Modal.setAppElement(document.getElementById('photo-add'));
+    Modal.setAppElement(document.getElementById('user'));
   }
 
   componentWillReceiveProps(nextProp){
@@ -78,7 +78,8 @@ class UserProfile extends React.Component {
             <UserProfileInfo openModal={this.openModal}
               username={this.props.user.username}
               length={this.props.pictures.length}
-              name={this.props.user.name}/>
+              name={this.props.user.name}
+              currentUser={this.props.user.id === this.props.sessionId}/>
             <Modal
               isOpen={this.state.modalIsOpen}
               onRequestClose={this.closeModal}
@@ -86,6 +87,7 @@ class UserProfile extends React.Component {
               contentLabel="Modal">
             <UserModal modalType={this.state.modalType}
               closeModal={this.closeModal}
+              openModal={this.openModal}
               pictureId={this.state.e}
               userId={this.props.user.id}/>
           </Modal>

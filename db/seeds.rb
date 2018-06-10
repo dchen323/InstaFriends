@@ -19,7 +19,7 @@ phoebe = User.create!({username: 'smelly_cat', name: "Phoebe Buffay", password: 
 
 
 picture1 = Picture.create!({img_url: 'https://s20.postimg.cc/qzwhcf66l/picture1.jpg', user: guest, caption: "Welcome to Central Perk"})
-picture4 = Picture.create!({img_url: 'https://s20.postimg.cc/50q2p7x25/picture4.jpg', user: ross, caption: "Hoiday Armadillo"})
+picture4 = Picture.create!({img_url: 'https://s20.postimg.cc/50q2p7x25/picture4.jpg', user: ross, caption: "Holiday Armadillo!"})
 picture7 = Picture.create!({img_url:'https://s20.postimg.cc/dvqwzr8zx/picture_7.jpg', user: rachel , caption: 'Me and Ross'})
 picture10 = Picture.create!({img_url:'https://s20.postimg.cc/kyysfdtv1/picture_10.jpg', user: joey , caption: 'JOEY DOESNT SHARE FOOD'})
 picture13 = Picture.create!({img_url:'https://s20.postimg.cc/x0u69jat9/picture_13.jpg', user: chandler , caption: 'best day ever'})

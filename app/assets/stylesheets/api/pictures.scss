@@ -100,20 +100,24 @@
 .pic-show-info {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .pic-show-userpic{
   border-radius: 50%;
   height: 45px;
   width: 45px;
-  margin-right: 10px;
+  margin: 10px;
+}
+
+.pic-show-username {
+  margin-top: 15px;
+  margin-right: 5px;
 }
 
 .pic-show-header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
 }
 
 .pic-show-button {
@@ -125,4 +129,22 @@
   margin: 5px;
   text-align: center;
   border: 1px solid black;
+}
+
+.pic-show-edit {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.input-show-box {
+  width: auto;
+  height: auto;
+  margin: 15px 5px;
+  resize: none;
+}
+
+.hide-button {
+  display: none;
 }

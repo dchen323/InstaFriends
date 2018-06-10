@@ -18,3 +18,8 @@ export const uploadPicture = picture => dispatch => (
   APIUtil.uploadPicture(picture)
     .then(res => dispatch(receivePicture(res)))
 );
+
+export const updatePicture = picture => dispatch => (
+APIUtil.updatePicture(picture)
+  .then(res => dispatch(receivePicture(res)))
+);

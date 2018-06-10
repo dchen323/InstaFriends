@@ -17,3 +17,13 @@ export const uploadPicture = picture => (
       data: { picture }
     })
 );
+
+export const updatePicture = picture => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/pictures/${picture.id}`,
+    data: {picture}
+  })
+);
+
+export const deletePicture = picture
