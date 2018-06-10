@@ -1,10 +1,19 @@
 import React from 'react';
 import EditPictureFormContainer from './edit_picture_form_container';
+import {withRouter} from 'react-router';
 
-
-export default class PictureIndex extends React.Component {
+class PictureIndex extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      modalIsOpen: true
+    };
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deletePicture(this.props.picture);
+    this.props.closeModal();
   }
 
   render() {
@@ -22,7 +31,8 @@ export default class PictureIndex extends React.Component {
           <header className="pic-show-header">
             <img src={this.props.user.imgUrl} className="pic-show-userpic"/>
             <h2>{this.props.user.username}</h2>
-            <button className={`pic-show-button ${disabled}`}>Delete Picture</button>
+            <button className={`pic-show-button ${disabled}`}
+              onClick={this.handleDelete.bind(this)}>Delete Picture</button>
           </header>
           <EditPictureFormContainer picture={this.props.picture}
             disabled={disabled} user={this.props.user}/>
@@ -31,3 +41,5 @@ export default class PictureIndex extends React.Component {
     );
   }
 }
+
+export default withRouter(PictureIndex);

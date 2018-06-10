@@ -1,8 +1,9 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
+import { withRouter } from 'react-router';
 
-export default class PictureUploadForm extends React.Component {
+class PictureUploadForm extends React.Component {
   constructor(props){
     super(props);
     this.state = { picture: {
@@ -34,7 +35,8 @@ export default class PictureUploadForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.uploadPicture(this.state.picture);
+    this.props.uploadPicture(this.state.picture)
+      .then(() => this.props.history.push(`/user/${this.props.match.params.userId}`));
     this.props.closeModal();
   }
 
@@ -69,3 +71,5 @@ export default class PictureUploadForm extends React.Component {
     );
   }
 }
+
+export default withRouter(PictureUploadForm);

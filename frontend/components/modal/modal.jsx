@@ -20,7 +20,6 @@ export const UserModal = ({modalType, closeModal,openModal, pictureId, userId}) 
     return(
       <PictureIndexContainer pictureId={pictureId}
         userId={userId}
-        openModal={openModal}
         closeModal={closeModal}/>
     );
   }

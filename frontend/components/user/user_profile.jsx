@@ -66,9 +66,12 @@ class UserProfile extends React.Component {
         pictureId={picture.id}/>
     ));
     if (this.state.modalType === "Add Photo"){
-      customStyles = merge(customStyles, {content: {width: "50%", height: "90%",
+      customStyles = merge(customStyles, {content: {width: "50%", height: "95%",
                   background: "#FAFAFA"
         }});
+    }else{
+      customStyles = merge(customStyles, {content: {width: "900px",
+        height: "500px"}});
     }
     return(
       <div className="user">
@@ -83,8 +86,8 @@ class UserProfile extends React.Component {
             <Modal
               isOpen={this.state.modalIsOpen}
               onRequestClose={this.closeModal}
-              style={customStyles}
-              contentLabel="Modal">
+              contentLabel="Modal"
+              style={customStyles}>
             <UserModal modalType={this.state.modalType}
               closeModal={this.closeModal}
               openModal={this.openModal}
