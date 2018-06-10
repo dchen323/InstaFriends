@@ -14,7 +14,7 @@ let customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
     width: "900px",
-    height: "600px"
+    height: "500px"
   }
 };
 
@@ -24,7 +24,8 @@ class UserProfile extends React.Component {
     super(props);
     this.state = {
       modalIsOpen: false,
-      modalType: ''
+      modalType: '',
+      e: ''
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -41,25 +42,28 @@ class UserProfile extends React.Component {
     }
   }
 
-  openModal(field) {
+  openModal(field,key) {
     return () => {
       this.setState({modalIsOpen: true,
-              modalType: field});
+              modalType: field,
+              e: key});
     };
   }
 
   closeModal() {
     this.setState({modalIsOpen: false});
+    window.location = `/#/user/${this.props.user.id}`;
   }
 
   render(){
     if(this.props.user === undefined){
       return (<div></div>);
     }
-    const pictures = this.props.pictures.map((picture, idx) => (
-      <PictureIndexItems key={idx}
+    const pictures = this.props.pictures.map(picture => (
+      <PictureIndexItems key={picture.id}
         picture={picture}
-        openModal={this.openModal}/>
+        openModal={this.openModal}
+        pictureId={picture.id}/>
     ));
     if (this.state.modalType === "Add Photo"){
       customStyles = merge(customStyles, {content: {width: "50%", height: "90%",
@@ -81,7 +85,9 @@ class UserProfile extends React.Component {
               style={customStyles}
               contentLabel="Modal">
             <UserModal modalType={this.state.modalType}
-              closeModal={this.closeModal}/>
+              closeModal={this.closeModal}
+              pictureId={this.state.e}
+              userId={this.props.user.id}/>
           </Modal>
           </div>
         </header>

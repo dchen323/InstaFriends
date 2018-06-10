@@ -85,3 +85,44 @@
   height: 40px;
   border-radius: 4px;
 }
+
+.picture-show-container {
+  display: flex;
+  flex-direction: row;
+  font-family: sans-serif;
+}
+
+.display-picture {
+  height: 500px;
+  width: 500px;
+}
+
+.pic-show-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.pic-show-userpic{
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  margin-right: 10px;
+}
+
+.pic-show-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pic-show-button {
+  height: 33px;
+  width: 120px;
+  background: #1991F4;
+  color: white;
+  border-radius: 8px;
+  margin: 5px;
+  text-align: center;
+  border: 1px solid black;
+}

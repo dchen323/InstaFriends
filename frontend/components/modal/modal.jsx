@@ -1,8 +1,10 @@
 import React from 'react';
 import PictureUploadFormContainer
   from '../picture/picture_upload_form_container';
+import PictureIndexContainer
+  from '../picture/picture_index_container';
 
-export const UserModal = ({modalType,closeModal}) => {
+export const UserModal = ({modalType, closeModal, pictureId, userId}) => {
   if (modalType === "Add Photo"){
     return (
         <div className="photo-modal">
@@ -14,6 +16,10 @@ export const UserModal = ({modalType,closeModal}) => {
         </div>
       );
   }else if (modalType ==="Show Photo"){
-    return(<div>Filler</div>);
+    window.location = `/#/user/${userId}/pictures/${pictureId}`;
+    return(
+      <PictureIndexContainer pictureId={pictureId}
+        userId={userId}/>
+    );
   }
 };
