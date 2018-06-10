@@ -101,6 +101,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 10px;
+  width: 43%;
 }
 .pic-show-userpic{
   border-radius: 50%;
@@ -114,13 +115,27 @@
   margin-right: 5px;
 }
 
+
 .pic-show-header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-bottom: 1px solid #dcdee2;
+  width: 100%
 }
 
 .pic-show-button {
+  height: 33px;
+  width: 120px;
+  background: #1991F4;
+  color: white;
+  border-radius: 8px;
+  margin: 15px 5px 5px 5px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.pic-show-button2 {
   height: 33px;
   width: 120px;
   background: #1991F4;
@@ -133,7 +148,6 @@
 
 .pic-show-edit {
   display: flex;
-  justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -147,4 +161,8 @@
 
 .hide-button {
   display: none;
+}
+
+.outline {
+  border: 1px solid #dcdee2;
 }

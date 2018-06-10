@@ -31,7 +31,7 @@ class PictureIndex extends React.Component {
           <header className="pic-show-header">
             <img src={this.props.user.imgUrl} className="pic-show-userpic"/>
             <h2>{this.props.user.username}</h2>
-            <button className={`pic-show-button ${disabled}`}
+            <button className={`pic-show-button2 ${disabled}`}
               onClick={this.handleDelete.bind(this)}>Delete Picture</button>
           </header>
           <EditPictureFormContainer picture={this.props.picture}
