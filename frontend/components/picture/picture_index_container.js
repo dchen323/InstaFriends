@@ -13,9 +13,7 @@ const mapStateToProps = ({entities: {pictures,users},session},{pictureId,userId}
 const mapDispatchToProps = dispatch => ({
   fetchPicture: (userId, pictureId) => dispatch(fetchPicture(
     userId, pictureId
-  )),
-  updatePicture: picture => dispatch(updatePicture(picture))
-
+  ))
 });
 
 

@@ -7,10 +7,9 @@ export default class EditForm extends React.Component {
   }
 
 
-  handleSubmit(e){
+  updateCaption(e){
     e.preventDefault();
     this.props.updatePicture(this.state);
-    window.location = `/#/user/${this.state.picture.userId}`;
   }
 
   update(e){
@@ -19,16 +18,19 @@ export default class EditForm extends React.Component {
   }
 
   render() {
-    if (this.props.picture === null) {
-      return(<div></div>);
-    }
 
     return(
       <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <textarea className="edit-picture"
-            value={this.state.caption}></textarea>
-          <input type="submit" value="Edit Post"/>
+        <form onSubmit={this.updateCaption.bind(this)}
+          className="pic-show-edit">
+          <h2 className="pic-show-username">{this.props.user.username}</h2>
+          <textarea type="text" value={this.state.caption ? this.state.caption : ""}
+            onChange={this.update.bind(this)}
+            className="input-show-box"
+            disabled={this.props.disabled}
+            placeholder="caption..."></textarea>
+          <input type="submit" value="Edit Picture"
+            className={`pic-show-button ${this.props.disabled}`}/>
         </form>
       </div>
     );

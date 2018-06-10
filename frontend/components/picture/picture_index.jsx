@@ -1,22 +1,10 @@
 import React from 'react';
-
+import EditPictureFormContainer from './edit_picture_form_container';
 
 
 export default class PictureIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = this.props.picture;
-  }
-
-  updateCaption(e){
-    e.preventDefault();
-    this.props.updatePicture(this.state);
-  }
-
-  update(e){
-    return(
-      this.setState({caption: e.target.value})
-    );
   }
 
   render() {
@@ -36,21 +24,9 @@ export default class PictureIndex extends React.Component {
             <h2>{this.props.user.username}</h2>
             <button className={`pic-show-button ${disabled}`}>Delete Picture</button>
           </header>
-          <div>
-            <form onSubmit={this.updateCaption.bind(this)}
-              className="pic-show-edit">
-              <h2 className="pic-show-username">{this.props.user.username}</h2>
-              <textarea type="text" value={this.state.caption}
-                onChange={this.update.bind(this)}
-                className="input-show-box"
-                disabled={disabled}
-                placeholder="caption..."></textarea>
-              <input type="submit" value="Edit Picture"
-                className={`pic-show-button ${disabled}`}/>
-            </form>
-          </div>
+          <EditPictureFormContainer picture={this.props.picture}
+            disabled={disabled} user={this.props.user}/>
         </div>
-
       </div>
     );
   }

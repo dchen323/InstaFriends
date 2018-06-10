@@ -26,4 +26,9 @@ export const updatePicture = picture => (
   })
 );
 
-export const deletePicture = picture
+export const deletePicture = picture => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/pictures/${picture.id}`
+  })
+);
