@@ -1,5 +1,6 @@
 import React from 'react';
 import EditPictureFormContainer from './edit_picture_form_container';
+import {LikeItems} from '../likes/likes_items';
 import {withRouter} from 'react-router';
 
 class PictureIndex extends React.Component {
@@ -30,15 +31,11 @@ class PictureIndex extends React.Component {
     if (this.props.picture === undefined){
       return (<div></div>);
     }
-    let disabled, like,unlike;
+    let disabled;
     if(this.props.picture.userId !== this.props.sessionId){
       disabled = "hide-button";
     }
-    if(this.props.likes){
-      like="hide-button";
-    }else{
-      unlike="hide-button";
-    }
+
     return(
       <div className="picture-show-container">
         <img src={this.props.picture.imgUrl} className="display-picture"/>
@@ -51,12 +48,10 @@ class PictureIndex extends React.Component {
           </header>
           <EditPictureFormContainer picture={this.props.picture}
             disabled={disabled} user={this.props.user}/>
-          <div classname='pic-like'>
-            <i className={`far fa-heart like-icon ${like}`}
-              onClick={this.handleLike.bind(this)}></i>
-            <img src="https://s20.postimg.cc/l6em6gka5/heavy-black-heart_2764.png" className={`fas fa-heart like-icon2 ${unlike}`}
-              onClick={this.handleUnlike.bind(this)}/>
-          </div>
+          <LikeItems handleLike={this.handleLike.bind(this)}
+            handleUnlike={this.handleUnlike.bind(this)}
+            likeCount = {this.props.likeCount}
+            likes ={this.props.likes} />
         </div>
       </div>
     );

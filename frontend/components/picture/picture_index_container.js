@@ -9,7 +9,8 @@ const mapStateToProps = ({entities: {pictures,users,likes},session},{pictureId,u
   picture: pictures[pictureId],
   user: users[userId],
   likes: sortLikes(likes,session.id,pictureId) || false,
-  sessionId: session.id
+  sessionId: session.id,
+  likeCount: Object.values(likes).length
 });
 
 
