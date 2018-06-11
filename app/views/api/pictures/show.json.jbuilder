@@ -1,8 +1,8 @@
-json.pictures do
+json.picture do
   json.partial! 'api/pictures/picture' , picture: @picture
 end
 
-json.users do
+json.user do
     json.set! @picture.user.id do
       json.partial! 'api/users/user', user: @picture.user
     end
