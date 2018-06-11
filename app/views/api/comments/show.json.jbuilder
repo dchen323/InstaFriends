@@ -9,3 +9,9 @@ end
 json.picture do
   json.partial! 'api/pictures/picture', picture: @comment.picture
 end
+
+json.comments_author do
+  json.set! @comment.user.id do
+    json.extract! @comment.user, :id, :username
+  end
+end

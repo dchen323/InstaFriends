@@ -2,6 +2,12 @@ import {connect} from 'react-redux';
 import CommentIndex from './comment_index';
 import {sortComments} from '../../reducers/selectors';
 
-const mapStateToProps = (state, {pictureId}) => ({
-  comments: sortComments(state,pictureId)
+const mapStateToProps = ({entities: {comments}, ui: {commentAuthor}}, {pictureId}) => {
+return({
+  comments: sortComments(comments,pictureId),
+  commentAuthor: commentAuthor
 });
+};
+
+
+export default connect(mapStateToProps)(CommentIndex);

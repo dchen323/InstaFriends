@@ -4,6 +4,7 @@
 
 .comment-form-container {
   width: 100%;
+  font-family: sans-serif;
 }
 
 .comments-form {
@@ -15,4 +16,20 @@
 .comments-box {
   width: 100%;
   resize:none;
+  padding-left: 10px;
+}
+
+.comments-container {
+  overflow: scroll;
+  max-height: 212px;
+}
+
+.comment-body {
+  margin: 5px;
+  display: flex;
+}
+
+.comment-author {
+  font-weight: 600;
+  margin-right: 5px;
 }

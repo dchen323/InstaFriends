@@ -1,6 +1,7 @@
 import React from 'react';
 import EditPictureFormContainer from './edit_picture_form_container';
 import CommentFormContainer from '../comment/comment_form_container';
+import CommentIndexContainer from '../comment/comment_index_container';
 import {LikeItems} from '../likes/likes_items';
 import {withRouter} from 'react-router';
 
@@ -9,7 +10,10 @@ class PictureIndex extends React.Component {
     super(props);
     this.state = {
       modalIsOpen: true,
+      inputFocus: false
     };
+
+    this.setInputFocus = this.setInputFocus.bind(this);
   }
 
   handleDelete(e) {
@@ -26,6 +30,10 @@ class PictureIndex extends React.Component {
   handleUnlike(e){
     e.preventDefault();
     this.props.deleteLike(this.props.likes);
+  }
+
+  setInputFocus(value){
+    this.setState({inputFocus: value});
   }
 
   render() {
@@ -49,11 +57,14 @@ class PictureIndex extends React.Component {
           </header>
           <EditPictureFormContainer picture={this.props.picture}
             disabled={disabled} user={this.props.user}/>
+          <CommentIndexContainer pictureId={this.props.picture.id}/>
           <LikeItems handleLike={this.handleLike.bind(this)}
             handleUnlike={this.handleUnlike.bind(this)}
             likeCount = {this.props.likeCount}
-            likes ={this.props.likes} />
-          <CommentFormContainer pictureId={this.props.picture.id} />
+            likes ={this.props.likes}
+            setInputFocus={this.setInputFocus}/>
+          <CommentFormContainer pictureId={this.props.picture.id}
+            inputFocus={this.state.inputFocus}/>
         </div>
       </div>
     );

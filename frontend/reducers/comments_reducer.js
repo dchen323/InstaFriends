@@ -10,9 +10,9 @@ const commentsReducer = (state = {}, action) => {
     case RECEIVE_COMMENT:
       return merge({},state, {[action.comments.id]: action.comments});
     case RECEIVE_USER:
-      return merge({}, state, {[action.user.id]: action.user});
+      return action.comments || {};
     case RECEIVE_PICTURE:
-      return merge({},state,{[action.picture.id]: action.picture});
+      return action.comments || {};
     default:
       return state;
   }

@@ -6,8 +6,15 @@ export default class CommentForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      body: ''
+      body: '',
+      inputFocus: this.props.inputFocus
     };
+  }
+
+  componentWillReceiveProps(nextProp){
+    if(nextProp.inputFocus){
+      this.myInp.focus();
+    }
   }
 
   update(e){
@@ -29,7 +36,8 @@ export default class CommentForm extends React.Component {
         <form className="comments-form" onSubmit={this.handleSubmit.bind(this)}>
           <input type="text" className="comments-box" value={this.state.body}
             onChange={this.update.bind(this)}
-            placeholder="Add Comment..."/>
+            placeholder="Add Comment..."
+            ref={ip => this.myInp = ip}/>
         </form>
       </div>
     );

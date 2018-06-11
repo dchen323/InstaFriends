@@ -10,7 +10,18 @@ export const sortLikes = (likes, sessionId,pictureId) => {
       like.pictureId === pictureId);
 };
 
-export const sortComments = (state, pictureId ) => {
-  let comments = Object.values(state.entities.comments);
-  
+export const sortComments = (comments, pictureId ) => {
+  let values = Object.values(comments);
+  values = values.filter(comment => comment.pictureId === pictureId);
+  values = values.sort((a,b) => a.createdAt < b.createdAt);
+  return values;
+};
+
+export const findCommentAuthor = (comments) => {
+  let users = [];
+  Object.values(comments).forEach(comment => {
+    if(users.indexOf(comment.userId) === -1){
+      users.push(comment.userId);
+    }
+  });
 };

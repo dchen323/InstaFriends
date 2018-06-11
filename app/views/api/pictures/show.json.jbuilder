@@ -17,7 +17,15 @@ end
 json.comments do
   @picture.comments.each do |comment|
     json.set! comment.id do
-      json.partial! 'api/comments/comments'. comment: comment
+      json.partial! 'api/comments/comments', comment: comment
+    end
+  end
+end
+
+json.comments_author do
+  @picture.comments.each do |comment|
+    json.set! comment.user.id do
+      json.extract! comment.user, :id, :username
     end
   end
 end

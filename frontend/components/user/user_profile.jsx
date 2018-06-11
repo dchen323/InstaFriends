@@ -52,7 +52,6 @@ class UserProfile extends React.Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
-    window.location = `/#/user/${this.props.user.id}`;
   }
 
   render(){

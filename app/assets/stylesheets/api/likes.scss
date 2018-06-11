@@ -4,11 +4,18 @@
 
 .like-icon {
   font-size: 30px;
+  margin: 0 5px;
 }
+
+.like-icon:hover, .like-icon2:hover{
+  cursor: pointer;
+}
+
 
 .like-icon2{
   height:30px;
   width:30px;
+  margin: 0 5px;
 }
 
 .pic-like {
@@ -16,6 +23,6 @@
   border-top: 1px solid #dcdee2;
 }
 
-.like-count{
-  
+.icon-shows {
+  display: flex;
 }

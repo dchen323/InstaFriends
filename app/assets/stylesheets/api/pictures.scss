@@ -41,8 +41,8 @@
   width: 240px;
   height: 40px;
   margin: 10px;
-  background: #1991F4;
-  color: white;
+  border: 1px solid #dcdee2;
+  color: black;
   border-radius: 8px;
 }
 
@@ -127,24 +127,26 @@
 .pic-show-button {
   height: 33px;
   width: 120px;
-  background: #1991F4;
-  color: white;
+  border: 1px solid #dcdee2;
+  color: black;
   border-radius: 8px;
   margin: 15px 5px 5px 5px;
   text-align: center;
-  border: 1px solid black;
+  font-weight: 550;
 }
 
 .pic-show-button2 {
   height: 33px;
   width: 120px;
-  background: #1991F4;
-  color: white;
+  border: 1px solid #dcdee2;
+  color: black;
   border-radius: 8px;
   margin: 5px;
   text-align: center;
-  border: 1px solid black;
+  font-weight: 550;
 }
+
+
 
 .pic-show-edit {
   display: flex;
