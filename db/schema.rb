@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_06_161544) do
+ActiveRecord::Schema.define(version: 2018_06_10_235219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "picture_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["picture_id", "user_id"], name: "index_likes_on_picture_id_and_user_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
 
   create_table "pictures", force: :cascade do |t|
     t.integer "user_id", null: false

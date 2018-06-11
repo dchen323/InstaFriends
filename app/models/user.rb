@@ -5,6 +5,7 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   has_many :pictures
+  has_many :likes
 
   attr_reader :password
 
