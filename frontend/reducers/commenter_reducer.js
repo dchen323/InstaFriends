@@ -8,7 +8,7 @@ export const commenterReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USER:
-      return action.commentsAuthor;
+      return action.commentsAuthor || {};
     case RECEIVE_COMMENT:
       return merge({}, state, action.commentsAuthor);
     case RECEIVE_PICTURE:

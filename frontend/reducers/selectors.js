@@ -17,11 +17,7 @@ export const sortComments = (comments, pictureId ) => {
   return values;
 };
 
-export const findCommentAuthor = (comments) => {
-  let users = [];
-  Object.values(comments).forEach(comment => {
-    if(users.indexOf(comment.userId) === -1){
-      users.push(comment.userId);
-    }
-  });
+export const countLikes = (likes , pictureId) => {
+  let values = Object.values(likes);
+  return values.filter(like => like.pictureId === pictureId).length;
 };

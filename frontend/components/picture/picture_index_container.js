@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import PictureIndex from './picture_index';
 import {fetchPicture, deletePicture} from '../../actions/picture_actions';
 import {createLike, deleteLike} from '../../actions/like_actions';
-import {sortLikes} from '../../reducers/selectors';
+import {sortLikes,countLikes} from '../../reducers/selectors';
 
 
 const mapStateToProps = ({entities: {pictures,users,likes},session},{pictureId,userId}) =>({
@@ -10,7 +10,7 @@ const mapStateToProps = ({entities: {pictures,users,likes},session},{pictureId,u
   user: users[userId],
   likes: sortLikes(likes,session.id,pictureId) || false,
   sessionId: session.id,
-  likeCount: Object.values(likes).length
+  likeCount: countLikes(likes, pictureId)
 });
 
 
