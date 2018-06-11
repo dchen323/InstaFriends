@@ -14,6 +14,7 @@ class Api::LikesController < ApplicationController
   def destroy
     @like = Like.find(params[:id])
     @picture.destroy
+    render :show
   end
 
 end

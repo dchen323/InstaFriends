@@ -3,9 +3,9 @@ export const RECEIVE_PICTURE = 'RECEIVE_PICTURE';
 export const RECEIVE_PICTURES = 'RECEIVE_PICTURES';
 export const REMOVE_PICTURE = 'REMOVE_PICTURE';
 
-export const receivePicture = ({picture, author}) => ({
+export const receivePicture = ({picture, user, likes}) => ({
   type: RECEIVE_PICTURE,
-  picture, author
+  picture, user, likes
 });
 
 export const removePicture = pictureId => ({

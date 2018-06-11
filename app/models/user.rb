@@ -4,8 +4,8 @@ class User < ApplicationRecord
   validates :username, :session_token, uniqueness: true
   before_validation :ensure_session_token
 
-  has_many :pictures
-  has_many :likes
+  has_many :pictures, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   attr_reader :password
 

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :users, only: [:show] do
       resources :pictures, only: [:show]
     end
+    resources :pictures, only: [:show] do
+      resources :likes, only: [:create, :destroy]
+    end
   end
   root to: "static_pages#root"
 end
