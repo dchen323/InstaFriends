@@ -9,6 +9,7 @@ export const LikeItems = ({likes,likeCount, handleUnlike, handleLike}) => {
   }else{
     unlike="hide-button";
   }
+  // onclick={() => handleLike()}
   return(
     <div className='pic-like'>
       <i className={`far fa-heart like-icon ${like}`}

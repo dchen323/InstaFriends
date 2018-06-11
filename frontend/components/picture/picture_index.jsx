@@ -1,5 +1,6 @@
 import React from 'react';
 import EditPictureFormContainer from './edit_picture_form_container';
+import CommentFormContainer from '../comment/comment_form_container';
 import {LikeItems} from '../likes/likes_items';
 import {withRouter} from 'react-router';
 
@@ -52,6 +53,7 @@ class PictureIndex extends React.Component {
             handleUnlike={this.handleUnlike.bind(this)}
             likeCount = {this.props.likeCount}
             likes ={this.props.likes} />
+          <CommentFormContainer pictureId={this.props.picture.id} />
         </div>
       </div>
     );

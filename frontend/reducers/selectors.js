@@ -9,3 +9,8 @@ export const sortLikes = (likes, sessionId,pictureId) => {
   return values.find((like) => like.userId === sessionId &&
       like.pictureId === pictureId);
 };
+
+export const sortComments = (state, pictureId ) => {
+  let comments = Object.values(state.entities.comments);
+  
+};

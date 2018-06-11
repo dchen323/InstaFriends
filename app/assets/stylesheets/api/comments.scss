@@ -1,3 +1,18 @@
 // Place all the styles related to the api::comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment-form-container {
+  width: 100%;
+}
+
+.comments-form {
+  height: 60px;
+  width: 100%;
+  border: 1px solid #dcdee2;
+}
+
+.comments-box {
+  width: 100%;
+  resize:none;
+}

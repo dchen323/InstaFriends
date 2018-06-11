@@ -10,6 +10,6 @@ class Picture < ApplicationRecord
     source: :user
 
   has_many :commenters,
-    through: :comments:
+    through: :comments,
     source: :user
 end
