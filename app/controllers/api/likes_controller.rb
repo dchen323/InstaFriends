@@ -2,7 +2,7 @@ class Api::LikesController < ApplicationController
   before_action :require_login
 
   def create
-    @like = Like.new(params[:picture_id])
+    @like = Like.new(picture_id: params[:picture_id])
     @like.user_id = current_user.id
     if @like.save
       render :show
@@ -13,7 +13,7 @@ class Api::LikesController < ApplicationController
 
   def destroy
     @like = Like.find(params[:id])
-    @picture.destroy
+    @like.destroy
     render :show
   end
 

@@ -3,9 +3,7 @@ json.picture do
 end
 
 json.user do
-    json.set! @picture.user.id do
-      json.partial! 'api/users/user', user: @picture.user
-    end
+  json.partial! 'api/users/user', user: @picture.user
 end
 
 json.likes do

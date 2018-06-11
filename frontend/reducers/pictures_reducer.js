@@ -11,7 +11,7 @@ const picturesReducer = (state = {}, action) => {
     case RECEIVE_PICTURE:
       return merge({}, state, {[action.picture.id]: action.picture});
     case RECEIVE_LIKE:
-      return merge({}, state, {[action.like.id]: action.like});
+      return merge({}, state, {[action.picture.id]: action.picture});
     case REMOVE_PICTURE:
       let newState = merge({},state);
       delete newState[action.pictureId];

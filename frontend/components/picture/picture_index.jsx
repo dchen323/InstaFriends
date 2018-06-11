@@ -6,7 +6,7 @@ class PictureIndex extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      modalIsOpen: true
+      modalIsOpen: true,
     };
   }
 
@@ -16,13 +16,28 @@ class PictureIndex extends React.Component {
     this.props.closeModal();
   }
 
+  handleLike(e){
+    e.preventDefault();
+    this.props.createLike(this.props.picture.id);
+  }
+
+  handleUnlike(e){
+    e.preventDefault();
+    this.props.deleteLike(this.props.likes);
+  }
+
   render() {
     if (this.props.picture === undefined){
       return (<div></div>);
     }
-    let disabled;
+    let disabled, like,unlike;
     if(this.props.picture.userId !== this.props.sessionId){
       disabled = "hide-button";
+    }
+    if(this.props.likes){
+      like="hide-button";
+    }else{
+      unlike="hide-button";
     }
     return(
       <div className="picture-show-container">
@@ -36,6 +51,12 @@ class PictureIndex extends React.Component {
           </header>
           <EditPictureFormContainer picture={this.props.picture}
             disabled={disabled} user={this.props.user}/>
+          <div classname='pic-like'>
+            <i className={`far fa-heart like-icon ${like}`}
+              onClick={this.handleLike.bind(this)}></i>
+            <img src="https://s20.postimg.cc/l6em6gka5/heavy-black-heart_2764.png" className={`fas fa-heart like-icon2 ${unlike}`}
+              onClick={this.handleUnlike.bind(this)}/>
+          </div>
         </div>
       </div>
     );

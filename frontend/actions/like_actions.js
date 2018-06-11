@@ -3,18 +3,20 @@ export const RECEIVE_LIKE = 'RECEIVE_LIKE';
 export const REMOVE_LIKE = 'REMOVE_LIKE';
 
 
-export const receiveLike = like => ({
+export const receiveLike = ({likes,picture,user}) => ({
   type: RECEIVE_LIKE,
-  like
+  likes, picture,user
 });
 
-export const removeLike = like => ({
+
+
+export const removeLike = ({likes}) => ({
   type: REMOVE_LIKE,
-  like
+  likes
 });
 
-export const createLike = like => dispatch => (
-  APIUtil.createLike(like)
+export const createLike = id => dispatch => (
+  APIUtil.createLike(id)
     .then(res => dispatch(receiveLike(res)))
 );
 

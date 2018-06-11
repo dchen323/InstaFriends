@@ -14,7 +14,7 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_PICTURE:
       return merge({}, state, {[action.user.id]: action.user});
     case RECEIVE_LIKE:
-      return merge({}, state, {[action.like.id]: action.like});
+      return merge({}, state, {[action.user.id]: action.user});
     default:
       return state;
   }
