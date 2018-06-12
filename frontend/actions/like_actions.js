@@ -8,8 +8,6 @@ export const receiveLike = ({likes,picture,user}) => ({
   likes, picture,user
 });
 
-
-
 export const removeLike = ({likes}) => ({
   type: REMOVE_LIKE,
   likes

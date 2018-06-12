@@ -1,6 +1,7 @@
 import {RECEIVE_LIKE, REMOVE_LIKE} from '../actions/like_actions';
 import {RECEIVE_PICTURE} from '../actions/picture_actions';
 import {RECEIVE_USER} from '../actions/user_actions';
+import {RECEIVE_FOLLOWERS} from '../actions/follow_actions';
 import {merge} from 'lodash';
 
 
@@ -16,6 +17,8 @@ const likesReducer = (state = {}, action) => {
     case RECEIVE_PICTURE:
       return action.likes || {};
     case RECEIVE_USER:
+      return action.likes || {};
+    case RECEIVE_FOLLOWERS:
       return action.likes || {};
     default:
       return state;

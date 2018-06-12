@@ -27,3 +27,15 @@ json.comments do
     end
   end
 end
+
+json.likes do
+  @followers.each do |follower|
+    @follower.pictures.each do |picture|
+      picture.likes.each do |like|
+        json.set! like.id do
+          json.partial! 'api/likes/likes', like: like
+        end
+      end
+    end
+  end
+end

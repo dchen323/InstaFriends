@@ -1,6 +1,7 @@
 import {RECEIVE_PICTURE} from '../actions/picture_actions';
 import {RECEIVE_COMMENT} from '../actions/comment_actions';
 import {RECEIVE_USER} from '../actions/user_actions';
+import {RECEIVE_FOLLOWERS} from '../actions/follow_actions';
 import {merge} from 'lodash';
 
 
@@ -12,6 +13,8 @@ const commentsReducer = (state = {}, action) => {
     case RECEIVE_USER:
       return action.comments || {};
     case RECEIVE_PICTURE:
+      return action.comments || {};
+    case RECEIVE_FOLLOWERS:
       return action.comments || {};
     default:
       return state;
