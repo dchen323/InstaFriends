@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :pictures, except: [:show, :new, :edit]
     resources :users, only: [:show] do
       resources :pictures, only: [:show]
+      resources :follows, only: [:index, :create, :destroy]
     end
     resources :pictures, only: [:show] do
       resources :likes, only: [:create, :destroy]

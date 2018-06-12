@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint(8)        not null, primary key
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  username        :string           not null
+#  name            :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  img_url         :string
+#
+
 class User < ApplicationRecord
   validates :username, :password_digest, :session_token, :name, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
@@ -7,6 +21,10 @@ class User < ApplicationRecord
   has_many :pictures, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :followers,
+    class_name: 'Follow',
+    foreign_key: :user_id
+  has_many :followed
 
   attr_reader :password
 

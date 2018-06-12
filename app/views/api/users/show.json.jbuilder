@@ -29,6 +29,14 @@ json.comments do
   end
 end
 
+json.followed do
+  @user.followed.each do |following|
+    json.set! following.id do
+      json.partial! 'api/users/user', user: following
+    end
+  end
+end
+
 json.comments_author do
   @user.pictures.each do |picture|
     picture.comments.each do |comment|
