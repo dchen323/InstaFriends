@@ -81,6 +81,7 @@ class UserProfile extends React.Component {
               username={this.props.user.username}
               length={this.props.pictures.length}
               name={this.props.user.name}
+              userId={this.props.user.id}
               currentUser={this.props.user.id === this.props.sessionId}/>
             <Modal
               isOpen={this.state.modalIsOpen}

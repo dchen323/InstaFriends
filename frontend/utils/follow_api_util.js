@@ -8,7 +8,7 @@ export const createFollow = id => (
   $.ajax({
     method: 'POST',
     url: `/api/users/${id}/follows`,
-    data: {id}
+    data: {follow: {followed_id: id}}
   })
 );
 

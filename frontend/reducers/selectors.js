@@ -21,3 +21,8 @@ export const countLikes = (likes , pictureId) => {
   let values = Object.values(likes);
   return values.filter(like => like.pictureId === pictureId).length;
 };
+
+export const filterFollows = (follows, userId) => {
+  let values = Object.values(follows);
+  return values.filter(follow => follow.followedId === userId);
+};

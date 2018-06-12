@@ -1,19 +1,18 @@
 import React from 'react';
+import FollowContainer from '../follow/follow_container';
 
 export const UserProfileInfo =
-  ({username,length,name,openModal,currentUser}) => {
-  let disabled,follow,followText;
+  ({username,length,name,openModal,currentUser,userId}) => {
+  let disabled;
   if (!currentUser){
     disabled = "hide-button";
   }
-  if(currentUser){
-    follow = "hide-button";
-  }
+
   return (
     <div className="user-content">
       <div className="user-content1">
         <h3 className="profile-username">{username}</h3>
-        <button className={`${follow}`}>Follow</button>
+        <FollowContainer currentUser={currentUser} userId={userId}/>
         <button className={`edit-profile ${disabled}`}>Edit Profile</button>
         <i className="fas fa-cog icon4"></i>
       </div>

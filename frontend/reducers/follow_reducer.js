@@ -1,5 +1,5 @@
 import {RECEIVE_FOLLOW,
-  REMOVE_FOLLOW} from '../actions.follow_action';
+  REMOVE_FOLLOW} from '../actions/follow_actions';
 import {RECEIVE_USER} from '../actions/user_actions';
 import {merge} from 'lodash';
 
