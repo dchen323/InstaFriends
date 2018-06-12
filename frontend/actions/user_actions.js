@@ -3,10 +3,10 @@ import * as APIUtil from '../utils/user_api_util';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
-export const receiveUser = ({user,pictures,likes,comments,follows,
+export const receiveUser = ({user,pictures,likes,comments,
   followed,following,commentsAuthor}) => ({
   type: RECEIVE_USER,
-  user, pictures,likes,comments,follows,followed,commentsAuthor,following
+  user, pictures,likes,comments,followed,commentsAuthor,following
 });
 
 

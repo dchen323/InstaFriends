@@ -14,7 +14,7 @@ let customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
     width: "900px",
-    height: "500px"
+    height: "600px"
   }
 };
 
@@ -70,7 +70,7 @@ class UserProfile extends React.Component {
         }});
     }else{
       customStyles = merge(customStyles, {content: {width: "900px",
-        height: "500px"}});
+        height: "600px"}});
     }
     return(
       <div className="user">
@@ -82,7 +82,6 @@ class UserProfile extends React.Component {
               length={this.props.pictures.length}
               name={this.props.user.name}
               userId={this.props.user.id}
-              follows={this.props.follows}
               followed={this.props.followed}
               following={this.props.following}
               currentUser={this.props.user.id === this.props.sessionId}/>

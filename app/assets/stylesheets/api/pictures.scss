@@ -73,7 +73,7 @@
   height: 50px;
   width: 257px;
   padding-left: 10px;
-  overflow: scroll;
+  overflow-y: scroll;
   resize:none;
 }
 
@@ -93,8 +93,8 @@
 }
 
 .display-picture {
-  height: 500px;
-  width: 500px;
+  height: 600px;
+  width: 600px;
 }
 
 .pic-show-info {

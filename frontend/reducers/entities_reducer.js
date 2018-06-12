@@ -13,7 +13,6 @@ export default combineReducers({
   pictures: picturesReducer,
   likes: likesReducer,
   comments: commentsReducer,
-  follows: followsReducer,
   followed: followedReducer,
   following: followingReducer,
   commentAuthor: commenterReducer

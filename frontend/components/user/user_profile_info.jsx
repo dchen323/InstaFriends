@@ -4,13 +4,12 @@ import {withRouter} from 'react-router';
 
 const UserProfileInfo =
   ({username,length,name,openModal,currentUser,userId,
-    follows,followed,following, match}) => {
+      followed,following, match}) => {
   let disabled;
   if (!currentUser){
     disabled = "hide-button";
   }
-  // let values = Object.keys(follows);
-  // values = values.filter(follow => follow.userId === match.params.userId);
+
   let followingLength = Object.keys(following).length || 0;
   let followersLength = Object.keys(followed).length || 0;
 
@@ -36,4 +35,4 @@ const UserProfileInfo =
   );
 };
 
-export default withRouter(UserProfileInfo)
+export default withRouter(UserProfileInfo);

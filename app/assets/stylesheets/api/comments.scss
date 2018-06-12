@@ -20,7 +20,7 @@
 }
 
 .comments-container {
-  overflow: scroll;
+  overflow-y: scroll;
   max-height: 212px;
 }
 
@@ -32,4 +32,8 @@
 .comment-author {
   font-weight: 600;
   margin-right: 5px;
+}
+
+.vsc-initialized {
+  background: #FAFAFA;
 }
