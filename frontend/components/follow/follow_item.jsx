@@ -4,11 +4,13 @@ import {withRouter} from 'react-router';
 class FollowItem extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+    };
   }
 
   handleUnfollow(e){
     e.preventDefault();
-    this.props.deleteFollow(this.props.follows[0]);
+    this.props.deleteFollow(this.props.followed[0]);
   }
 
   handleFollow(e){
@@ -21,7 +23,7 @@ class FollowItem extends React.Component {
     if(this.props.currentUser){
       follow = "hide-button";
     }
-    if(this.props.follows.length === 0){
+    if(this.props.followed.length === 0){
       return(
         <button className={`follower-button ${follow}`}
           onClick={this.handleFollow.bind(this)}>Follow</button>

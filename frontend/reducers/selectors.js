@@ -22,7 +22,7 @@ export const countLikes = (likes , pictureId) => {
   return values.filter(like => like.pictureId === pictureId).length;
 };
 
-export const filterFollows = (follows, userId) => {
-  let values = Object.values(follows);
-  return values.filter(follow => follow.followedId === userId);
+export const filterFollows = (following, userId) => {
+  let values = Object.values(following);
+  return values.filter(follow => follow.userId === userId);
 };

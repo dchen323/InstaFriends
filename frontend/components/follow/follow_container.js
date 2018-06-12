@@ -3,8 +3,8 @@ import FollowItem from './follow_item';
 import {createFollow,deleteFollow} from '../../actions/follow_actions';
 import {filterFollows} from '../../reducers/selectors';
 
-const mapStateToProps = ({entities: {follows}},{userId,currentUser}) => ({
-  follows: filterFollows(follows, userId),
+const mapStateToProps = ({entities: {followed},session},{currentUser}) => ({
+  followed: filterFollows(followed, session.id),
   currentUser: currentUser
 });
 

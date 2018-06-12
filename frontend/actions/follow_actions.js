@@ -8,14 +8,14 @@ export const receiveFollowers = ({users,pictures,comments}) => ({
   users,pictures,comments
 });
 
-export const receiveFollow = ({follows}) => ({
+export const receiveFollow = ({follows,followed}) => ({
   type: RECEIVE_FOLLOW,
-  follows
+  follows, followed
 });
 
-export const removeFollow = ({follows}) => ({
+export const removeFollow = ({follows,followed}) => ({
   type: REMOVE_FOLLOW,
-  follows
+  follows, followed
 });
 
 export const fetchFollowers = id => dispatch => (

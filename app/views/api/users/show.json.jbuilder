@@ -37,6 +37,23 @@ json.follows do
   end
 end
 
+json.followed do
+  @user.followed.each do |follow|
+    json.set! follow.id do
+      json.partial! 'api/follows/follows', follow: follow
+    end
+  end
+end
+
+json.following do
+  @user.following.each do |followed_person|
+    # debugger
+    json.set! followed_person.id do
+      json.partial! 'api/users/user', user: followed_person
+    end
+  end
+end
+
 json.comments_author do
   @user.pictures.each do |picture|
     picture.comments.each do |comment|

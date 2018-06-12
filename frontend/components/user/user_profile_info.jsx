@@ -1,13 +1,18 @@
 import React from 'react';
 import FollowContainer from '../follow/follow_container';
+import {withRouter} from 'react-router';
 
-export const UserProfileInfo =
-  ({username,length,name,openModal,currentUser,userId,follows}) => {
+const UserProfileInfo =
+  ({username,length,name,openModal,currentUser,userId,
+    follows,followed,following, match}) => {
   let disabled;
   if (!currentUser){
     disabled = "hide-button";
   }
-  let followingLength = Object.keys(follows).length || 0;
+  // let values = Object.keys(follows);
+  // values = values.filter(follow => follow.userId === match.params.userId);
+  let followingLength = Object.keys(following).length || 0;
+  let followersLength = Object.keys(followed).length || 0;
 
   return (
     <div className="user-content">
@@ -19,7 +24,7 @@ export const UserProfileInfo =
       </div>
       <div className="user-content2">
         <h4 className="user-info">{length} posts</h4>
-        <h4 className="user-info">0 followers</h4>
+        <h4 className="user-info">{followersLength} followers</h4>
         <h4 className="user-info">{followingLength} following</h4>
       </div>
       <div className="user-content3">
@@ -30,3 +35,5 @@ export const UserProfileInfo =
     </div>
   );
 };
+
+export default withRouter(UserProfileInfo)

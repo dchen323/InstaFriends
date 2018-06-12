@@ -1,7 +1,7 @@
 import React from 'react';
 import {PictureIndexItems} from '../picture/picture_index_items';
 import Modal from 'react-modal';
-import {UserProfileInfo} from './user_profile_info';
+import UserProfileInfo from './user_profile_info';
 import {UserModal} from '../modal/modal';
 import {merge} from 'lodash';
 
@@ -83,6 +83,8 @@ class UserProfile extends React.Component {
               name={this.props.user.name}
               userId={this.props.user.id}
               follows={this.props.follows}
+              followed={this.props.followed}
+              following={this.props.following}
               currentUser={this.props.user.id === this.props.sessionId}/>
             <Modal
               isOpen={this.state.modalIsOpen}
