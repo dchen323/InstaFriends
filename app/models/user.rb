@@ -28,11 +28,11 @@ class User < ApplicationRecord
     foreign_key: :followed_id
 
   has_many :followers,
-    through: :follows,
+    through: :followed,
     source: :user
 
   has_many :following,
-    through: :followed,
+    through: :follows,
     source: :followed_user
 
   attr_reader :password

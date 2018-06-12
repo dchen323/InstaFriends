@@ -2,11 +2,12 @@ import React from 'react';
 import FollowContainer from '../follow/follow_container';
 
 export const UserProfileInfo =
-  ({username,length,name,openModal,currentUser,userId}) => {
+  ({username,length,name,openModal,currentUser,userId,follows}) => {
   let disabled;
   if (!currentUser){
     disabled = "hide-button";
   }
+  let followingLength = Object.keys(follows).length || 0;
 
   return (
     <div className="user-content">
@@ -19,7 +20,7 @@ export const UserProfileInfo =
       <div className="user-content2">
         <h4 className="user-info">{length} posts</h4>
         <h4 className="user-info">0 followers</h4>
-        <h4 className="user-info"> 2 following</h4>
+        <h4 className="user-info">{followingLength} following</h4>
       </div>
       <div className="user-content3">
         <h4 className="user-name">{name}</h4>

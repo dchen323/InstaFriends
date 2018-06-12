@@ -7,6 +7,7 @@ const followReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USER:
+    debugger
       return action.follows || {};
     case RECEIVE_FOLLOW:
       return merge({},state, {[action.follows.id]: action.follows});
