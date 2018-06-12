@@ -1,6 +1,6 @@
 export const sortPictures = pictures => {
   let values = Object.values(pictures);
-  values = values.sort((a,b) => a.createdAt < b.createdAt);
+  values = values.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
   return values;
 };
 
@@ -13,7 +13,7 @@ export const sortLikes = (likes, sessionId,pictureId) => {
 export const sortComments = (comments, pictureId ) => {
   let values = Object.values(comments);
   values = values.filter(comment => comment.pictureId === pictureId);
-  // values = values.sort((a,b) => a.createdAt < b.createdAt);
+  values = values.sort((a,b) => new Date(a.createdAt) - new Date(b.createdAt));
   return values;
 };
 

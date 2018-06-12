@@ -3,6 +3,10 @@ import {Link} from 'react-router-dom';
 
 class NavBar extends React.Component {
 
+  componentDidMount(){
+    this.props.fetchUser(this.props.sessionId);
+  }
+
   render(){
     return(
       <div>

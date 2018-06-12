@@ -3,7 +3,8 @@ import {fetchUser} from '../../actions/user_actions';
 import NavBar from './nav_bar';
 
 const mapStateToProps = ({entities: {users} ,session}, ownProps) => ({
-  currentUser: users[session.id]
+  currentUser: users[session.id],
+  sessionId: session.id
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,5 +1,11 @@
 json.users do
-  @followers.each do |follower|
+  json.set! @user.id do
+    json.partial! 'api/users/user', user: @user
+  end
+end
+
+json.users do
+  @user.following.each do |follower|
     json.set! follower.id do
       json.partial! 'api/users/user', user: follower
     end
@@ -7,7 +13,7 @@ json.users do
 end
 
 json.pictures do
-  @followers.each do |follower|
+  @user.following.each do |follower|
     follower.pictures.each do |picture|
       json.set! picture.id do
         json.partial! 'api/pictures/picture', picture: picture
@@ -17,7 +23,7 @@ json.pictures do
 end
 
 json.comments do
-  @followers.each do |follower|
+  @user.following.each do |follower|
     follower.pictures.each do |picture|
       picture.comments. each do |comment|
         json.set! comment.id do
@@ -29,12 +35,22 @@ json.comments do
 end
 
 json.likes do
-  @followers.each do |follower|
-    @follower.pictures.each do |picture|
+  @user.following.each do |follower|
+    follower.pictures.each do |picture|
       picture.likes.each do |like|
         json.set! like.id do
           json.partial! 'api/likes/likes', like: like
         end
+      end
+    end
+  end
+end
+
+json.comments_author do
+  @user.pictures.each do |picture|
+    picture.comments.each do |comment|
+      json.set! comment.user.id do
+        json.extract! comment.user, :id,:username
       end
     end
   end
