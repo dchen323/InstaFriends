@@ -3,6 +3,7 @@ import usersReducer from './users_reducer';
 import picturesReducer from './pictures_reducer';
 import likesReducer from './likes_reducer';
 import commentsReducer from './comments_reducer';
+import followReducer from './follow_reducer';
 import {commenterReducer} from './commenter_reducer';
 
 export default combineReducers({
@@ -10,5 +11,6 @@ export default combineReducers({
   pictures: picturesReducer,
   likes: likesReducer,
   comments: commentsReducer,
+  follows: followReducer,
   commentAuthor: commenterReducer
 });

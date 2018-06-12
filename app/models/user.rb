@@ -21,12 +21,19 @@ class User < ApplicationRecord
   has_many :pictures, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :followers,
-    class_name: 'Follow',
-    foreign_key: :user_id
+  has_many :follows
+
   has_many :followed,
     class_name: 'Follow',
     foreign_key: :followed_id
+
+  has_many :followers,
+    through: :follows,
+    source: :user
+
+  has_many :following,
+    through: :followed,
+    source: :followed_user
 
   attr_reader :password
 

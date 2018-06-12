@@ -29,10 +29,10 @@ json.comments do
   end
 end
 
-json.followed do
-  @user.followed.each do |following|
-    json.set! following.id do
-      json.partial! 'api/users/user', user: following
+json.follows do
+  @user.followed.each do |follow|
+    json.set! follow.id do
+      json.partial! 'api/follows/follows', follow: follow
     end
   end
 end
