@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import FollowPictureContainer from '../follow/follow_picture_container';
+import FollowingUserContainer from '../follow/follow_user_container';
 
 
 export default class Welcome extends React.Component {
@@ -18,6 +19,7 @@ export default class Welcome extends React.Component {
         <button onClick={() => this.props.logout()
             .then(() => history.push('/login'))}>Logout</button>
           <FollowPictureContainer/>
+          <FollowingUserContainer/>
       </div>
     );
   }

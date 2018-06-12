@@ -20,7 +20,7 @@ export default class FollowPicture extends React.Component {
     let pictures = this.props.pictures.map(picture => {
       let likes = Object.values(this.props.likes).filter(like => like.pictureId === picture.id);
       return(
-        <FollowPictureItem key={this.props.id}
+        <FollowPictureItem key={picture.id}
           user={this.props.users[picture.userId]}
           picture={picture}
           likes={likes}
