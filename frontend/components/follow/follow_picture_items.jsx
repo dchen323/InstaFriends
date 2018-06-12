@@ -7,18 +7,21 @@ import CommentIndexContainer from '../comment/comment_index_container';
 export const FollowPictureItem = ({user, picture,
   likes,handleLike, handleUnlike}) => {
 
-  let likeCount = Object.keys(likes).length;
+  let likeCount = Object.values(likes).length;
 
   return (
     <li>
-      <div>
-        <span>{user.imgUrl} {user.username}</span>
-        <img src={picture.imgUrl}/>
+      <div className="picture-feed-container">
+        <span className="feed-user-pic">
+          <img src={user.imgUrl} className="pic-show-userpic"/>
+          <h4>{user.username}</h4>
+        </span>
+        <img src={picture.imgUrl} className="picture-feed"/>
         <LikeItems likes={likes} likeCount={likeCount}
            handleUnlike={handleUnlike}
            handleLike={handleLike}/>
-        <CommentsIndexContainer/>
-        <CommentFormContainer />
+         <CommentIndexContainer pictureId={picture.id}/>
+        <CommentFormContainer pictureId={picture.id} />
       </div>
     </li>
   );

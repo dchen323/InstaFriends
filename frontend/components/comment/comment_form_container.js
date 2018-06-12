@@ -3,8 +3,7 @@ import CommentForm from './comment_form';
 import {postComment} from '../../actions/comment_actions';
 
 
-const mapStateToProps = ({entities: {comments, user}}, {pictureId}) => ({
-  comments: comments,
+const mapStateToProps = ({entities: {user}}, {pictureId}) => ({
   user: user,
   pictureId :pictureId
 });

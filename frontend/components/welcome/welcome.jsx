@@ -1,6 +1,6 @@
 import React from 'react';
-import SignupFormContainer from '../session/signup_form_container';
 import {Link} from 'react-router-dom';
+import FollowPictureContainer from '../follow/follow_picture_container';
 
 
 export default class Welcome extends React.Component {
@@ -19,6 +19,7 @@ export default class Welcome extends React.Component {
         <h2>Hi,{this.props.currentUser.username}</h2>
         <button onClick={() => this.props.logout()
             .then(() => history.push('/login'))}>Logout</button>
+          <FollowPictureContainer/>
       </div>
     );
   }

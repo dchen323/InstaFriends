@@ -3,9 +3,10 @@ export const RECEIVE_FOLLOWERS = 'RECEIVE_FOLLOWERS';
 export const RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
 export const REMOVE_FOLLOW = 'REMOVE_FOLLOW';
 
-export const receiveFollowers = ({users,pictures,comments}) => ({
+export const receiveFollowers = ({users,pictures,comments,
+  likes,commentsAuthor}) => ({
   type: RECEIVE_FOLLOWERS,
-  users,pictures,comments
+  users,pictures,comments, likes, commentsAuthor
 });
 
 export const receiveFollow = ({followed}) => ({
