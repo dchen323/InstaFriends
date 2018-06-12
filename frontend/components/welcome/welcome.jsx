@@ -15,8 +15,6 @@ export default class Welcome extends React.Component {
   render() {
     return(
       <div className = "feed">
-        <h1>Main show page filler</h1>
-        <h2>Hi,{this.props.currentUser.username}</h2>
         <button onClick={() => this.props.logout()
             .then(() => history.push('/login'))}>Logout</button>
           <FollowPictureContainer/>

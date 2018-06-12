@@ -30,8 +30,8 @@ export default class FollowPicture extends React.Component {
     });
 
     return(
-      <div>
-        <ul>
+      <div className="feed-post-container">
+        <ul className="feed-ul">
           {pictures}
         </ul>
       </div>

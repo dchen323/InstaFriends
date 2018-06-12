@@ -22,6 +22,8 @@
 .comments-container {
   overflow-y: scroll;
   max-height: 212px;
+  border-bottom: 1px solid #dcdee2;
+  margin-bottom: 10px;
 }
 
 .comment-body {

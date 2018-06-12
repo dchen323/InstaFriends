@@ -10,19 +10,27 @@ export const FollowPictureItem = ({user, picture,
   let likeCount = Object.values(likes).length;
 
   return (
-    <li>
-      <div className="picture-feed-container">
+    <li className="picture-feed-container">
         <span className="feed-user-pic">
           <img src={user.imgUrl} className="pic-show-userpic"/>
           <h4>{user.username}</h4>
         </span>
         <img src={picture.imgUrl} className="picture-feed"/>
-        <LikeItems likes={likes} likeCount={likeCount}
-           handleUnlike={handleUnlike}
-           handleLike={handleLike}/>
-         <CommentIndexContainer pictureId={picture.id}/>
-        <CommentFormContainer pictureId={picture.id} />
-      </div>
+        <br></br>
+        <div className="extra-info">
+          <LikeItems likes={likes} likeCount={likeCount}
+            handleUnlike={handleUnlike}
+            handleLike={handleLike}
+            className="feed-likes"/>
+          <span className="feed-user-caption">
+            <h4 className="feed-username">{user.username}</h4>
+            <content>{picture.caption}</content>
+          </span>
+          <div className="comment-feed">
+            <CommentIndexContainer pictureId={picture.id}/>
+          </div>
+          <CommentFormContainer pictureId={picture.id} />
+        </div>
     </li>
   );
 };

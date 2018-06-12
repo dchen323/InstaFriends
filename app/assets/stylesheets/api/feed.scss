@@ -1,0 +1,52 @@
+// Place all the styles related to the api::comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.feed {
+  display: flex;
+  justify-content: center;
+}
+
+.feed-likes {
+  border: none;
+}
+
+.feed-username{
+  margin: 0 5px 0 0;
+}
+
+.feed-user-caption {
+  display: flex;
+  margin: 5px 0 5px 5px;
+  justify-content: flex-start;
+}
+
+.extra-info {
+  margin: 5px 10px;
+}
+
+.feed-post-container {
+  width: 600px;
+  border: 1px solid #dcdee2;
+  background: white;
+  margin-top: 70px;
+}
+
+.picture-feed-container{
+  margin-bottom: 50px;
+  background: white;
+  border: 2px solid #dcdee2;
+}
+
+.comment-feed{
+  overflow-y: scroll;
+  max-height: 100px;
+  margin: 10px 0;
+}
+
+.feed-ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
