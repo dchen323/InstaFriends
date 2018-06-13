@@ -11,8 +11,12 @@ export const FollowPictureItem = ({user, picture,
   return (
     <li className="picture-feed-container">
         <span className="feed-user-pic">
-          <img src={user.imgUrl} className="pic-show-userpic"/>
-          <h4>{user.username}</h4>
+          <Link to={`/user/${user.id}`}>
+            <img src={user.imgUrl} className="pic-show-userpic"/>
+          </Link>
+          <Link to={`/user/${user.id}`}>
+            <h4 className="pic-show-username">{user.username}</h4>
+          </Link>
         </span>
         <img src={picture.imgUrl} className="picture-feed"/>
         <br></br>
@@ -23,7 +27,9 @@ export const FollowPictureItem = ({user, picture,
             className="feed-likes"
             pictureId={picture.id}/>
           <span className="feed-user-caption">
-            <h4 className="feed-username">{user.username}</h4>
+            <Link to={`/user/${user.id}`}>
+              <h4 className="feed-username">{user.username}</h4>
+            </Link>
             <content>{picture.caption}</content>
           </span>
           <div className="comment-feed">

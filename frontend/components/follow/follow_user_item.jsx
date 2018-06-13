@@ -6,7 +6,7 @@ export const FollowUserItem = ({user}) => (
     <Link to={`/user/${user.id}`} className='link-userpage'>
       <img src={user.imgUrl}
         className="pic-show-userpic"/>
-      <h4>{user.username}</h4>
+      <h4 className="pic-show-username">{user.username}</h4>
     </Link>
   </li>
 );
