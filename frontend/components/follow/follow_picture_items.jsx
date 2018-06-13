@@ -2,6 +2,7 @@ import React from 'react';
 import {FeedLikeItems} from '../likes/likes_feed_items';
 import CommentFormContainer from '../comment/comment_form_container';
 import CommentIndexContainer from '../comment/comment_index_container';
+import {Link} from 'react-router-dom'
 //javascript time-ago
 
 export const FollowPictureItem = ({user, picture,
