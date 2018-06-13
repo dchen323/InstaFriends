@@ -58,12 +58,20 @@ class UserProfile extends React.Component {
     if(this.props.user === undefined){
       return (<div></div>);
     }
-    const pictures = this.props.pictures.map(picture => (
-      <PictureIndexItems key={picture.id}
-        picture={picture}
-        openModal={this.openModal}
-        pictureId={picture.id}/>
-    ));
+    const pictures = this.props.pictures.map(picture => {
+      let likeCount = Object.values(this.props.likes)
+        .filter(like => like.pictureId === picture.id).length;
+      let commentCount = Object.values(this.props.comments)
+        .filter(comment => comment.pictureId === comment.id).length;
+      return(
+        <PictureIndexItems key={picture.id}
+          picture={picture}
+          openModal={this.openModal}
+          pictureId={picture.id}
+          likeCount={likeCount}
+          commentCount={commentCount}/>
+      );
+    });
     if (this.state.modalType === "Add Photo"){
       customStyles = merge(customStyles, {content: {width: "50%", height: "95%",
                   background: "#FAFAFA"

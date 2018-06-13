@@ -1,0 +1,29 @@
+.hover-text {
+  transition: .5s ease;
+  opacity: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.post-pics:hover .posted-picture {
+  opacity: 0.3;
+}
+
+
+.post-pics:hover .hover-text {
+  opacity: 1;
+}
+
+.hover-text{
+
+}
+
+.posted-picture{
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
