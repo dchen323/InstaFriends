@@ -1,0 +1,23 @@
+
+.search-list-container {
+  z-index:2;
+  position: absolute;
+  max-height: 200px;
+  overflow: scroll;
+  top: 8%;
+  width: 16%;
+  background: white;
+}
+
+.search-list-item {
+  border-bottom:1px solid #dcdee2;
+
+}
+
+.pic-show-userpic2{
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  margin: 10px;
+  z-index: 100;
+}

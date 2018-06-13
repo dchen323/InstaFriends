@@ -17,8 +17,12 @@ class Api::UsersController < ApplicationController
   end
 
   def search
-    @users = User.where("username LIKE '%#{params[:query]}%'")
-    render json: @users
+    if params[:query].empty?
+      render json: {}
+    else
+      @users = User.where("username LIKE '%#{params[:query]}%'")
+      render :index
+    end
   end
 
 

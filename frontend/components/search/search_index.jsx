@@ -7,8 +7,7 @@ export default class SearchIndex extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      query: '',
-      results: []
+      query: ''
     };
     this.update = this.update.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
@@ -20,15 +19,16 @@ export default class SearchIndex extends React.Component{
 
   update(e){
     e.preventDefault();
-    this.setState({query: e.target.value});
-    this.handleSearch();
+    this.setState({query: e.target.value},
+      () => {
+        this.handleSearch();
+      });
   }
 
 
   render() {
-    debugger
     let searchList = Object.values(this.props.searchList).map(user => (
-      <SearchListItem user={user} />
+      <SearchListItem key={user.id} user={user} />
     ));
     return(
       <div>
@@ -40,10 +40,10 @@ export default class SearchIndex extends React.Component{
               value={this.state.query}
               onChange={this.update}></input>
           </form>
-          <ul className="search-list-container">
-            {searchList}
-          </ul>
         </span>
+        <ul className="search-list-container">
+          {searchList}
+        </ul>
       </div>
     );
   }
