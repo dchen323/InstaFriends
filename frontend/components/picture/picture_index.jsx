@@ -4,6 +4,7 @@ import CommentFormContainer from '../comment/comment_form_container';
 import CommentIndexContainer from '../comment/comment_index_container';
 import {LikeItems} from '../likes/likes_items';
 import {withRouter} from 'react-router';
+import {Link} from 'react-router-dom';
 
 class PictureIndex extends React.Component {
   constructor(props){

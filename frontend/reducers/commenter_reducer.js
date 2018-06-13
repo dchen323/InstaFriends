@@ -13,8 +13,6 @@ export const commenterReducer = (state = {}, action) => {
       return action.commentsAuthor || {};
     case RECEIVE_COMMENT:
       return merge({}, state, action.commentsAuthor);
-    case RECEIVE_PICTURE:
-      return(merge({}, state, action.commentsAuthor.id));
     default:
       return state;
   }

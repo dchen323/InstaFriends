@@ -2,14 +2,16 @@ import React from 'react';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import { withRouter } from 'react-router';
+import PictureCaptionForm from './picture_caption_form';
+import {merge} from 'lodash';
 
 class PictureUploadForm extends React.Component {
   constructor(props){
     super(props);
     this.state = { picture: {
       img_url: '',
-      caption: ''
       },
+      caption: '',
       modalIsOpen: true
     };
   }
@@ -35,13 +37,15 @@ class PictureUploadForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.uploadPicture(this.state.picture)
-      .then(() => this.props.history.push(`/user/${this.props.match.params.userId}`));
-    this.props.closeModal();
+    let newState = merge({},this.state.picture,
+      {caption: this.state.caption});
+    this.props.uploadPicture(newState)
+      .then(() => this.props.closeModal());
   }
 
-  update(field){
-    return e => this.setState({picture: {[field]: e.target.value}});
+  update(e){
+    e.preventDefault();
+    this.setState({caption: e.target.value});
   }
 
   render() {
@@ -52,9 +56,10 @@ class PictureUploadForm extends React.Component {
           <content>Picture Preview</content>
           <img src={this.state.picture.img_url} className="preview-pic"/>
           <textarea type="text" className="caption-box"
-            onChange={this.update("caption").bind(this)}
-            value ={this.state.picture.caption}
-            placeholder="Caption..."></textarea>
+            onChange={this.update.bind(this)}
+            value={this.state.caption}
+            placeholder="Caption...">
+          </textarea>
           <div className="dropzone">
             <Dropzone
               multiple={false}

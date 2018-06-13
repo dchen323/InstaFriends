@@ -32,7 +32,6 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount(){
-    debugger
     this.props.fetchUser(this.props.match.params.userId);
     Modal.setAppElement(document.getElementById('user'));
   }
