@@ -92,7 +92,6 @@ class UserProfile extends React.Component {
               style={customStyles}>
             <UserModal modalType={this.state.modalType}
               closeModal={this.closeModal}
-              openModal={this.openModal}
               pictureId={this.state.e}
               userId={this.props.user.id}/>
           </Modal>

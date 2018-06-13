@@ -6,14 +6,18 @@ export default class FollowPicture extends React.Component {
     super(props);
   }
 
-  handleLike(e){
-    e.preventDefault();
-    this.props.createLike(this.props.picture.id);
+  handleLike(id){
+    return (e) => {
+      e.preventDefault();
+      this.props.createLike(id);
+    };
   }
 
-  handleUnlike(e){
-    e.preventDefault();
-    this.props.deleteLike(this.props.likes);
+  handleUnlike(like){
+    return (e) => {
+      e.preventDefault();
+      this.props.deleteLike(like);
+    };
   }
 
   render(){

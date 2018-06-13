@@ -4,7 +4,7 @@ import PictureUploadFormContainer
 import PictureIndexContainer
   from '../picture/picture_index_container';
 
-export const UserModal = ({modalType, closeModal,openModal, pictureId, userId}) => {
+export const UserModal = ({modalType, closeModal, pictureId, userId}) => {
   if (modalType === "Add Photo"){
     return (
         <div className="photo-modal">

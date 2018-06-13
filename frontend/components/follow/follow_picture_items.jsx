@@ -1,5 +1,5 @@
 import React from 'react';
-import {LikeItems} from '../likes/likes_items';
+import {FeedLikeItems} from '../likes/likes_feed_items';
 import CommentFormContainer from '../comment/comment_form_container';
 import CommentIndexContainer from '../comment/comment_index_container';
 //javascript time-ago
@@ -7,8 +7,7 @@ import CommentIndexContainer from '../comment/comment_index_container';
 export const FollowPictureItem = ({user, picture,
   likes,handleLike, handleUnlike}) => {
 
-  let likeCount = Object.values(likes).length;
-
+  let likeCount = likes.length;
   return (
     <li className="picture-feed-container">
         <span className="feed-user-pic">
@@ -18,10 +17,11 @@ export const FollowPictureItem = ({user, picture,
         <img src={picture.imgUrl} className="picture-feed"/>
         <br></br>
         <div className="extra-info">
-          <LikeItems likes={likes} likeCount={likeCount}
+          <FeedLikeItems likes={likes} likeCount={likeCount}
             handleUnlike={handleUnlike}
             handleLike={handleLike}
-            className="feed-likes"/>
+            className="feed-likes"
+            pictureId={picture.id}/>
           <span className="feed-user-caption">
             <h4 className="feed-username">{user.username}</h4>
             <content>{picture.caption}</content>
