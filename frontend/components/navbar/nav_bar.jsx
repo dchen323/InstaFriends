@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import SearchContainer from '../search/search_container';
 
 export const NavBar = ({sessionId}) => (
       <div>
@@ -10,11 +11,7 @@ export const NavBar = ({sessionId}) => (
               <content className="line">|</content></Link>
               <Link to="/"><h3 className="nav-title icon">InstaFriends</h3></Link>
             </span>
-            <span className="search-span">
-              <i className="fas fa-search icon3"></i>
-              <input type="text" placeholder="Search"
-                className="nav-search icon2"></input>
-            </span>
+            <SearchContainer/>
             <span className="nav-icon">
               <i className="far fa-compass icon2"></i>
               <i className="far fa-heart icon2"></i>

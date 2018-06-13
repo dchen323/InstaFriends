@@ -1,5 +1,6 @@
 import React from 'react';
-import {SearchIndexItem} from './search_index_item';
+import {SearchListItem} from './search_list_item';
+
 
 
 export default class SearchIndex extends React.Component{
@@ -10,20 +11,24 @@ export default class SearchIndex extends React.Component{
       results: []
     };
     this.update = this.update.bind(this);
-  }
-
-  update(e){
-    e.preventDefault();
-    this.setState({query: e.target.value});
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   handleSearch(){
     this.props.searchUsers(this.state.query);
   }
 
+  update(e){
+    e.preventDefault();
+    this.setState({query: e.target.value});
+    this.handleSearch();
+  }
+
+
   render() {
+    debugger
     let searchList = Object.values(this.props.searchList).map(user => (
-      <SearchIndexItem user={user} />
+      <SearchListItem user={user} />
     ));
     return(
       <div>
