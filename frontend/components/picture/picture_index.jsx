@@ -5,6 +5,9 @@ import CommentIndexContainer from '../comment/comment_index_container';
 import {LikeItems} from '../likes/likes_items';
 import {withRouter} from 'react-router';
 import {Link} from 'react-router-dom';
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
+
 
 class PictureIndex extends React.Component {
   constructor(props){
@@ -35,6 +38,12 @@ class PictureIndex extends React.Component {
 
   setInputFocus(value){
     this.setState({inputFocus: value});
+  }
+
+  setDate(date){
+    TimeAgo.locale(en);
+    const timeAgo = new TimeAgo('en-US');
+    return timeAgo.format(date);
   }
 
   render() {
@@ -71,6 +80,7 @@ class PictureIndex extends React.Component {
             likeCount = {this.props.likeCount}
             likes ={this.props.likes}
             setInputFocus={this.setInputFocus}/>
+          <span className="time-stamp">{this.setDate(Date.parse(this.props.picture.createdAt))}</span>
           <CommentFormContainer pictureId={this.props.picture.id}
             inputFocus={this.state.inputFocus}/>
         </div>

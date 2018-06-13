@@ -1,9 +1,12 @@
 import React from 'react';
 import {FollowPictureItem} from './follow_picture_items';
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
 
 export default class FollowPicture extends React.Component {
   constructor(props){
     super(props);
+    this.setDate = this.setDate.bind(this);
   }
 
   handleLike(id){
@@ -20,16 +23,24 @@ export default class FollowPicture extends React.Component {
     };
   }
 
+  setDate(date){
+    TimeAgo.locale(en);
+    const timeAgo = new TimeAgo('en-US');
+    return timeAgo.format(date);
+  }
+
   render(){
     let pictures = this.props.pictures.map(picture => {
-      let likes = Object.values(this.props.likes).filter(like => like.pictureId === picture.id);
+      let likes = Object.values(this.props.likes)
+        .filter(like => like.pictureId === picture.id);
       return(
         <FollowPictureItem key={picture.id}
           user={this.props.users[picture.userId]}
           picture={picture}
           likes={likes}
           handleLike={this.handleLike.bind(this)}
-          handleUnlike={this.handleUnlike.bind(this)}/>
+          handleUnlike={this.handleUnlike.bind(this)}
+          setDate={this.setDate}/>
       );
     });
 

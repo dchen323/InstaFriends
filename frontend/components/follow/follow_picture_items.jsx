@@ -2,11 +2,10 @@ import React from 'react';
 import {FeedLikeItems} from '../likes/likes_feed_items';
 import CommentFormContainer from '../comment/comment_form_container';
 import CommentIndexContainer from '../comment/comment_index_container';
-import {Link} from 'react-router-dom'
-//javascript time-ago
+import {Link} from 'react-router-dom';
 
 export const FollowPictureItem = ({user, picture,
-  likes,handleLike, handleUnlike}) => {
+  likes,handleLike, handleUnlike, setDate}) => {
 
   let likeCount = likes.length;
   return (
@@ -36,6 +35,9 @@ export const FollowPictureItem = ({user, picture,
           <div className="comment-feed">
             <CommentIndexContainer pictureId={picture.id}/>
           </div>
+          <span className="time-stamp">
+            {setDate(Date.parse(picture.createdAt))}
+          </span>
           <CommentFormContainer pictureId={picture.id} />
         </div>
     </li>
