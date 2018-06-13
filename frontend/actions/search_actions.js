@@ -2,9 +2,9 @@ import * as APIUtil from '../utils/search_api_utils';
 export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
 
 
-export const receiveSearch = users => ({
+export const receiveSearch = searchList => ({
   type: RECEIVE_SEARCH,
-  users
+  searchList
 });
 
 export const searchUsers = query => dispatch => (

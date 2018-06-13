@@ -6,6 +6,7 @@ import commentsReducer from './comments_reducer';
 import followsReducer from './follow_reducer';
 import followedReducer from './followed_reducer';
 import followingReducer from './following_reducer';
+import searchReducer from './search_reducer';
 import {commenterReducer} from './commenter_reducer';
 
 export default combineReducers({
@@ -15,5 +16,6 @@ export default combineReducers({
   comments: commentsReducer,
   followed: followedReducer,
   following: followingReducer,
-  commentAuthor: commenterReducer
+  commentAuthor: commenterReducer,
+  searchList : searchReducer
 });
