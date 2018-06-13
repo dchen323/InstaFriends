@@ -19,7 +19,6 @@ monica = User.create!({username: 'chef_geller', name: "Monica Geller", password:
 phoebe = User.create!({username: 'smelly_cat', name: "Phoebe Buffay", password: "password1", img_url: "https://s20.postimg.cc/sey214zjx/phoebe_profile.jpg"})
 
 
-picture1 = Picture.create!({img_url: 'https://s20.postimg.cc/qzwhcf66l/picture1.jpg', user: guest, caption: "Welcome to Central Perk"})
 picture4 = Picture.create!({img_url: 'https://s33.postimg.cc/s0m1l91nz/armadillo_Ross.jpg', user: ross, caption: "Holiday Armadillo!"})
 picture10 = Picture.create!({img_url:'https://s20.postimg.cc/kyysfdtv1/picture_10.jpg', user: joey , caption: 'JOEY DOESNT SHARE FOOD'})
 picture16 = Picture.create!({img_url:'https://s20.postimg.cc/c3xy4vki5/picture_16.jpg', user: monica , caption: 'TBT'})
@@ -32,12 +31,13 @@ picture11 = Picture.create!({img_url:'https://s20.postimg.cc/dizitn3lp/picture_1
 picture17 = Picture.create!({img_url:'https://s20.postimg.cc/wo2s3exp9/picture_17.jpg', user: monica , caption: 'The routine'})
 picture20 = Picture.create!({img_url: 'https://s20.postimg.cc/iuefedctp/picture_20.jpg', user: phoebe, caption: "smelly cat...smelly cat"})
 
-picture3 = Picture.create!({img_url: "https://s20.postimg.cc/c3xy4yzyl/picture_3.jpg", user: guest, caption: "NYC"})
 picture6 = Picture.create!({img_url: 'https://s20.postimg.cc/uw9t8k42l/picture_6.jpg', user: ross, caption: "Vegas"})
 picture9 = Picture.create!({img_url:'https://s20.postimg.cc/nt1xsy6ct/picture_9.jpg', user: rachel , caption: 'Emma'})
 picture15 = Picture.create!({img_url:'https://s20.postimg.cc/m18yy2a59/picture_15.jpg', user: chandler , caption: 'The best roomie'})
+picture1 = Picture.create!({img_url: 'https://s20.postimg.cc/qzwhcf66l/picture1.jpg', user: guest, caption: "Welcome to Central Perk"})
 picture21 = Picture.create!({img_url: 'https://s20.postimg.cc/ujif2ew3h/picture_21.jpg', user: phoebe , caption: "I GOT MARRIED"})
 picture13 = Picture.create!({img_url:'https://s20.postimg.cc/x0u69jat9/picture_13.jpg', user: chandler , caption: 'best day ever'})
+picture3 = Picture.create!({img_url: "https://s20.postimg.cc/c3xy4yzyl/picture_3.jpg", user: guest, caption: "NYC"})
 picture18 = Picture.create!({img_url:'https://s20.postimg.cc/ovc4bik19/picture_18.jpg', user: monica , caption: 'Getting Married!'})
 picture14 = Picture.create!({img_url:'https://s20.postimg.cc/wbbdx87pp/picture_14.jpg', user: chandler , caption: 'I married a turkey'})
 picture22 = Picture.create!({img_url: 'http://res.cloudinary.com/dchen3/image/upload/v1528910472/dt8rgb3hfsopp4rrfkp0.jpg', user: ross, caption: 'I miss marcel'})

@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       resources :pictures, only: [:show]
       resources :follows, only: [:index, :create, :destroy]
     end
+
+    post '/search', to: 'users#search'
+
     resources :pictures, only: [:show] do
       resources :likes, only: [:create, :destroy]
       resources :comments, only: [:create]
