@@ -14,7 +14,8 @@ export default class CommentIndex extends React.Component{
   render(){
     let comments =this.props.comments.map(comment => (
       <CommentIndexItem key={comment.id} comment={comment}
-        commentAuthor={this.props.commentAuthor[comment.userId]}/>
+        commentAuthor={this.props.commentAuthor[comment.userId]}
+        closeModal={this.props.closeModal}/>
     ));
     return(
       <div>

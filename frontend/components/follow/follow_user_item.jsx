@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 export const FollowUserItem = ({user}) => (
   <li className="user-feed-item">
-    <Link to={`/user/${user.id}`}>
+    <Link to={`/user/${user.id}`} className='link-userpage'>
       <img src={user.imgUrl}
         className="pic-show-userpic"/>
       <h4>{user.username}</h4>

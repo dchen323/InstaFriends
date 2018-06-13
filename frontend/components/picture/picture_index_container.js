@@ -14,13 +14,14 @@ const mapStateToProps = ({entities: {pictures,users,likes},session},{pictureId,u
 });
 
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, {closeModal}) => ({
   fetchPicture: (userId, pictureId) => dispatch(fetchPicture(
     userId, pictureId
   )),
   deletePicture: picture => dispatch(deletePicture(picture)),
   createLike: like => dispatch(createLike(like)),
-  deleteLike: like => dispatch(deleteLike(like))
+  deleteLike: like => dispatch(deleteLike(like)),
+  closeModal : () => closeModal()
 });
 
 

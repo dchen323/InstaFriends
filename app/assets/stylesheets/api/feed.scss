@@ -28,8 +28,8 @@
 
 .feed-post-container {
   width: 600px;
-  border: 1px solid #dcdee2;
-  background: white;
+  border: 2px solid #dcdee2;
+  background: #FAFAFA;
   margin-top: 70px;
   margin-right: 188px;
 }
@@ -37,9 +37,14 @@
 .picture-feed-container{
   margin-bottom: 50px;
   background: white;
-  border: 2px solid #dcdee2;
+  border-bottom: 2px solid #dcdee2;
   width: 600px;
 }
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;
+  }
 
 .comment-feed{
   overflow-y: scroll;
@@ -79,6 +84,11 @@
 .following-icons {
   max-height: 400px;
   overflow-y: scroll;
+}
+
+.link-userpage {
+  display: flex;
+
 }
 
 @media only screen and (max-width: 1290px) {
