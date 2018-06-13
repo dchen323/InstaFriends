@@ -1,12 +1,14 @@
-.hover-text {
+.hover-text{
   transition: .5s ease;
   opacity: 0;
   position: relative;
-  top: 50%;
+  top: -50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
+}
+
+.post-pics:hover {
+  background: #3f3d3d
 }
 
 .post-pics:hover .posted-picture {
@@ -18,11 +20,24 @@
   opacity: 1;
 }
 
-.hover-text{
-
+.hover-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
 }
 
-.posted-picture{
+.hover-span {
+  display: flex;
+  margin: 0 10px;
+}
+
+.hover-icon {
+  margin: 0 10px;
+}
+
+.posted-picture {
   opacity: 1;
   transition: .5s ease;
   backface-visibility: hidden;

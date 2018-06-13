@@ -5,13 +5,15 @@ export const PictureIndexItems = ({picture, openModal,pictureId,
   <li className="post-pics"
     onClick={openModal("Show Photo",pictureId)}><img src={picture.imgUrl}
     className="posted-picture" id="posted"/>
-    <div className="hover-pic">
-      <div className="hover-text">
-        <i className="far fa-heart"></i>
+    <div className="hover-text">
+      <span className="hover-span">
+        <i className="fas fa-heart hover-icon"></i>
         <p>{likeCount}</p>
-        <i className="far fa-comment"></i>
+      </span>
+      <span className="hover-span">
+        <i className="fas fa-comment hover-icon"></i>
         <p>{commentCount}</p>
-      </div>
+      </span>
     </div>
   </li>
 );

@@ -74,6 +74,7 @@ input.nav-search[type="text"]{
 .icon2 {
   margin: 0 24px 0 0;
   font-size: 24px;
+  color: gray;
 }
 
 .icon3{
@@ -201,7 +202,7 @@ input.nav-search[type="text"]{
 .picture-holder {
   display: grid;
   width: 100%;
-  grid-gap: 1em;
+  grid-gap: 2em;
   list-style: none;
   grid-template-columns: repeat(3, 290px);
   align-items: center;
@@ -210,7 +211,7 @@ input.nav-search[type="text"]{
 
 .post-pics {
   overflow: hidden;
-  max-height: 100%;
+  max-height: 290px;
   max-width: 100%;
 }
 
