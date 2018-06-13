@@ -16,10 +16,8 @@ export default class Welcome extends React.Component {
   render() {
     return(
       <div className = "feed">
-        <button onClick={() => this.props.logout()
-            .then(() => history.push('/login'))}>Logout</button>
-          <FollowPictureContainer/>
-          <FollowingUserContainer/>
+        <FollowPictureContainer/>
+        <FollowingUserContainer/>
       </div>
     );
   }

@@ -55,3 +55,11 @@ json.comments_author do
     end
   end
 end
+
+json.following do
+  @user.following.each do |followed_person|
+    json.set! followed_person.id do
+      json.extract! followed_person, :id, :username, :img_url
+    end
+  end
+end
