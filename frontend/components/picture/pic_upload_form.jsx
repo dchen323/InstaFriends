@@ -2,7 +2,6 @@ import React from 'react';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import { withRouter } from 'react-router';
-import PictureCaptionForm from './picture_caption_form';
 import {merge} from 'lodash';
 
 class PictureUploadForm extends React.Component {

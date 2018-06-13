@@ -51,8 +51,14 @@ class PictureIndex extends React.Component {
         <img src={this.props.picture.imgUrl} className="display-picture"/>
         <div className="pic-show-info">
           <header className="pic-show-header">
-            <img src={this.props.user.imgUrl} className="pic-show-userpic"/>
-            <h2>{this.props.user.username}</h2>
+            <Link to={`/user/${this.props.user.id}`}
+              onClick={this.props.closeModal}>
+              <img src={this.props.user.imgUrl} className="pic-show-userpic"/>
+            </Link>
+            <Link to={`/user/${this.props.user.id}`}
+              onClick={this.props.closeModal}>
+              <h2 className="pic-show-username">{this.props.user.username}</h2>
+            </Link>
             <button className={`pic-show-button2 ${disabled}`}
               onClick={this.handleDelete.bind(this)}>Delete Picture</button>
           </header>

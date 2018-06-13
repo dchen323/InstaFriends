@@ -10,10 +10,6 @@ return({
 });
 };
 
-const mapDispatchToProps = (dispatch, {closeModal}) => ({
-  closeModal: () => closeModal()
-});
 
 
-export default connect(mapStateToProps,
-  mapDispatchToProps)(CommentIndex);
+export default connect(mapStateToProps)(CommentIndex);
