@@ -57,7 +57,9 @@ class PictureIndex extends React.Component {
 
     return(
       <div className="picture-show-container">
-        <img src={this.props.picture.imgUrl} className="display-picture"/>
+        <div className="display-picture-holder">
+          <img src={this.props.picture.imgUrl} className="display-picture"/>
+        </div>
         <div className="pic-show-info">
           <header className="pic-show-header">
             <Link to={`/user/${this.props.user.id}`}

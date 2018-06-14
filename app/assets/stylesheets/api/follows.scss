@@ -21,9 +21,8 @@
   display: flex;
 }
 
-
-
-.picture-feed {
-  height: 600px;
+.picture-holder-feed {
   width: 600px;
+  max-height: 600px;
+  overflow: hidden;
 }

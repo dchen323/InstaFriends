@@ -18,7 +18,9 @@ export const FollowPictureItem = ({user, picture,
             <h4 className="pic-show-username">{user.username}</h4>
           </Link>
         </span>
-        <img src={picture.imgUrl} className="picture-feed"/>
+        <div className="picture-holder-feed">
+          <img src={picture.imgUrl} className="picture-feed"/>
+        </div>
         <br></br>
         <div className="extra-info">
           <FeedLikeItems likes={likes} likeCount={likeCount}
