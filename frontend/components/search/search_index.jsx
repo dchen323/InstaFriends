@@ -27,8 +27,13 @@ export default class SearchIndex extends React.Component{
 
 
   render() {
+    let hide;
+    if(this.props.searchList === {}){
+      hide="hide-button";
+    }
     let searchList = Object.values(this.props.searchList).map(user => (
-      <SearchListItem key={user.id} user={user} />
+      <SearchListItem key={user.id} user={user}
+        hide={hide}/>
     ));
     return(
       <div>
