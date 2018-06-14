@@ -61,7 +61,7 @@ class UserProfile extends React.Component {
       let likeCount = Object.values(this.props.likes)
         .filter(like => like.pictureId === picture.id).length;
       let commentCount = Object.values(this.props.comments)
-        .filter(comment => comment.pictureId === comment.id).length;
+        .filter(comment => comment.pictureId === picture.id).length;
       return(
         <PictureIndexItems key={picture.id}
           picture={picture}
