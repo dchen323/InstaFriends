@@ -14,8 +14,6 @@ const likesReducer = (state = {}, action) => {
       let newState = merge({},state);
       delete newState[action.likes.id];
       return newState;
-    case RECEIVE_PICTURE:
-      return action.likes || {};
     case RECEIVE_USER:
       return action.likes || {};
     case RECEIVE_FOLLOWERS:
