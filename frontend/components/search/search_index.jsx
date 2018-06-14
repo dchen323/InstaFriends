@@ -52,7 +52,7 @@ export default class SearchIndex extends React.Component{
               onBlur={this.handleBlur} />
           </form>
         </span>
-        <ul className="search-list-container">
+        <ul className={`search-list-container ${hide}`}>
           {searchList}
         </ul>
       </div>
