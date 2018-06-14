@@ -13,8 +13,7 @@ let customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    width: "900px",
-    height: "600px"
+    width: "900px"
   }
 };
 
@@ -77,8 +76,7 @@ class UserProfile extends React.Component {
                   background: "#FAFAFA"
         }});
     }else{
-      customStyles = merge(customStyles, {content: {width: "900px",
-        height: "600px"}});
+      customStyles = merge(customStyles, {content: {width: "900px"}});
     }
     return(
       <div className="user">

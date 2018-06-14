@@ -211,13 +211,15 @@ input.nav-search[type="text"]{
 
 .post-pics {
   overflow: hidden;
-  max-height: 290px;
-  max-width: 100%;
+  height: 290px;
+  width: 100%;
+  display: flex;
 }
 
 .posted-picture{
-  height: 290px;
-  width: 290px;
+  height: 100%;
+  width:auto;
+  flex-shrink: 0;
 
 }
 
