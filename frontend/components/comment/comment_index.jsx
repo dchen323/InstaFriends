@@ -12,7 +12,8 @@ export default class CommentIndex extends React.Component{
         commentAuthor={this.props.commentAuthor[comment.userId]}
         closeModal={this.props.closeModal}
         pictureAuthorId={this.props.pictureAuthorId}
-        deleteComment={this.props.deleteComment}/>
+        deleteComment={this.props.deleteComment}
+        sessionId = {this.props.sessionId} />
     ));
     return(
       <div>

@@ -3,11 +3,12 @@ import CommentIndex from './comment_index';
 import {sortComments} from '../../reducers/selectors';
 import {deleteComment} from '../../actions/comment_actions';
 
-const mapStateToProps = ({entities: {comments,commentAuthor}}, {picture,
+const mapStateToProps = ({entities: {comments,commentAuthor},session}, {picture,
   stylefill}) => ({
     comments: sortComments(comments,picture.id),
     commentAuthor: commentAuthor,
-    pictureAuthorId:  picture.userId
+    pictureAuthorId:  picture.userId,
+    sessionId: session.id
 });
 
 const mapDispatchToProps = dispatch => ({

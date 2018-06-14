@@ -15,10 +15,9 @@ export default class CommentIndexItem extends React.Component{
 
   render(){
     let user = this.props.commentAuthor.username;
-    let disabled;
-    if(this.props.comment.userId !== this.props.commentAuthor.id
-      && this.props.comment.userId !== this.props.pictureAuthorId){
-      disabled = "hide-button";
+    let hideButton="hide-button";
+    if(this.props.sessionId === this.props.commentAuthor.id || this.props.pictureAuthorId === this.props.sessionId){
+      hideButton = "";
     }
     return(
       <li className="comment-body">
@@ -29,7 +28,7 @@ export default class CommentIndexItem extends React.Component{
         </Link>
         <span className ="comment-delete">
           {this.props.comment.body}
-          <i className={`fas fa-times deleteicon ${disabled}`}
+          <i className={`fas fa-times deleteicon ${hideButton}`}
             onClick={this.handleDelete}></i>
         </span>
       </li>);
