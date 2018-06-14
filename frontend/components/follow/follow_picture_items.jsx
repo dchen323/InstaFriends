@@ -18,7 +18,8 @@ export const FollowPictureItem = ({user, picture,
           </Link>
         </span>
         <div className="picture-holder-feed">
-          <img src={picture.imgUrl} className="picture-feed"/>
+          <img src={picture.imgUrl} className="picture-feed"
+            onDoubleClick={handleLike(picture.id)}/>
         </div>
         <br></br>
         <div className="extra-info">

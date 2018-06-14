@@ -58,7 +58,8 @@ class PictureIndex extends React.Component {
     return(
       <div className="picture-show-container">
         <div className="display-picture-holder">
-          <img src={this.props.picture.imgUrl} className="display-picture"/>
+          <img src={this.props.picture.imgUrl} className="display-picture"
+            onDoubleClick={this.handleLike.bind(this)}/>
         </div>
         <div className="pic-show-info">
           <header className="pic-show-header">
