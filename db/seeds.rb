@@ -17,7 +17,8 @@ joey = User.create!({username: 'drake_ramoray', name: "Joey Tribbiani", password
 chandler = User.create!({username: 'bing', name: "Chandler Bing", password: "password1",img_url: "http://res.cloudinary.com/dchen3/image/upload/v1528934417/chandle_profile.jpg"})
 monica = User.create!({username: 'chef_geller', name: "Monica Geller", password: "password1",img_url: "http://res.cloudinary.com/dchen3/image/upload/v1528934412/monica_profile.jpg"})
 phoebe = User.create!({username: 'smelly_cat', name: "Phoebe Buffay", password: "password1", img_url: "http://res.cloudinary.com/dchen3/image/upload/v1528934401/phoebe_profile.jpg"})
-
+mike = User.create!({username: 'mike', name: 'Mike Hannigan', password: 'password1', img_url: "http://res.cloudinary.com/dchen3/image/upload/c_scale,w_345/v1528994395/Mike_Hannigan.jpg"})
+janice = User.create!({username: 'janice', name: "Janice Hosenstein", password: 'password1', img_url: "http://res.cloudinary.com/dchen3/image/upload/c_scale,w_439/v1528994484/janice-from-friends-825x580.jpg"})
 
 picture4 = Picture.create!({img_url: 'http://res.cloudinary.com/dchen3/image/upload/c_fill,h_500,w_500/v1528934233/armadilloRoss.jpg', user: ross, caption: "Holiday Armadillo!"})
 picture10 = Picture.create!({img_url:'http://res.cloudinary.com/dchen3/image/upload/c_fit,h_500,w_500/v1528934381/picture_10.jpg', user: joey , caption: 'JOEY DOESNT SHARE FOOD'})

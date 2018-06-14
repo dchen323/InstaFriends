@@ -75,7 +75,7 @@ class PictureIndex extends React.Component {
           </header>
           <EditPictureFormContainer picture={this.props.picture}
             disabled={disabled} user={this.props.user}/>
-          <CommentIndexContainer pictureId={this.props.picture.id}
+          <CommentIndexContainer picture={this.props.picture}
             closeModal={this.props.closeModal}/>
           <LikeItems handleLike={this.handleLike.bind(this)}
             handleUnlike={this.handleUnlike.bind(this)}
