@@ -1,26 +1,37 @@
 import {fetchUser} from '../../utils/user_api_util';
 import {Link} from 'react-router-dom';
-
 import React from 'react';
 
-export const CommentIndexItem = ({comment,commentAuthor,closeModal,
-    handleDelete,pictureAuthorId}) => {
-  let user = commentAuthor.username;
-  let disabled;
-  if(comment.userId !== commentAuthor.id ||
-    comment.userId !== pictureAuthorId){
-      disabled = "hide-button";
+export default class CommentIndexItem extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
-  return(
-    <li className="comment-body">
-      <Link to={`/user/${commentAuthor.id}/`} className="comment-author"
-        onClick={closeModal}>
-        {user}
-      </Link>
-      <span className ="comment-delete">
-        {comment.body}
-        <i className={`fas fa-times deleteicon ${disabled}`}
-          onClick={() => handleDelete(comment)}></i>
-      </span>
-  </li>);
-};
+
+  handleDelete(e){
+    this.props.deleteComment(this.props.comment);
+  }
+
+  render(){
+    let user = this.props.commentAuthor.username;
+    let disabled;
+    if(this.props.comment.userId !== this.props.commentAuthor.id
+      && this.props.comment.userId !== this.props.pictureAuthorId){
+      disabled = "hide-button";
+    }
+    return(
+      <li className="comment-body">
+        <Link to={`/user/${this.props.commentAuthor.id}/`}
+          className="comment-author"
+          onClick={this.props.closeModal}>
+          {user}
+        </Link>
+        <span className ="comment-delete">
+          {this.props.comment.body}
+          <i className={`fas fa-times deleteicon ${disabled}`}
+            onClick={this.handleDelete}></i>
+        </span>
+      </li>);
+    }
+}
