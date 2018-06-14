@@ -7,10 +7,12 @@ export default class SearchIndex extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      query: ''
+      query: '',
+      focus: false
     };
     this.update = this.update.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   handleSearch(){
@@ -19,16 +21,19 @@ export default class SearchIndex extends React.Component{
 
   update(e){
     e.preventDefault();
-    this.setState({query: e.target.value},
+    this.setState({query: e.target.value, focus: true},
       () => {
         this.handleSearch();
       });
   }
 
+  handleBlur(){
+    setTimeout(() => this.setState({focus: false}),150);
+  }
 
   render() {
     let hide;
-    if(this.props.searchList === {}){
+    if(this.props.searchList === {} || !this.state.focus){
       hide="hide-button";
     }
     let searchList = Object.values(this.props.searchList).map(user => (
@@ -43,7 +48,8 @@ export default class SearchIndex extends React.Component{
             <input type="text" placeholder="Search"
               className="nav-search icon2"
               value={this.state.query}
-              onChange={this.update}></input>
+              onChange={this.update}
+              onBlur={this.handleBlur} />
           </form>
         </span>
         <ul className="search-list-container">
