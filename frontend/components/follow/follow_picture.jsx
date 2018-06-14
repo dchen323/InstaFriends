@@ -40,7 +40,8 @@ export default class FollowPicture extends React.Component {
           likes={likes}
           handleLike={this.handleLike.bind(this)}
           handleUnlike={this.handleUnlike.bind(this)}
-          setDate={this.setDate}/>
+          setDate={this.setDate}
+          currentUser={this.props.currentUser}/>
       );
     });
 

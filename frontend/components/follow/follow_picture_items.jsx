@@ -5,8 +5,7 @@ import CommentIndexContainer from '../comment/comment_index_container';
 import {Link} from 'react-router-dom';
 
 export const FollowPictureItem = ({user, picture,
-  likes,handleLike, handleUnlike, setDate}) => {
-
+  likes,handleLike, handleUnlike, setDate,currentUser}) => {
   let likeCount = likes.length;
   return (
     <li className="picture-feed-container">
@@ -27,7 +26,8 @@ export const FollowPictureItem = ({user, picture,
             handleUnlike={handleUnlike}
             handleLike={handleLike}
             className="feed-likes"
-            pictureId={picture.id}/>
+            pictureId={picture.id}
+            currentUserId={currentUser.id}/>
           <span className="feed-user-caption">
             <Link to={`/user/${user.id}`}>
               <h4 className="feed-username">{user.username}</h4>
