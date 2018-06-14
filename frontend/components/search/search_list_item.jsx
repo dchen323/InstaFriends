@@ -11,4 +11,4 @@ export const SearchListItem = ({user}) => {
       </Link>
     </li>
   );
-}
+};
