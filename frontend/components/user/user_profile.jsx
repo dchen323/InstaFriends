@@ -76,7 +76,7 @@ class UserProfile extends React.Component {
                   background: "#FAFAFA"
         }});
     }else{
-      customStyles = merge(customStyles, {content: {width: "900px"}});
+      customStyles = merge(customStyles, {content: {width: "900px",height: "auto"}});
     }
     return(
       <div className="user">
