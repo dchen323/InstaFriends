@@ -17,7 +17,9 @@ export default class FollowUserIndex extends React.Component {
             <img src={this.props.currentUser.imgUrl}
               className="pic-show-userpic"/>
           </Link>
-          <h4>{this.props.currentUser.username}</h4>
+          <Link to={`/user/${this.props.currentUser.id}`}>
+            <h4>{this.props.currentUser.username}</h4>
+          </Link>
           <button onClick={() => this.props.logout()
               .then(() => history.push('/login'))}
               className="feed-logout">Logout</button>

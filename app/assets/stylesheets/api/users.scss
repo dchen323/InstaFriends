@@ -229,21 +229,24 @@ input.nav-search[type="text"]{
     grid-gap: 10px;
   }
 
-  .post-pic {
+  .post-pics {
     margin: 5px;
-    max-width: 190px;
-    max-height: 190px;
+    height: 190px;
   }
 
   .posted-picture{
     height: 190px;
     width: 190px;
   }
+
+  .hover-text{
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width: 650px) {
 
-    .post-pic {
+    .post-pics {
       margin: 3px;
       max-width: 95px;
       max-height: 95px;
@@ -258,12 +261,18 @@ input.nav-search[type="text"]{
       grid-template-columns: repeat(3, 95px);
       grid-gap: 0;
     }
+
+    .hover-text {
+      font-size: 8px;
+      left: -5%;
+    }
 }
 
 @media only screen and (max-width: 700px) {
-  .search-span {
+  .search-span, .search-list-container, .search-list-item {
     display: none;
   }
+
 
   .user-pic {
     margin: 0 20px 0 0;
