@@ -6,8 +6,11 @@ export default class CommentIndex extends React.Component{
     super(props);
   }
 
-  removeComment(){
-    //???tbd
+  handleDelete(comment){
+    return (e) => {
+      e.preventDefault();
+
+    };
   }
 
 
@@ -15,7 +18,9 @@ export default class CommentIndex extends React.Component{
     let comments =this.props.comments.map(comment => (
       <CommentIndexItem key={comment.id} comment={comment}
         commentAuthor={this.props.commentAuthor[comment.userId]}
-        closeModal={this.props.closeModal}/>
+        closeModal={this.props.closeModal}
+        handleDelete={this.handleDelete}
+        pictureAuthorId={this.props.pictureAuthorId}/>
     ));
     return(
       <div>

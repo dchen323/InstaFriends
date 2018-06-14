@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import CommentForm from './comment_form';
-import {postComment} from '../../actions/comment_actions';
+import {postComment, deleteComment} from '../../actions/comment_actions';
 
 
 const mapStateToProps = ({entities: {user}}, {pictureId}) => ({

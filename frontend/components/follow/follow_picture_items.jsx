@@ -35,7 +35,7 @@ export const FollowPictureItem = ({user, picture,
             <content>{picture.caption}</content>
           </span>
           <div className="comment-feed">
-            <CommentIndexContainer pictureId={picture.id}/>
+            <CommentIndexContainer picture={picture}/>
           </div>
           <span className="time-stamp">
             {setDate(Date.parse(picture.createdAt))}
