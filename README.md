@@ -31,8 +31,9 @@ InstaFriends is built with...
   * Search bar can be used to search for other users by username.
 
 ### Pictures
-  * Users can add pictures to share to their profile or remove them from their profile dynamically through Redux changing state immediately and React rendering the new state without any additional DOM manipulations.
-  * You can click on pictures on the user's page to display a bigger picture.
+Users can add pictures to share to their profile or remove them from their profile dynamically through Redux changing state immediately and React rendering the new state without any additional DOM manipulations.
+
+You can click on pictures on the user's page to display a bigger picture.
 
 ![Add Photos](https://res.cloudinary.com/dchen3/image/upload/v1529092320/FullstackPicturesSeedData/ezgif.com-optimize.gif)
 
@@ -70,12 +71,12 @@ The picture upload form and picture view form were both created using [React-Mod
   ```
 
 ### Likes
-  * Users can like a picture by double clicking the picture or hitting the black heart, changing the heart into a red one.
+Users can like a picture by double clicking the picture or hitting the black heart, changing the heart into a red one.
 
 ![dbclick](http://res.cloudinary.com/dchen3/image/upload/v1529095380/dclick.gif)
 
 ### Search
-  * There is a search bar in the navigation bar that users can use to search for other users by username.
+Users can use the search the site for usernames that match their search query.
 ![search](http://res.cloudinary.com/dchen3/image/upload/v1529096987/search.gif)
 
 A problem I ran into with the search bar was hiding the search results if the results were empty and if you click out of the search box. To tackle this issue, I set a focus state on my search index component that would change upon actions:
