@@ -1,10 +1,18 @@
 # Weclome to InstaFriends!
 
-InstaFriends is a single page web app inspired by Instagram. Connect with any users and share pictures with all your friends and followers. Come join InstaFriends today and share your experiences!
+InstaFriends is a single page web app inspired by Instagram. Connect with users and share pictures with all your friends and followers. Come join InstaFriends today and share your experiences!
 
 [Live Link](https://instafriends-.herokuapp.com/#/)
 
 [Design Documents](https://github.com/dchen323/InstaFriends/wiki)
+
+## Technology
+
+InstaFriends is built with...
+  * Ruby on Rails and PostGreSQL to keep track of the backend data through RESTful API.
+
+  * React/Redux to manage the frontend DOM and interactions with the backend.
+
 
 ## Key Features
 
@@ -46,3 +54,9 @@ InstaFriends is a single page web app inspired by Instagram. Connect with any us
 ### Feed
   * The feed displays the pictures of everyone the user follows.
   * The user can navigate to each of the profiles of the people he is following by clicking on their profile picture or username displayed on the sidebar.
+
+## Future Implementations
+  * Infinite Scrolling for quicker user feed page rendering.
+  * Followers/Following Pages to display who the user is following and who follows the user.
+  * Notifications to allow the user to see activities that affect him/her.
+  * Explore page to display pictures that the users might be interested in.
