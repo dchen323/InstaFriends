@@ -29,6 +29,10 @@ export default class FollowUserIndex extends React.Component {
             {following}
           </ul>
         </div>
+        <div className="github">
+          <a href="https://github.com/dchen323/InstaFriends"><i className="fab fa-github icon-git"></i></a>
+          <a href="https://www.linkedin.com/in/daniel-chen92/"><i className="fab fa-linkedin icon-git"></i></a>
+        </div>
       </div>
     );
   }
