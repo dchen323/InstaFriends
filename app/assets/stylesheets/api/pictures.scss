@@ -95,7 +95,8 @@
 }
 
 .display-picture {
-  height: 100%
+  height: 100%;
+  object-fit:cover;
 }
 
 .pic-show-info {
