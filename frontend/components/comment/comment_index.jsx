@@ -17,7 +17,7 @@ export default class CommentIndex extends React.Component{
     ));
     return(
       <div>
-        <ul className="comments-container">
+        <ul className={`comments-container ${this.props.commentFeed}`}>
           {comments}
         </ul>
       </div>

@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 export const FollowPictureItem = ({user, picture,
   likes,handleLike, handleUnlike, setDate,currentUser}) => {
   let likeCount = likes.length;
+  let commentFeed ="comment-feed";
   return (
     <li className="picture-feed-container">
         <span className="feed-user-pic">
@@ -36,7 +37,8 @@ export const FollowPictureItem = ({user, picture,
             <content>{picture.caption}</content>
           </span>
           <div className="comment-feed">
-            <CommentIndexContainer picture={picture}/>
+            <CommentIndexContainer picture={picture}
+              commentFeed={commentFeed}/>
           </div>
           <span className="time-stamp">
             {setDate(Date.parse(picture.createdAt))}
