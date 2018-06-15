@@ -2,8 +2,6 @@
 
 [Live Link](https://instafriends-.herokuapp.com/#/)
 
-[Design Documents](https://github.com/dchen323/InstaFriends/wiki)
-
 InstaFriends is a single page web app inspired by Instagram. Connect with users and share pictures with all your friends and followers. Come join InstaFriends today and share your experiences!
 
 ![DEMO](http://res.cloudinary.com/dchen3/image/upload/v1529096473/intro.gif)
