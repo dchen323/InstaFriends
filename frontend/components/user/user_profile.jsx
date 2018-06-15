@@ -72,7 +72,7 @@ class UserProfile extends React.Component {
       );
     });
     if (this.state.modalType === "Add Photo"){
-      customStyles = merge(customStyles, {content: {width: "50%", height: "95%",
+      customStyles = merge(customStyles, {content: {width: "40%", height: "80%",
                   background: "#FAFAFA"
         }});
     }else{
