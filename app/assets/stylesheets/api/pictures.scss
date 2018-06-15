@@ -98,6 +98,10 @@
   object-fit:cover;
 }
 
+.display-picture:hover {
+  cursor:pointer;
+}
+
 .pic-show-info {
   display: flex;
   flex-direction: column;

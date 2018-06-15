@@ -6,14 +6,14 @@
 
 InstaFriends is a single page web app inspired by Instagram. Connect with users and share pictures with all your friends and followers. Come join InstaFriends today and share your experiences!
 
-![SignUp Page](http://res.cloudinary.com/dchen3/image/upload/v1529082475/Screen_Shot_2018-06-15_at_10.07.19_AM.png)
+![DEMO](http://res.cloudinary.com/dchen3/image/upload/v1529096473/intro.gif)
 
 
 
 ## Technology
 
 InstaFriends is built with...
-  * Ruby on Rails and PostGreSQL to keep track of the backend data through RESTful API. Since this is a smaller-scale project, Rails was chosen because it provided convenience and speed over scalability.
+  * Ruby on Rails and PostGreSQL are used to keep track of the backend data through RESTful API. Since this is a smaller-scale project, Rails was chosen because it provided convenience and speed over scalability.
 
   * React.js/Redux are used to manage the frontend DOM and interactions with the backend by keeping states normalized.
 
@@ -31,14 +31,14 @@ InstaFriends is built with...
   * Search bar can be used to search for other users by username.
 
 ### Pictures
-  * Users can add pictures to share to their profile or remove them from their profile.
+  * Users can add pictures to share to their profile or remove them from their profile dynamically through Redux changing state immediately and React rendering the new state without any additional DOM manipulations.
   * You can click on pictures on the user's page to display a bigger picture.
 
 ![Add Photos](http://res.cloudinary.com/dchen3/image/upload/v1529092320/ezgif.com-optimize.gif)
 
 ![DeletePhoto](http://res.cloudinary.com/dchen3/image/upload/v1529092795/deletepicture.gif)
 
-The picture upload form and picture view form were both created using [React-Modal](https://github.com/reactjs/react-modal). To render two modals, a modal type had to be set in order to conditionally render the add photo or user picture modal like so :
+The picture upload form and picture view form were both created using [React-Modal](https://github.com/reactjs/react-modal). To render two modals, a modal type state had to be set in order to conditionally render the appropriate modal like so :
 
   ```javascript
     this.state = {
@@ -66,38 +66,21 @@ The picture upload form and picture view form were both created using [React-Mod
     );
   }
   ```
-Since I am only using two modals, this approach made sense because I d
 
 ### Likes
   * Users can like a picture by double clicking the picture or hitting the black heart, changing the heart into a red one.
-  * Users can unlike a picture they have previously liked by hitting the red heart icon under the picture.
-  * Like counts are displayed below each picture.
 
-### Comments
-  * Users can post comments to any pictures.
-  * Owner of the picture and the user who posted the comment are able to delete the comment.
-  * The pictures comments are displayed under the picture with the commenter.
-
-### Follows
-  * Users can follow and unfollow users
-  * User's follower and following counts will display on their profile page.
-  * Following a user will cause their photo to show up on the main page and for their profile to show up on a sidebar of the main page.
+![dbclick](http://res.cloudinary.com/dchen3/image/upload/v1529095380/dclick.gif)
 
 ### Search
   * There is a search bar in the navigation bar that users can use to search for other users by username.
+![search](http://res.cloudinary.com/dchen3/image/upload/v1529096987/search.gif)
 
-### User Profile
-  * Each user has a profile that displays all of their photos.
-  * The user can add pictures to their profile by using the add photo button.
-  * The user's public information are displayed on their profiles.
 
-### Feed
-  * The feed displays the pictures of everyone the user follows.
-  * The user can navigate to each of the profiles of the people he is following by clicking on their profile picture or username displayed on the sidebar.
-
-## Future Implementations
+## Future Features
   * Editing User Info
   * Infinite Scrolling
   * Followers/Following Pages
   * Notifications
   * Explore page
+  * Video Stories
