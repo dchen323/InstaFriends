@@ -47,6 +47,8 @@ The picture upload form and picture view form were both created using [React-Mod
     value: ''
   };
 
+  ...
+
   if (modalType === "Add Photo"){
     return (
         <div className="photo-modal">
@@ -75,6 +77,55 @@ The picture upload form and picture view form were both created using [React-Mod
 ### Search
   * There is a search bar in the navigation bar that users can use to search for other users by username.
 ![search](http://res.cloudinary.com/dchen3/image/upload/v1529096987/search.gif)
+
+A problem I ran into with the search bar was hiding the search results if the results were empty and if you click out of the search box. To tackle this issue, I set a focus state on my search index component that would change upon actions:
+
+``` javascript
+constructor(props){
+  super(props);
+  this.state = {
+    query: '',
+    focus: false
+  };
+
+  update(e){
+    e.preventDefault();
+    this.setState({query: e.target.value, focus: true},
+      () => {
+        this.handleSearch();
+      });
+  }
+
+  handleBlur(){
+    setTimeout(() => this.setState({focus: false}),150);
+  }
+
+  render() {
+    let hide;
+    if(this.props.searchList === {} || !this.state.focus){
+      hide = "hide-button";
+    }
+    ...
+    <input type="text" placeholder="Search"
+      className="nav-search icon2"
+      value={this.state.query}
+      onChange={this.update}
+      onBlur={this.handleBlur} />
+    ...
+
+  export const SearchListItem = ({user,hide}) => {
+    return(
+      <li className={`search-list-item ${hide}`}>
+    ...
+```
+
+I had set a class on the search items that would cause it to hide when if it was either empty or if the text box was exited. A setTimeout is used to delay the removal of the search items, which allowed users to click on the list item they wanted. Without the setTimeout or with a lower delay, users were not able to click on the search items, due to React changing the state faster than the registered clicks.
+
+## Additional Resources
+  * [Database Schema](https://github.com/dchen323/InstaFriends/wiki/Database-Schema)
+  * [API Endpoints/Routes](https://github.com/dchen323/InstaFriends/wiki/Routes)
+  * [Proposal Wireframes](https://github.com/dchen323/InstaFriends/wiki/Component-Hierarchy)
+
 
 
 ## Future Features
