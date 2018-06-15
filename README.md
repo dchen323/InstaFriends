@@ -34,7 +34,7 @@ InstaFriends is built with...
   * Users can add pictures to share to their profile or remove them from their profile dynamically through Redux changing state immediately and React rendering the new state without any additional DOM manipulations.
   * You can click on pictures on the user's page to display a bigger picture.
 
-![Add Photos](http://res.cloudinary.com/dchen3/image/upload/v1529092320/ezgif.com-optimize.gif)
+![Add Photos](https://res.cloudinary.com/dchen3/image/upload/v1529092320/FullstackPicturesSeedData/ezgif.com-optimize.gif)
 
 ![DeletePhoto](http://res.cloudinary.com/dchen3/image/upload/v1529092795/deletepicture.gif)
 
