@@ -30,13 +30,43 @@ InstaFriends is built with...
   * Users are able to comment and delete their own comments from pictures.
   * Search bar can be used to search for other users by username.
 
-###
-
 ### Pictures
   * Users can add pictures to share to their profile or remove them from their profile.
   * You can click on pictures on the user's page to display a bigger picture.
 
-  * Pictures will also show up on the feed of followers.
+![Add Photos](http://res.cloudinary.com/dchen3/image/upload/v1529092320/ezgif.com-optimize.gif)
+
+![DeletePhoto](http://res.cloudinary.com/dchen3/image/upload/v1529092795/deletepicture.gif)
+
+The picture upload form and picture view form were both created using [React-Modal](https://github.com/reactjs/react-modal). To render two modals, a modal type had to be set in order to conditionally render the add photo or user picture modal like so :
+
+  ```javascript
+    this.state = {
+    modalIsOpen: false,
+    modalType: '',
+    value: ''
+  };
+
+  if (modalType === "Add Photo"){
+    return (
+        <div className="photo-modal">
+          <h2 className="modal-add" >Add Photo</h2>
+          <PictureUploadFormContainer
+            closeModal={closeModal} />
+          <button onClick={() => closeModal()}
+            className="close-modal">Close</button>
+        </div>
+      );
+  }else if (modalType ==="Show Photo"){
+    window.location = `/#/user/${userId}/pictures/${pictureId}`;
+    return(
+      <PictureIndexContainer pictureId={pictureId}
+        userId={userId}
+        closeModal={closeModal}/>
+    );
+  }
+  ```
+Since I am only using two modals, this approach made sense because I d
 
 ### Likes
   * Users can like a picture by double clicking the picture or hitting the black heart, changing the heart into a red one.

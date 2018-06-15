@@ -16,7 +16,6 @@ class PictureUploadForm extends React.Component {
   }
 
   onImageDrop(files){
-    this.setState({uploadedFile: files[0]});
     this.handleImageUpload(files[0]);
   }
 

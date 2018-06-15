@@ -24,7 +24,7 @@ class UserProfile extends React.Component {
     this.state = {
       modalIsOpen: false,
       modalType: '',
-      e: ''
+      value: ''
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -45,7 +45,7 @@ class UserProfile extends React.Component {
     return () => {
       this.setState({modalIsOpen: true,
               modalType: field,
-              e: key});
+              value: key});
     };
   }
 
@@ -72,7 +72,7 @@ class UserProfile extends React.Component {
       );
     });
     if (this.state.modalType === "Add Photo"){
-      customStyles = merge(customStyles, {content: {width: "40%", height: "80%",
+      customStyles = merge(customStyles, {content: {width: "40%", height: "82%",
                   background: "#FAFAFA"
         }});
     }else{
@@ -98,7 +98,7 @@ class UserProfile extends React.Component {
               style={customStyles}>
             <UserModal modalType={this.state.modalType}
               closeModal={this.closeModal}
-              pictureId={this.state.e}
+              pictureId={this.state.value}
               userId={this.props.user.id}/>
           </Modal>
           </div>
