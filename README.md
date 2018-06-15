@@ -1,24 +1,48 @@
-# README
+# Weclome to InstaFriends!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+InstaFriends is a single page web app inspired by Instagram. Connect with any users and share pictures with all your friends and followers. Come join InstaFriends today and share your experiences!
 
-Things you may want to cover:
+[Live Link](https://instafriends-.herokuapp.com/#/)
 
-* Ruby version
+[Design Documents](https://github.com/dchen323/InstaFriends/wiki)
 
-* System dependencies
+## Key Features
 
-* Configuration
+### User Authentication
+  * User can create new account and log in with existing accounts.
+  * Demo user available for users to demo the site without signing up.
 
-* Database creation
+### Pictures
+  * Users can add pictures to share to their profile or remove them from their profile.
+  * Users can add and edit the caption of the picture.
+  * You can click on pictures on the user's page to display a bigger picture.
+  * Hovering over each picture will display the number of likes and comments it has.
+  * Pictures will also show up on the feed of followers.
+  * Pictures are hosted using [Cloudinary](https://cloudinary.com/)
 
-* Database initialization
+### Likes
+  * Users can like a picture by double clicking the picture or hitting the black heart, changing the heart into a red one.
+  * Users can unlike a picture they have previously liked by hitting the red heart icon under the picture.
+  * Like counts are displayed below each picture.
 
-* How to run the test suite
+### Comments
+  * Users can post comments to any pictures.
+  * Owner of the picture and the user who posted the comment are able to delete the comment.
+  * The pictures comments are displayed under the picture with the commenter.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Follows
+  * Users can follow and unfollow users
+  * User's follower and following counts will display on their profile page.
+  * Following a user will cause their photo to show up on the main page and for their profile to show up on a sidebar of the main page.
 
-* Deployment instructions
+### Search
+  * There is a search bar in the navigation bar that users can use to search for other users by username.
 
-* ...
+### User Profile
+  * Each user has a profile that displays all of their photos.
+  * The user can add pictures to their profile by using the add photo button.
+  * The user's public information are displayed on their profiles.
+
+### Feed
+  * The feed displays the pictures of everyone the user follows.
+  * The user can navigate to each of the profiles of the people he is following by clicking on their profile picture or username displayed on the sidebar.
