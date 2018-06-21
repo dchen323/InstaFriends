@@ -1,6 +1,6 @@
 # Welcome to InstaFriends!
 
-[Live Link](https://instafriends-.herokuapp.com/#/)
+[Live Link](https://insta-friends.herokuapp.com/)
 
 InstaFriends is a single page web app inspired by Instagram. Connect with users and share pictures with all your friends and followers. Come join InstaFriends today and share your experiences!
 
