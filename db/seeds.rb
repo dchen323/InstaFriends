@@ -9,11 +9,12 @@
 User.delete_all
 Picture.delete_all
 Follow.delete_all
+Like.delete_all
 
-guest = User.create!({username: "gunther", name: "Gunther", password: 'password', img_url: 'https://res.cloudinary.com/dchen3/image/upload/v1528934443/gunther_profile.jpg'})
-ross = User.create!({username: 'dr_ross', name: "Ross Geller", password: "password1", img_url: "https://res.cloudinary.com/dchen3/image/upload/v1528934437/ross_profile.png"})
-rachel = User.create!({username: 'rach', name: "Rachel Green", password: "password1",img_url: "https://res.cloudinary.com/dchen3/image/upload/v1528934430/Rachel_Green_profile.jpg"})
-joey = User.create!({username: 'drake_ramoray', name: "Joey Tribbiani", password: "password1", img_url:"https://res.cloudinary.com/dchen3/image/upload/v1528934422/joey_profile.jpg"})
+guest = User.create!({username: "gunther", name: "Gunther", password: 'password', img_url: 'https://res.cloudinary.com/dchen3/image/upload/v1528934443/FullstackPicturesSeedData/gunther_profile.jpg'})
+ross = User.create!({username: 'dr_ross', name: "Ross Geller", password: "password1", img_url: "https://res.cloudinary.com/dchen3/image/upload/v1528934437/FullstackPicturesSeedData/ross_profile.png"})
+rachel = User.create!({username: 'rach', name: "Rachel Green", password: "password1",img_url: "https://res.cloudinary.com/dchen3/image/upload/v1528934430/FullstackPicturesSeedData/Rachel_Green_profile.jpg"})
+joey = User.create!({username: 'drake_ramoray', name: "Joey Tribbiani", password: "password1", img_url:"https://res.cloudinary.com/dchen3/image/upload/v1528934422/FullstackPicturesSeedData/joey_profile.jpg"})
 chandler = User.create!({username: 'bing', name: "Chandler Bing", password: "password1",img_url: "https://res.cloudinary.com/dchen3/image/upload/v1528934417/chandle_profile.jpg"})
 monica = User.create!({username: 'chef_geller', name: "Monica Geller", password: "password1",img_url: "https://res.cloudinary.com/dchen3/image/upload/v1528934412/monica_profile.jpg"})
 phoebe = User.create!({username: 'smelly_cat', name: "Phoebe Buffay", password: "password1", img_url: "https://res.cloudinary.com/dchen3/image/upload/v1528934401/phoebe_profile.jpg"})
@@ -91,3 +92,18 @@ follow42 = Follow.create!({user_id: guest.id, followed_id: mike.id})
 follow43 = Follow.create!({user_id: guest.id, followed_id: janice.id})
 follow44 = Follow.create!({user_id: guest.id, followed_id: richard.id})
 follow45 = Follow.create!({user_id: guest.id, followed_id: carol.id})
+
+likes = Like.create!({user_id: ross.id, picture_id: picturelast.id})
+likes2 = Like.create!({user_id: rachel.id, picture_id: picturelast.id})
+likes3 = Like.create!({user_id: chandler.id, picture_id: picturelast.id})
+likes4 = Like.create!({user_id: joey.id, picture_id: picturelast.id})
+likes5 = Like.create!({user_id: phoebe.id, picture_id: picturelast.id})
+likes6 = Like.create!({user_id: mike.id, picture_id: picturelast.id})
+likes7 = Like.create!({user_id: richard.id, picture_id: picturelast.id})
+
+likes8 = Like.create!({user_id: carol.id, picture_id: picture23.id})
+likes9 = Like.create!({user_id: rachel.id, picture_id: picture23.id})
+likes11 = Like.create!({user_id: joey.id, picture_id: picture23.id})
+likes12 = Like.create!({user_id: phoebe.id, picture_id: picture23.id})
+likes13 = Like.create!({user_id: mike.id, picture_id: picture23.id})
+likes14 = Like.create!({user_id: richard.id, picture_id: picture23.id})
