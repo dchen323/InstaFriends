@@ -26,7 +26,7 @@ export default class EditForm extends React.Component {
       <div>
         <form onSubmit={this.updateCaption.bind(this)}
           className="pic-show-edit">
-          <h2 className="pic-show-username">{this.props.user.username}</h2>
+          <h2 className="pic-show-username-userpage">{this.props.user.username}</h2>
           <textarea type="text" value={this.state.caption ? this.state.caption : ""}
             onChange={this.update.bind(this)}
             className={`input-show-box ${outline}`}
