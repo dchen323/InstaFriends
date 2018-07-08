@@ -47,6 +47,11 @@
 }
 
 
-.picture-feed:hover, {
+.input-show-box::placeholder {
+  padding-top: 0.3vw;
+}
 
+.comments-box::placeholder {
+  position: relative;
+  top: -0.1vw;
 }
