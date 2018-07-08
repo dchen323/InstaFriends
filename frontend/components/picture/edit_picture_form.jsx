@@ -32,7 +32,7 @@ export default class EditForm extends React.Component {
             className={`input-show-box ${outline}`}
             disabled={this.props.disabled}
             placeholder="caption..."></textarea>
-          <input type="submit" value="Edit Picture"
+          <input type="submit" value="Edit Caption"
             className={`pic-show-button ${this.props.disabled}`}/>
         </form>
       </div>
