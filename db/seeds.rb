@@ -126,7 +126,7 @@ likes21 = Like.create!({user_id: rachel.id, picture_id: picture22.id})
 likes22 = Like.create!({user_id: joey.id, picture_id: picture22.id})
 likes23 = Like.create!({user_id: phoebe.id, picture_id: picture22.id})
 likes24 = Like.create!({user_id: mike.id, picture_id: picture22.id})
-comment6 = Comment.create!({user_id: chandler.id, picture_id: picture23.id, body: "Hey, that monkey's got a Ross on its butt!"})
+comment6 = Comment.create!({user_id: chandler.id, picture_id: picture22.id, body: "Hey, that monkey's got a Ross on its butt!"})
 
 likes25 = Like.create!({user_id: monica.id, picture_id: picture14.id})
 likes26 = Like.create!({user_id: rachel.id, picture_id: picture14.id})
