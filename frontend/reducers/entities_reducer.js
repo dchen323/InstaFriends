@@ -3,7 +3,6 @@ import usersReducer from './users_reducer';
 import picturesReducer from './pictures_reducer';
 import likesReducer from './likes_reducer';
 import commentsReducer from './comments_reducer';
-import followsReducer from './follow_reducer';
 import followedReducer from './followed_reducer';
 import followingReducer from './following_reducer';
 import searchReducer from './search_reducer';

@@ -3,9 +3,9 @@ export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
 
-export const receiveComment = ({comments, user,picture,commentsAuthor}) => ({
+export const receiveComment = ({comments,commentsAuthor}) => ({
   type: RECEIVE_COMMENT,
-  comments,user,picture,commentsAuthor
+  comments,commentsAuthor
 });
 
 export const removeComment = ({comments}) => ({
