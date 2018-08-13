@@ -34,10 +34,10 @@
   display: inline-block;
 }
 
-.nav-search{
+.nav-search {
   width: 199px;
   height: 24px;
-  background: #FAFAFA;
+  background: #fafafa;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border: 1px solid #dcdee2;
@@ -50,19 +50,18 @@
   align-items: center;
 }
 
-input.nav-search[type="text"]{
+input.nav-search[type="text"] {
   font-size: 18px;
   font-family: sans-serif;
-  padding-left: 5px
+  padding-left: 5px;
 }
-
 
 .nav-title {
   font-size: 30px;
-  font-family: 'Grand Hotel', cursive;
+  font-family: "Grand Hotel", cursive;
 }
 
-.nav-icon{
+.nav-icon {
   display: flex;
   flex-direction: row;
 }
@@ -77,14 +76,14 @@ input.nav-search[type="text"]{
   color: gray;
 }
 
-.icon3{
+.icon3 {
   width: 18px;
   display: flex;
   font-size: 14px;
   align-items: center;
   justify-content: center;
   height: 24px;
-  background: #FAFAFA;
+  background: #fafafa;
   border-bottom: 1px solid #dcdee2;
   border-left: 1px solid #dcdee2;
   border-top: 1px solid #dcdee2;
@@ -92,17 +91,17 @@ input.nav-search[type="text"]{
   border-bottom-left-radius: 5px;
 }
 
-.user{
+.user {
   width: 100%;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: #FAFAFA;
+  background: #fafafa;
   font-family: sans-serif;
 }
 
-.profile-box{
+.profile-box {
   display: flex;
   width: 70%;
   align-items: center;
@@ -120,7 +119,7 @@ input.nav-search[type="text"]{
   object-fit: cover;
 }
 
-.user-content{
+.user-content {
   display: flex;
   flex-direction: column;
 }
@@ -153,7 +152,7 @@ input.nav-search[type="text"]{
 .edit-profile {
   margin: 5px 0 0 0;
   height: 27px;
-  width:124px;
+  width: 124px;
   border: 1px solid #dcdee2;
   text-align: center;
   border-radius: 4px;
@@ -165,7 +164,8 @@ input.nav-search[type="text"]{
   font-size: 24px;
 }
 
-.user-content2, .user-content3 {
+.user-content2,
+.user-content3 {
   display: flex;
   flex-direction: row;
 }
@@ -173,7 +173,7 @@ input.nav-search[type="text"]{
 .add-photo {
   margin-top: 15px;
   height: 27px;
-  width:124px;
+  width: 124px;
   border: 1px solid #dcdee2;
   text-align: center;
   border-radius: 4px;
@@ -192,12 +192,11 @@ input.nav-search[type="text"]{
   height: 51px;
 }
 
-
 .picture-container {
   margin-top: 20px;
   width: 70%;
   height: 250px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
 .picture-holder {
@@ -217,11 +216,10 @@ input.nav-search[type="text"]{
   display: flex;
 }
 
-.posted-picture{
+.posted-picture {
   width: 100%;
   object-fit: cover;
   flex-shrink: 0;
-
 }
 
 @media only screen and (max-width: 900px) {
@@ -235,45 +233,45 @@ input.nav-search[type="text"]{
     height: 190px;
   }
 
-  .posted-picture{
+  .posted-picture {
     height: 190px;
     width: 190px;
   }
 
-  .hover-text{
+  .hover-text {
     font-size: 20px;
   }
 }
 
 @media only screen and (max-width: 650px) {
+  .post-pics {
+    margin: 3px;
+    max-width: 95px;
+    max-height: 95px;
+  }
 
-    .post-pics {
-      margin: 3px;
-      max-width: 95px;
-      max-height: 95px;
-    }
+  .posted-picture {
+    height: 95px;
+    width: 95px;
+  }
 
-    .posted-picture{
-      height: 95px;
-      width: 95px;
-    }
+  .picture-holder {
+    grid-template-columns: repeat(3, 95px);
+    grid-gap: 0;
+  }
 
-    .picture-holder {
-      grid-template-columns: repeat(3, 95px);
-      grid-gap: 0;
-    }
-
-    .hover-text {
-      font-size: 8px;
-      left: -5%;
-    }
+  .hover-text {
+    font-size: 8px;
+    left: -5%;
+  }
 }
 
 @media only screen and (max-width: 700px) {
-  .search-span, .search-list-container, .search-list-item {
+  .search-span,
+  .search-list-container,
+  .search-list-item {
     display: none;
   }
-
 
   .user-pic {
     margin: 0 20px 0 0;
@@ -284,5 +282,4 @@ input.nav-search[type="text"]{
   .nav-main {
     margin-left: 50px;
   }
-
 }
