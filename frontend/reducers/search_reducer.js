@@ -1,5 +1,5 @@
-import {RECEIVE_SEARCH} from '../actions/search_actions';
-import {merge} from 'lodash';
+import { RECEIVE_SEARCH } from "../actions/search_actions";
+import { merge } from "lodash";
 
 const searchReducer = (state = {}, action) => {
   Object.freeze(state);

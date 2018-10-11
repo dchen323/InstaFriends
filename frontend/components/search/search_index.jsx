@@ -11,10 +11,15 @@ export default class SearchIndex extends React.Component {
     this.update = this.update.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
 
   handleSearch() {
     this.props.searchUsers(this.state.query);
+  }
+
+  clearSearch() {
+    this.setState({ query: "" });
   }
 
   update(e) {
@@ -34,7 +39,12 @@ export default class SearchIndex extends React.Component {
       hide = "hide-button";
     }
     let searchList = Object.values(this.props.searchList).map(user => (
-      <SearchListItem key={user.id} user={user} hide={hide} />
+      <SearchListItem
+        key={user.id}
+        user={user}
+        hide={hide}
+        clearSearch={this.clearSearch}
+      />
     ));
     return (
       <div>
