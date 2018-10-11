@@ -1,20 +1,18 @@
-
 .search-list-container {
-  z-index:2;
+  z-index: 2;
   position: absolute;
   max-height: 200px;
-  overflow: scroll;
+  overflow: auto;
   top: 8%;
   width: 230px;
   background: white;
 }
 
 .search-list-item {
-  border-bottom:1px solid #dcdee2;
+  border-bottom: 1px solid #dcdee2;
 }
 
-
-.pic-show-userpic2{
+.pic-show-userpic2 {
   border-radius: 50%;
   height: 45px;
   width: 45px;

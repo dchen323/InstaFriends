@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .feed {
   display: flex;
   justify-content: center;
@@ -13,13 +12,13 @@
   border: none;
 }
 
-.feed-username{
+.feed-username {
   margin: 0 5px 0 0;
 }
 
 .feed-user-caption {
   display: flex;
-  margin: 5px 0 5px 5px;
+  margin: 5px 0 15px 5px;
   justify-content: flex-start;
 }
 
@@ -30,27 +29,28 @@
 .feed-post-container {
   width: 600px;
   border-bottom: 2px solid #dcdee2;
-  background: #FAFAFA;
+  background: #fafafa;
   margin-top: 70px;
   margin-right: 188px;
 }
 
-.picture-feed-container{
+.picture-feed-container {
   margin-bottom: 50px;
   background: white;
   border: 2px solid #dcdee2;
   width: 600px;
 }
 
-::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;
-  }
+// ::-webkit-scrollbar {
+//   width: 0px; /* remove scrollbar space */
+//   background: transparent;
+// }
 
-.comment-feed{
-  overflow-y: scroll;
+.comment-feed {
+  // overflow-y: auto;
   max-height: 100px;
   margin: 10px 0;
+  height: auto;
 }
 
 .feed-ul {
@@ -91,11 +91,10 @@
 .link-userpage {
   display: flex;
   align-items: center;
-
 }
 
 @media only screen and (max-width: 1290px) {
-  .following-feed{
+  .following-feed {
     display: none;
   }
 
@@ -108,13 +107,13 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .feed-post-container{
+  .feed-post-container {
     margin-left: 200px;
   }
 }
 
 @media only screen and (max-width: 620px) {
-  .feed-post-container{
+  .feed-post-container {
     margin-left: 400px;
   }
 }

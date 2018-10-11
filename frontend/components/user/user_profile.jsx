@@ -1,106 +1,125 @@
-import React from 'react';
-import {PictureIndexItems} from '../picture/picture_index_items';
-import Modal from 'react-modal';
-import UserProfileInfo from './user_profile_info';
-import {UserModal} from '../modal/modal';
-import {merge} from 'lodash';
+import React from "react";
+import { PictureIndexItems } from "../picture/picture_index_items";
+import Modal from "react-modal";
+import UserProfileInfo from "./user_profile_info";
+import { UserModal } from "../modal/modal";
+import { merge } from "lodash";
 
 let customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
     width: "900px"
   }
 };
 
 class UserProfile extends React.Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       modalIsOpen: false,
-      modalType: '',
-      value: ''
+      modalType: "",
+      value: ""
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
-    Modal.setAppElement(document.getElementById('user'));
+    Modal.setAppElement(document.getElementById("user"));
   }
 
-  componentWillReceiveProps(nextProp){
-    if(this.props.user && this.props.user.id !== parseInt(nextProp.match.params.userId)){
+  componentWillReceiveProps(nextProp) {
+    if (
+      this.props.user &&
+      this.props.user.id !== parseInt(nextProp.match.params.userId)
+    ) {
       this.props.fetchUser(nextProp.match.params.userId);
     }
   }
 
-  openModal(field,key) {
+  openModal(field, key) {
     return () => {
-      this.setState({modalIsOpen: true,
-              modalType: field,
-              value: key});
+      this.setState({
+        modalIsOpen: true,
+        modalType: field,
+        value: key
+      });
     };
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({ modalIsOpen: false });
   }
 
-  render(){
-    if(this.props.user === undefined){
-      return (<div></div>);
+  render() {
+    if (this.props.user === undefined) {
+      return <div />;
     }
     const pictures = this.props.pictures.map(picture => {
-      let likeCount = Object.values(this.props.likes)
-        .filter(like => like.pictureId === picture.id).length;
-      let commentCount = Object.values(this.props.comments)
-        .filter(comment => comment.pictureId === picture.id).length;
-      return(
-        <PictureIndexItems key={picture.id}
+      let likeCount = Object.values(this.props.likes).filter(
+        like => like.pictureId === picture.id
+      ).length;
+      let commentCount = Object.values(this.props.comments).filter(
+        comment => comment.pictureId === picture.id
+      ).length;
+      return (
+        <PictureIndexItems
+          key={picture.id}
           picture={picture}
           openModal={this.openModal}
           pictureId={picture.id}
           likeCount={likeCount}
-          commentCount={commentCount}/>
+          commentCount={commentCount}
+        />
       );
     });
-    if (this.state.modalType === "Add Photo"){
-      customStyles = merge(customStyles, {content: {width: "40%", height: "82%",
-                  background: "#FAFAFA"
-        }});
-    }else{
-      customStyles = merge(customStyles, {content: {width: "900px",height: "auto"}});
+    if (this.state.modalType === "Add Photo") {
+      customStyles = merge(customStyles, {
+        content: {
+          width: "40%",
+          height: "82%",
+          background: "#FAFAFA"
+        }
+      });
+    } else {
+      customStyles = merge(customStyles, {
+        content: { width: "900px", height: "auto" }
+      });
     }
-    return(
+    return (
       <div className="user">
         <header className="profile-box">
-          <img src={this.props.user.imgUrl} className="user-pic"/>
+          <img src={this.props.user.imgUrl} className="user-pic" />
           <div className="user-content">
-            <UserProfileInfo openModal={this.openModal}
+            <UserProfileInfo
+              openModal={this.openModal}
               username={this.props.user.username}
               length={this.props.pictures.length}
               name={this.props.user.name}
               userId={this.props.user.id}
               followed={this.props.followed}
               following={this.props.following}
-              currentUser={this.props.user.id === this.props.sessionId}/>
+              currentUser={this.props.user.id === this.props.sessionId}
+            />
             <Modal
               isOpen={this.state.modalIsOpen}
               onRequestClose={this.closeModal}
               contentLabel="Modal"
-              style={customStyles}>
-            <UserModal modalType={this.state.modalType}
-              closeModal={this.closeModal}
-              pictureId={this.state.value}
-              userId={this.props.user.id}/>
-          </Modal>
+              style={customStyles}
+            >
+              <UserModal
+                modalType={this.state.modalType}
+                closeModal={this.closeModal}
+                pictureId={this.state.value}
+                userId={this.props.user.id}
+              />
+            </Modal>
           </div>
         </header>
         <footer className="profile-footer">
@@ -108,9 +127,7 @@ class UserProfile extends React.Component {
           <h4 className="user-info">Saved</h4>
         </footer>
         <content className="picture-container">
-          <ul className="picture-holder">
-            {pictures}
-          </ul>
+          <ul className="picture-holder">{pictures}</ul>
         </content>
       </div>
     );
