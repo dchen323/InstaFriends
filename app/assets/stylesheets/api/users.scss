@@ -164,6 +164,31 @@ input.nav-search[type="text"] {
   font-size: 24px;
 }
 
+.icon4-container,
+.dropdown-logout,
+.dropdown-list {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-logout {
+  list-style: none;
+}
+
+.dropdown-list {
+  justify-content: center;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 13px solid #dcdee2;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
 .user-content2,
 .user-content3 {
   display: flex;

@@ -1,12 +1,21 @@
-import React from 'react';
-import FollowContainer from '../follow/follow_container';
-import {withRouter} from 'react-router';
+import React from "react";
+import FollowContainer from "../follow/follow_container";
+import Dropdown from "../dropdown/";
+import { withRouter } from "react-router";
 
-const UserProfileInfo =
-  ({username,length,name,openModal,currentUser,userId,
-      followed,following, match}) => {
+const UserProfileInfo = ({
+  username,
+  length,
+  name,
+  openModal,
+  currentUser,
+  userId,
+  followed,
+  following,
+  match
+}) => {
   let disabled;
-  if (!currentUser){
+  if (!currentUser) {
     disabled = "hide-button";
   }
 
@@ -17,9 +26,9 @@ const UserProfileInfo =
     <div className="user-content">
       <div className="user-content1">
         <h3 className="profile-username">{username}</h3>
-        <FollowContainer currentUser={currentUser} userId={userId}/>
+        <FollowContainer currentUser={currentUser} userId={userId} />
         <button className={`edit-profile ${disabled}`}>Edit Profile</button>
-        <i className="fas fa-cog icon4"></i>
+        <Dropdown />
       </div>
       <div className="user-content2">
         <h4 className="user-info">{length} posts</h4>
@@ -28,8 +37,13 @@ const UserProfileInfo =
       </div>
       <div className="user-content3">
         <h4 className="user-name">{name}</h4>
-        <button className={`add-photo ${disabled}`} id="photo-add"
-          onClick={openModal("Add Photo")}>Add Photo</button>
+        <button
+          className={`add-photo ${disabled}`}
+          id="photo-add"
+          onClick={openModal("Add Photo")}
+        >
+          Add Photo
+        </button>
       </div>
     </div>
   );
