@@ -8,16 +8,16 @@ class Dropdown extends Component {
     this.state = { open: false };
 
     this.toggleDropDown = this.toggleDropDown.bind(this);
+    this.createDropDown = this.createDropDown.bind(this);
   }
 
   toggleDropDown() {
     this.setState({ open: !this.state.open });
   }
 
-  render() {
-    let logoutItem;
+  createDropDown() {
     if (this.state.open) {
-      logoutItem = (
+      return (
         <div className="dropdown-logout">
           <div className="arrow-left" />
           <li
@@ -28,13 +28,19 @@ class Dropdown extends Component {
           </li>
         </div>
       );
-    } else {
-      logoutItem = <div styles={{ display: "none" }} />;
     }
+    return <div styles={{ display: "none" }} />;
+  }
+
+  render() {
+    const logoutItem = this.createDropDown();
 
     return (
       <div className="icon4-container">
-        <i className="fas fa-cog icon4" onClick={this.toggleDropDown} />
+        <i
+          className={`fas fa-cog icon4  ${this.props.hidden}`}
+          onClick={this.toggleDropDown}
+        />
         {logoutItem}
       </div>
     );
