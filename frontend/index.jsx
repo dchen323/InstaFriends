@@ -6,7 +6,7 @@ import Root from "./components/root";
 
 document.addEventListener("DOMContentLoaded", () => {
   if (process.env.NODE_ENV === "production") {
-    console.log(process.env.CLOUD_URL, process.env.UPLOAD_PRESET);
+    console.log(process.env.CLOUD_URL, "test");
   }
   let store;
   if (window.currentUser) {
