@@ -1,73 +1,76 @@
-import React from 'react';
-import Dropzone from 'react-dropzone';
-import request from 'superagent';
-import { withRouter } from 'react-router';
-import {merge} from 'lodash';
+import React from "react";
+import Dropzone from "react-dropzone";
+import request from "superagent";
+import { withRouter } from "react-router";
+import { merge } from "lodash";
 
 class PictureUploadForm extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = { picture: {
-      img_url: '',
+    this.state = {
+      picture: {
+        img_url: ""
       },
-      caption: '',
+      caption: "",
       modalIsOpen: true
     };
   }
 
-  onImageDrop(files){
+  onImageDrop(files) {
     this.handleImageUpload(files[0]);
   }
 
   handleImageUpload(file) {
-    let upload = request.post(window.CLOUDINARY_OPTIONS.cloud_url)
-                  .field('upload_preset', window.CLOUDINARY_OPTIONS.upload_preset)
-                  .field('file', file);
-    upload.end((err,response) => {
-      if(err) {
+    let upload = request
+      .post(window.CLOUDINARY_OPTIONS.cloud_url)
+      .field("upload_preset", window.CLOUDINARY_OPTIONS.upload_preset)
+      .field("file", file);
+    upload.end((err, response) => {
+      if (err) {
         console.error(err);
       }
-      if(response.body.secure_url !== '' ) {
-        this.setState({picture: { img_url: response.body.secure_url}});
+      if (response.body.secure_url !== "") {
+        this.setState({ picture: { img_url: response.body.secure_url } });
       }
     });
   }
 
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault();
-    let newState = merge({},this.state.picture,
-      {caption: this.state.caption});
-    this.props.uploadPicture(newState)
-      .then(() => this.props.closeModal());
+    let newState = merge({}, this.state.picture, {
+      caption: this.state.caption
+    });
+    this.props.uploadPicture(newState).then(() => this.props.closeModal());
   }
 
-  update(e){
+  update(e) {
     e.preventDefault();
-    this.setState({caption: e.target.value});
+    this.setState({ caption: e.target.value });
   }
 
   render() {
-    return(
+    return (
       <div className="photo-uploader">
-        <form onSubmit={this.handleSubmit.bind(this)}
-          className="upload-form">
+        <form onSubmit={this.handleSubmit.bind(this)} className="upload-form">
           <content>Picture Preview</content>
-          <img src={this.state.picture.img_url} className="preview-pic"/>
-          <textarea type="text" className="caption-box"
+          <img src={this.state.picture.img_url} className="preview-pic" />
+          <textarea
+            type="text"
+            className="caption-box"
             onChange={this.update.bind(this)}
             value={this.state.caption}
-            placeholder="Caption...">
-          </textarea>
+            placeholder="Caption..."
+          />
           <div className="dropzone">
             <Dropzone
               multiple={false}
               accept="image/*"
               onDrop={file => this.onImageDrop(file)}
-              className="dropzone-box">
-              <p className='upload-button'>Click to select a file to upload.</p>
+              className="dropzone-box"
+            >
+              <p className="upload-button">Click to select a file to upload.</p>
             </Dropzone>
-            <input type="submit" value="Upload"
-              className="upload-button"/>
+            <input type="submit" value="Upload" className="upload-button" />
           </div>
         </form>
       </div>
