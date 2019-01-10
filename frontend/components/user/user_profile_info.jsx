@@ -27,7 +27,9 @@ const UserProfileInfo = ({
       <div className="user-content1">
         <h3 className="profile-username">{username}</h3>
         <FollowContainer currentUser={currentUser} userId={userId} />
-        <button className={`edit-profile ${disabled}`}>Edit Profile</button>
+        <button className={`edit-profile ${disabled} hover-disable`}>
+          Edit Profile
+        </button>
         <Dropdown hidden={disabled} />
       </div>
       <div className="user-content2">

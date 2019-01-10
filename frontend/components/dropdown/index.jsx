@@ -21,7 +21,7 @@ class Dropdown extends Component {
         <div className="dropdown-logout">
           <div className="arrow-left" />
           <li
-            className="edit-profile dropdown-list"
+            className="edit-profile dropdown-list hover"
             onClick={this.props.logout.bind(this)}
           >
             Logout
