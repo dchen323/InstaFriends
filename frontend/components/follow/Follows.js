@@ -1,25 +1,31 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { FollowUserItem } from "./follow_user_item";
 
 class Follows extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
-    console.log(this.props);
+    const status = this.props.status;
+    const followers = Object.values(this.props[status]).map((user, idx) => (
+      <FollowUserItem key={user.id} user={user} />
+    ));
     return (
       <div>
         <h2>{this.props.status}</h2>
+        {followers}
       </div>
     );
   }
 }
 
 const mapStateToProps = (
-  { entities: { followed, following }, session },
+  { entities: { followers, following }, session },
   ownProps
 ) => ({
-  followers: followed,
+  followers,
   following,
   status: ownProps.status
 });

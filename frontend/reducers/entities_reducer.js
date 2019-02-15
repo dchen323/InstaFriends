@@ -16,7 +16,7 @@ export default combineReducers({
   comments: commentsReducer,
   followed: followedReducer,
   following: followingReducer,
-  follower: followerReducer,
+  followers: followerReducer,
   commentAuthor: commenterReducer,
   searchList: searchReducer
 });
