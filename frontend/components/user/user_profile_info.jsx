@@ -12,6 +12,7 @@ const UserProfileInfo = ({
   userId,
   followed,
   following,
+  followers,
   match
 }) => {
   let disabled;
@@ -34,8 +35,12 @@ const UserProfileInfo = ({
       </div>
       <div className="user-content2">
         <h4 className="user-info">{length} posts</h4>
-        <h4 className="user-info">{followersLength} followers</h4>
-        <h4 className="user-info">{followingLength} following</h4>
+        <h4 className="user-info" onClick={openModal("Followers")}>
+          {followersLength} followers
+        </h4>
+        <h4 className="user-info" onClick={openModal("Following")}>
+          {followingLength} following
+        </h4>
       </div>
       <div className="user-content3">
         <h4 className="user-name">{name}</h4>

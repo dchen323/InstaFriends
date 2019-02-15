@@ -5,7 +5,15 @@ import { sortPictures } from "../../reducers/selectors";
 
 const mapStateToProps = (
   {
-    entities: { users, pictures, followed, following, likes, comments },
+    entities: {
+      users,
+      pictures,
+      followed,
+      following,
+      followers,
+      likes,
+      comments
+    },
     session
   },
   ownProps
@@ -14,6 +22,7 @@ const mapStateToProps = (
   pictures: sortPictures(pictures),
   followed: followed,
   following: following,
+  followers,
   sessionId: session.id,
   likes: likes,
   comments: comments

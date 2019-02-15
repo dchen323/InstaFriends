@@ -10,6 +10,7 @@ const receiveUser = ({
   comments,
   followed,
   following,
+  followers,
   commentsAuthor
 }) => ({
   type: RECEIVE_USER,
@@ -19,7 +20,8 @@ const receiveUser = ({
   comments,
   followed,
   commentsAuthor,
-  following
+  following,
+  followers
 });
 
 export const fetchUser = id => dispatch =>

@@ -37,6 +37,15 @@ json.followed do
   end
 end
 
+json.followers do
+  @user.followers.each do |follower|
+    json.set! follower.id do
+      json.extract! follower, :id, :username, :img_url
+    end
+  end
+end
+
+
 json.following do
   @user.following.each do |followed_person|
     json.set! followed_person.id do
