@@ -31,7 +31,7 @@ class UserProfile extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
-    Modal.setAppElement(document.getElementById("user"));
+    Modal.setAppElement("body");
   }
 
   componentWillReceiveProps(nextProp) {
@@ -87,9 +87,13 @@ class UserProfile extends React.Component {
           background: "#FAFAFA"
         }
       });
-    } else {
+    } else if (this.state.modalType === "Show Photo") {
       customStyles = merge(customStyles, {
         content: { width: "900px", height: "auto" }
+      });
+    } else {
+      customStyles = merge(customStyles, {
+        content: { width: "600px", height: "auto" }
       });
     }
     return (

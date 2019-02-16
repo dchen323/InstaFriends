@@ -9,7 +9,9 @@ const receiveFollowers = ({
   comments,
   likes,
   commentsAuthor,
-  following
+  following,
+  follows,
+  followed
 }) => ({
   type: RECEIVE_FOLLOWERS,
   users,
@@ -17,7 +19,9 @@ const receiveFollowers = ({
   comments,
   likes,
   commentsAuthor,
-  following
+  following,
+  follows,
+  followed
 });
 
 const receiveFollow = ({ followed }) => ({

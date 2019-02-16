@@ -83,9 +83,29 @@
   margin-left: 20px;
 }
 
-.following-icons {
+.following-icons,
+.follow-menu {
   max-height: 400px;
   overflow-y: scroll;
+}
+
+.follow-menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  list-style: none;
+}
+
+.follow-title {
+  text-align: center;
+  border-bottom: 0.5px solid #dcdee2;
+  min-height: 40px;
+}
+
+.follow-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .link-userpage {

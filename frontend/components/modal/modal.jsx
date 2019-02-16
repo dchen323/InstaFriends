@@ -25,8 +25,12 @@ export const UserModal = ({ modalType, closeModal, pictureId, userId }) => {
       />
     );
   } else if (modalType === "Followers") {
-    return <Follows status="followers" />;
+    return (
+      <Follows status="followers" title="Followers" closeModal={closeModal} />
+    );
   } else if (modalType === "Following") {
-    return <Follows status="following" />;
+    return (
+      <Follows status="following" title="Following" closeModal={closeModal} />
+    );
   }
 };
