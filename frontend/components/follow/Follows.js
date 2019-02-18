@@ -15,19 +15,14 @@ class Follows extends Component {
   handleFollow() {}
 
   render() {
-    console.log(this.props);
     const status = this.props.status;
     const followers = Object.values(this.props[status]).map((user, idx) => {
       return (
-        <div className="follow-items">
-          <FollowsItem
-            key={user.id}
-            user={user}
-            closeModal={this.props.closeModal}
-          />
-          <button className="following-button" onClick={this.handleUnfollow}>
+        <div className="follow-items" key={user.id}>
+          <FollowsItem user={user} closeModal={this.props.closeModal} />
+          {/* <button className="following-button" onClick={this.handleUnfollow}>
             Following
-          </button>
+          </button> */}
         </div>
       );
     });

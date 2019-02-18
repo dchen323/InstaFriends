@@ -15,7 +15,7 @@ end
 json.follows do
   @user.follows.each do |follow|
     json.set! follow.id do
-      json.partial! 'api/follows/follows', follow: @follow
+      json.partial! 'api/follows/follows', follow: follow
     end
   end
 end
@@ -23,7 +23,7 @@ end
 json.followed do
   @user.followed.each do |follow|
     json.set! follow.id do
-      json.partial! 'api/follows/follows', follow: @follow
+      json.partial! 'api/follows/follows', follow: follow
     end
   end
 end
