@@ -2,23 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FollowPictureContainer from "../follow/follow_picture_container";
 import FollowingUserContainer from "../follow/follow_user_container";
+import Spinner from "../spinner/Spinner";
 
 export default class Welcome extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false
+      loading: true
     };
   }
 
   componentDidMount() {
     this.props
       .fetchFollowers(this.props.currentUser.id)
-      .then(() => this.setState({ loading: true }));
+      .then(() => this.setState({ loading: false }));
   }
 
   render() {
-    if (this.state.loading) {
+    if (!this.state.loading) {
       return (
         <div className="feed">
           <FollowPictureContainer />
@@ -26,7 +27,7 @@ export default class Welcome extends React.Component {
         </div>
       );
     } else {
-      return <div className="feed" />;
+      return <Spinner />;
     }
   }
 }

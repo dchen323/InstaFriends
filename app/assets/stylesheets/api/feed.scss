@@ -113,6 +113,12 @@
   align-items: center;
 }
 
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin: 10vh 0;
+}
+
 @media only screen and (max-width: 1290px) {
   .following-feed {
     display: none;
