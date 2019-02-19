@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import UserProfileInfo from "./user_profile_info";
 import { UserModal } from "../modal/modal";
 import { merge } from "lodash";
+import Spinner from "../spinner/Spinner";
 
 let customStyles = {
   content: {
@@ -23,14 +24,17 @@ class UserProfile extends React.Component {
     this.state = {
       modalIsOpen: false,
       modalType: "",
-      value: ""
+      value: "",
+      loading: true
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.userId);
+    this.props
+      .fetchUser(this.props.match.params.userId)
+      .then(this.setState({ loading: false }));
     Modal.setAppElement("body");
   }
 
@@ -96,6 +100,11 @@ class UserProfile extends React.Component {
         content: { width: "600px", height: "auto" }
       });
     }
+
+    if (this.state.loading) {
+      return <Spinner />;
+    }
+
     return (
       <div className="user">
         <header className="profile-box">
