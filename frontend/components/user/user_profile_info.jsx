@@ -35,10 +35,10 @@ const UserProfileInfo = ({
       </div>
       <div className="user-content2">
         <h4 className="user-info">{length} posts</h4>
-        <h4 className="user-info" onClick={openModal("Followers")}>
+        <h4 className="user-info hover" onClick={openModal("Followers")}>
           {followersLength} followers
         </h4>
-        <h4 className="user-info" onClick={openModal("Following")}>
+        <h4 className="user-info hover" onClick={openModal("Following")}>
           {followingLength} following
         </h4>
       </div>

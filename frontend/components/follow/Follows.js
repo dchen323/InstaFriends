@@ -18,7 +18,7 @@ class Follows extends Component {
     const status = this.props.status;
     const followers = Object.values(this.props[status]).map((user, idx) => {
       return (
-        <div className="follow-items" key={user.id}>
+        <div key={user.id}>
           <FollowsItem user={user} closeModal={this.props.closeModal} />
           {/* <button className="following-button" onClick={this.handleUnfollow}>
             Following
@@ -29,7 +29,7 @@ class Follows extends Component {
     return (
       <div className="follow-menu">
         <h1 className="follow-title">{this.props.title}</h1>
-        {followers}
+        <div className="follow-items">{followers}</div>
       </div>
     );
   }
