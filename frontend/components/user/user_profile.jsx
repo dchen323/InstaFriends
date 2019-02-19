@@ -24,17 +24,14 @@ class UserProfile extends React.Component {
     this.state = {
       modalIsOpen: false,
       modalType: "",
-      value: "",
-      loading: true
+      value: ""
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
-    this.props
-      .fetchUser(this.props.match.params.userId)
-      .then(this.setState({ loading: false }));
+    this.props.fetchUser(this.props.match.params.userId);
     Modal.setAppElement("body");
   }
 
@@ -63,7 +60,7 @@ class UserProfile extends React.Component {
 
   render() {
     if (this.props.user === undefined) {
-      return <div />;
+      return <Spinner />;
     }
     const pictures = this.props.pictures.map(picture => {
       let likeCount = Object.values(this.props.likes).filter(
@@ -99,10 +96,6 @@ class UserProfile extends React.Component {
       customStyles = merge(customStyles, {
         content: { width: "600px", height: "auto" }
       });
-    }
-
-    if (this.state.loading) {
-      return <Spinner />;
     }
 
     return (
