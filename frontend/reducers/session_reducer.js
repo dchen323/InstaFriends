@@ -21,7 +21,7 @@ const sessionReducer = (state = _nullUser, action) => {
         id: user.id,
         username: user.username,
         name: user.name,
-        img_url: user.img_url
+        imgUrl: user.img_url
       };
       return merge({}, state, { user: data });
     case RECEIVE_FOLLOWERS:
