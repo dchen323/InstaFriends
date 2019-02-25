@@ -1,10 +1,13 @@
-import {connect} from 'react-redux';
-import FollowItem from './follow_item';
-import {createFollow,deleteFollow} from '../../actions/follow_actions';
-import {filterFollows} from '../../reducers/selectors';
+import { connect } from "react-redux";
+import FollowItem from "./follow_item";
+import { createFollow, deleteFollow } from "../../actions/follow_actions";
+import { filterFollows } from "../../reducers/selectors";
 
-const mapStateToProps = ({entities: {followed},session},{currentUser}) => ({
-  followed: filterFollows(followed, session.id),
+const mapStateToProps = (
+  { entities: { followed }, session: { user } },
+  { currentUser }
+) => ({
+  followed: filterFollows(followed, user.id),
   currentUser: currentUser
 });
 
@@ -13,5 +16,7 @@ const mapDispatchToProps = dispatch => ({
   deleteFollow: follow => dispatch(deleteFollow(follow))
 });
 
-export default connect(mapStateToProps,
-  mapDispatchToProps)(FollowItem);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FollowItem);

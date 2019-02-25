@@ -14,7 +14,7 @@ const mapStateToProps = (
       likes,
       comments
     },
-    session
+    session: { user }
   },
   ownProps
 ) => ({
@@ -23,7 +23,7 @@ const mapStateToProps = (
   followed: followed,
   following: following,
   followers,
-  sessionId: session.id,
+  sessionId: user.id,
   likes: likes,
   comments: comments
 });

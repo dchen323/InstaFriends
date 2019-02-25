@@ -1,8 +1,8 @@
-import {connect} from 'react-redux';
-import {NavBar} from './nav_bar';
+import { connect } from "react-redux";
+import { NavBar } from "./nav_bar";
 
-const mapStateToProps = ({session}) => ({
-  sessionId: session.id
+const mapStateToProps = ({ session: { user } }) => ({
+  sessionId: user.id
 });
 
 export default connect(mapStateToProps)(NavBar);
