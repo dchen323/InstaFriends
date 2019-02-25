@@ -12,7 +12,7 @@ class Follows extends Component {
 
   handleUnfollow() {}
 
-  handleFollowsss(s) {}
+  handleFollow() {}
 
   render() {
     const status = this.props.status;
