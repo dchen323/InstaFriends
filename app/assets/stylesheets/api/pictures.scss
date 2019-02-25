@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   font-family: sans-serif;
-  background: #FAFAFA
+  background: #fafafa;
 }
 
 .upload-form {
@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center
+  align-items: center;
 }
 
 .upload-button {
@@ -46,7 +46,7 @@
   border-radius: 8px;
 }
 
-.upload-button:hover{
+.upload-button:hover {
   cursor: pointer;
 }
 
@@ -75,7 +75,7 @@
   width: 257px;
   padding-left: 10px;
   overflow-y: scroll;
-  resize:none;
+  resize: none;
 }
 
 .close-modal {
@@ -92,15 +92,15 @@
   flex-direction: row;
   font-family: sans-serif;
   width: 100%;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .display-picture {
-  object-fit:cover;
+  object-fit: cover;
 }
 
 .display-picture:hover {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .pic-show-info {
@@ -109,7 +109,7 @@
   margin-left: 10px;
   width: 43%;
 }
-.pic-show-userpic{
+.pic-show-userpic {
   border-radius: 50%;
   height: 45px;
   width: 45px;
@@ -117,23 +117,22 @@
   object-fit: cover;
 }
 
-.pic-show-username, .pic-show-username-userpage {
+.pic-show-username,
+.pic-show-username-userpage {
   margin-top: 15px;
   margin-right: 5px;
   font-weight: bold;
-
 }
 
 .pic-show-username-userpage {
   margin-left: 5px;
 }
 
-
 .pic-show-header {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #dcdee2;
-  width: 100%
+  width: 100%;
 }
 
 .pic-show-button {
@@ -167,7 +166,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .pic-show-edit {
@@ -180,6 +178,7 @@
   height: auto;
   margin: 15px 0 15px 5px;
   resize: none;
+  padding: 0.2vw 0 0 10px;
 }
 
 .hide-button {
