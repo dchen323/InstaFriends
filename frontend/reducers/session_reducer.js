@@ -8,8 +8,8 @@ import { merge } from "lodash";
 
 const _nullUser = Object.freeze({
   id: null,
-  followed: [],
-  follows: []
+  followed: {},
+  follows: {}
 });
 
 const sessionReducer = (state = _nullUser, action) => {
