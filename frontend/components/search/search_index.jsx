@@ -1,5 +1,6 @@
 import React from "react";
 import { SearchListItem } from "./search_list_item";
+import { debounce, throttle } from "throttle-debounce";
 
 export default class SearchIndex extends React.Component {
   constructor(props) {
@@ -9,13 +10,16 @@ export default class SearchIndex extends React.Component {
       focus: false
     };
     this.update = this.update.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
+    // this.handleSearch = this.handleSearch.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.clearSearch = this.clearSearch.bind(this);
+
+    this.debounceSearch = debounce(500, this.handleSearch);
+    this.throttleSearch = throttle(500, this.handleSearch);
   }
 
-  handleSearch() {
-    this.props.searchUsers(this.state.query);
+  handleSearch(query) {
+    this.props.searchUsers(query);
   }
 
   clearSearch() {
@@ -25,7 +29,12 @@ export default class SearchIndex extends React.Component {
   update(e) {
     e.preventDefault();
     this.setState({ query: e.target.value, focus: true }, () => {
-      this.handleSearch();
+      const query = this.state.query;
+      if (query.length < 6) {
+        this.throttleSearch(query);
+      } else {
+        this.debounceSearch(query);
+      }
     });
   }
 
