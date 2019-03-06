@@ -42,7 +42,6 @@ export default class CommentForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.inputFocus, this.myInp);
     return (
       <div className="comments-form-container">
         <form className="comments-form" onSubmit={this.handleSubmit.bind(this)}>

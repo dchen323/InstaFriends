@@ -35,12 +35,20 @@ class UserProfile extends React.Component {
     Modal.setAppElement("body");
   }
 
-  componentWillReceiveProps(nextProp) {
-    if (
-      this.props.user &&
-      this.props.user.id !== parseInt(nextProp.match.params.userId)
-    ) {
-      this.props.fetchUser(nextProp.match.params.userId);
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const nextId = parseInt(nextProps.match.params.userId);
+    if (prevState.userId !== nextId) {
+      return {
+        userId: nextId
+      };
+    }
+
+    return null;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.userId !== this.state.userId) {
+      this.props.fetchUser(this.state.userId);
     }
   }
 
