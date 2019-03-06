@@ -38,8 +38,10 @@ class PictureIndex extends React.Component {
     this.props.deleteLike(this.props.likes);
   }
 
-  setInputFocus(value) {
-    this.setState({ inputFocus: value });
+  setInputFocus() {
+    this.setState(prevState => ({
+      inputFocus: !prevState.inputFocus
+    }));
   }
 
   setDate(date) {

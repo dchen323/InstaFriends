@@ -12,8 +12,18 @@ export default class CommentForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
-  componentWillReceiveProps(nextProp) {
-    if (nextProp.inputFocus) {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.inputFocus !== prevState.inputFocus) {
+      return {
+        inputFocus: nextProps.inputFocus
+      };
+    }
+
+    return null;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.inputFocus !== prevProps.inputFocus) {
       this.myInp.focus();
     }
   }
@@ -32,6 +42,7 @@ export default class CommentForm extends React.Component {
   }
 
   render() {
+    console.log(this.state.inputFocus, this.myInp);
     return (
       <div className="comments-form-container">
         <form className="comments-form" onSubmit={this.handleSubmit.bind(this)}>
