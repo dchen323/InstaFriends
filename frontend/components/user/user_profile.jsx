@@ -96,12 +96,13 @@ class UserProfile extends React.Component {
         content: {
           width: "40%",
           height: "82%",
-          background: "#FAFAFA"
+          background: "#FAFAFA",
+          borderRadius: "20px"
         }
       });
     } else if (this.state.modalType === "Show Photo") {
       customStyles = merge(customStyles, {
-        content: { width: "900px", height: "auto" }
+        content: { width: "900px", height: "auto", borderRadius: "4px;" }
       });
     } else {
       customStyles = merge(customStyles, {
@@ -135,6 +136,7 @@ class UserProfile extends React.Component {
                 closeModal={this.closeModal}
                 pictureId={this.state.value}
                 userId={this.props.user.id}
+                history={this.props.history}
               />
             </Modal>
           </div>
