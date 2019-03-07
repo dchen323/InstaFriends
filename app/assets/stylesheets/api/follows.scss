@@ -4,7 +4,7 @@
 .follower-button {
   width: 90px;
   height: 27px;
-  background: #1991F4;
+  background: #1991f4;
   color: white;
   border-radius: 4px;
   text-align: center;
@@ -23,16 +23,16 @@
 }
 
 .picture-holder-feed {
-  width: 600px;
+  width: 100%;
   max-height: 600px;
   overflow: hidden;
 }
 
 .github {
-  display: flex
+  display: flex;
 }
 
-.icon-git{
+.icon-git {
   font-size: 40px;
   margin: 10px;
 }

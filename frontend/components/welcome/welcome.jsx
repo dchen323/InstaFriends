@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FollowPictureContainer from "../follow/follow_picture_container";
-import FollowingUserContainer from "../follow/follow_user_container";
 import Spinner from "../spinner/Spinner";
 
 export default class Welcome extends React.Component {
@@ -23,7 +22,6 @@ export default class Welcome extends React.Component {
       return (
         <div className="feed">
           <FollowPictureContainer />
-          <FollowingUserContainer />
         </div>
       );
     } else {

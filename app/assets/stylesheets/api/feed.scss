@@ -28,11 +28,13 @@
 }
 
 .feed-post-container {
-  width: 600px;
+  width: 100%;
   border-bottom: 2px solid #dcdee2;
   background: #fafafa;
   margin-top: 70px;
-  margin-right: 188px;
+  // margin-right: 188px;
+  display: flex;
+  justify-content: center;
 }
 
 .picture-feed-container {
@@ -61,10 +63,12 @@
 }
 
 .following-feed {
-  position: fixed;
-  top: 94px;
-  right: 184px;
   border-bottom: 1px solid #dcdee2;
+  margin-left: 150px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5em;
+  align-self: flex-start;
 }
 
 .current-user-feed {
@@ -126,16 +130,14 @@
   margin: 10vh 0;
 }
 
-@media only screen and (max-width: 1290px) {
+@media only screen and (max-width: 1080px) {
   .following-feed {
     display: none;
   }
+}
 
-  .feed-post-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+@media only screen and (max-width: 630px) {
+  .picture-feed-container {
+    width: 400px;
   }
 }

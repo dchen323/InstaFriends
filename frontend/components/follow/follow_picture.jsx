@@ -1,5 +1,6 @@
 import React from "react";
 import { FollowPictureItem } from "./follow_picture_items";
+import FollowingUserContainer from "../follow/follow_user_container";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 
@@ -51,6 +52,7 @@ export default class FollowPicture extends React.Component {
     return (
       <div className="feed-post-container">
         <ul className="feed-ul">{pictures}</ul>
+        <FollowingUserContainer />
       </div>
     );
   }
