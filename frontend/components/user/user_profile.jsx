@@ -7,6 +7,9 @@ import { merge } from "lodash";
 import Spinner from "../spinner/Spinner";
 
 let customStyles = {
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.50)"
+  },
   content: {
     top: "50%",
     left: "50%",
@@ -102,7 +105,7 @@ class UserProfile extends React.Component {
       });
     } else {
       customStyles = merge(customStyles, {
-        content: { width: "600px", height: "auto" }
+        content: { width: "25vw", height: "auto", borderRadius: "20px" }
       });
     }
 
