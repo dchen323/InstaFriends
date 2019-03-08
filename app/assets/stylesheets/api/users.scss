@@ -7,16 +7,18 @@
   height: 75px;
   border-bottom: 1px solid #dcdee2;
   background: white;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
 }
 
 .nav-bar {
   display: flex;
-  width: 71%;
+  width: 100%;
   height: inherit;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-direction: row;
   align-items: center;
-  margin: 0 auto;
 }
 
 .nav-main {
@@ -308,7 +310,7 @@ input.nav-search[type="text"] {
     width: 50px;
   }
 
-  .nav-main {
-    margin-left: 50px;
+  .nav-bar {
+    justify-content: space-between;
   }
 }
