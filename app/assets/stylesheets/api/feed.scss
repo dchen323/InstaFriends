@@ -7,6 +7,7 @@
   justify-content: center;
   font-family: sans-serif;
   align-items: center;
+  background: #fafafa;
 }
 
 .feed-likes {
@@ -64,11 +65,12 @@
 
 .following-feed {
   border-bottom: 1px solid #dcdee2;
-  margin-left: 150px;
+  margin-left: 30px;
   position: -webkit-sticky;
   position: sticky;
   top: 5em;
   align-self: flex-start;
+  width: 293px;
 }
 
 .current-user-feed {
@@ -76,7 +78,6 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid #dcdee2;
   margin-bottom: 10px;
 }
 
@@ -92,6 +93,12 @@
 .follow-menu {
   max-height: 400px;
   overflow-y: scroll;
+}
+
+.following-icons {
+  width: 100%;
+  border: 2px solid #dcdee2;
+  background: white;
 }
 
 .follow-menu {
