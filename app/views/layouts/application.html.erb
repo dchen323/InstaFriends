@@ -12,12 +12,6 @@
     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
   </head>
   <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-  <script type="text/javascript">
-   window.CLOUDINARY_OPTIONS = {
-     upload_preset: "<%= ENV['UPLOAD_PRESET'] %>",
-     cloud_url: "<%=ENV['CLOUD_URL']%>"
-   };
-  </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122000726-1"></script>
 <script>

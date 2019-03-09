@@ -21,10 +21,10 @@ class PictureUploadForm extends React.Component {
   }
 
   handleImageUpload(file) {
-    const keys = this.getKeys();
+    const cloudinaryOptions = this.getCloudinaryOptions();
     let upload = request
-      .post(window.CLOUDINARY_OPTIONS.cloud_url)
-      .field("upload_preset", window.CLOUDINARY_OPTIONS.upload_preset)
+      .post(cloudinaryOptions[0])
+      .field("upload_preset", cloudinaryOptions[1])
       .field("file", file);
     upload.end((err, response) => {
       if (err) {
@@ -49,18 +49,16 @@ class PictureUploadForm extends React.Component {
     this.setState({ caption: e.target.value });
   }
 
-  getKeys() {
+  getCloudinaryOptions() {
     if (process.env.NODE_ENV !== "production") {
       const { cloudURL, uploadPreset } = require("../secret");
       return [cloudURL, uploadPreset];
     } else {
-      console.log(CLOUD_URL, UPLOAD_PRESET);
-      console.log("test");
+      return [CLOUD_URL, UPLOAD_PRESET];
     }
   }
 
   render() {
-    const keys = this.getKeys();
     return (
       <div className="photo-uploader">
         <form onSubmit={this.handleSubmit.bind(this)} className="upload-form">

@@ -102,7 +102,7 @@ class UserProfile extends React.Component {
       });
     } else if (this.state.modalType === "Show Photo") {
       customStyles = merge(customStyles, {
-        content: { width: "900px", height: "auto", borderRadius: "4px;" }
+        content: { width: "900px", height: "auto", borderRadius: "4px" }
       });
     } else {
       customStyles = merge(customStyles, {
