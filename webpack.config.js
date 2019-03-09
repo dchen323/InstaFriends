@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
   context: __dirname,
@@ -24,5 +25,11 @@ module.exports = {
       }
     ]
   },
-  devtool: "source-map"
+  devtool: "source-map",
+  plugins: [
+    new webpack.DefinePlugin({
+      CLOUD_URL: JSON.stringify(process.env.CLOUD_URL),
+      UPLOAD_PRESET: JSON.stringify(process.env.UPLOAD_PRESET)
+    })
+  ]
 };

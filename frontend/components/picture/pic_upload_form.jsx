@@ -21,6 +21,7 @@ class PictureUploadForm extends React.Component {
   }
 
   handleImageUpload(file) {
+    const keys = this.getKeys();
     let upload = request
       .post(window.CLOUDINARY_OPTIONS.cloud_url)
       .field("upload_preset", window.CLOUDINARY_OPTIONS.upload_preset)
@@ -48,7 +49,18 @@ class PictureUploadForm extends React.Component {
     this.setState({ caption: e.target.value });
   }
 
+  getKeys() {
+    if (process.env.NODE_ENV !== "production") {
+      const { cloudURL, uploadPreset } = require("../secret");
+      return [cloudURL, uploadPreset];
+    } else {
+      console.log(CLOUD_URL, UPLOAD_PRESET);
+      console.log("test");
+    }
+  }
+
   render() {
+    const keys = this.getKeys();
     return (
       <div className="photo-uploader">
         <form onSubmit={this.handleSubmit.bind(this)} className="upload-form">

@@ -12,7 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+*secret.js
 # Ignore uploaded files in development
 /storage/*
 
