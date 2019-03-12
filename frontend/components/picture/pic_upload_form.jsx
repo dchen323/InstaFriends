@@ -60,8 +60,11 @@ class PictureUploadForm extends React.Component {
 
   render() {
     return (
-      <div className="photo-uploader">
-        <form onSubmit={this.handleSubmit.bind(this)} className="upload-form">
+      <div>
+        <form
+          onSubmit={this.handleSubmit.bind(this)}
+          className="upload-form flex-col-null-center"
+        >
           <content>Picture Preview</content>
           <img src={this.state.picture.img_url} className="preview-pic" />
           <textarea
@@ -78,9 +81,15 @@ class PictureUploadForm extends React.Component {
               onDrop={file => this.onImageDrop(file)}
               className="dropzone-box"
             >
-              <p className="upload-button">Click to select a file to upload.</p>
+              <p className="upload-button flex-row-center-center">
+                Click to select a file to upload.
+              </p>
             </Dropzone>
-            <input type="submit" value="Upload" className="upload-button" />
+            <input
+              type="submit"
+              value="Upload"
+              className="upload-button flex-row-center-center"
+            />
           </div>
         </form>
       </div>

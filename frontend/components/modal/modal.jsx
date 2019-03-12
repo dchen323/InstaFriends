@@ -7,7 +7,7 @@ import Follows from "../follow/Follows";
 export const UserModal = ({ modalType, closeModal, pictureId, userId }) => {
   if (modalType === "Add Photo") {
     return (
-      <div className="photo-modal">
+      <div className="photo-modal flex-col-null-center">
         <h2 className="modal-add">Add Photo</h2>
         <PictureUploadFormContainer closeModal={closeModal} />
         <button onClick={() => closeModal()} className="close-modal">
