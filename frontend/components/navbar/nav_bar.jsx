@@ -5,7 +5,7 @@ import SearchContainer from "../search/search_container";
 export const NavBar = ({ sessionId }) => (
   <div className="filler-nav">
     <nav className="nav-bar">
-      <span className="nav-main">
+      <span className="nav-main flex-row-center-center">
         <Link to="/">
           <i className="fab fa-instagram icon" />
           <content className="line">|</content>

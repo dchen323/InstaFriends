@@ -2,10 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$background-color: #fafafa;
+$border-color: #dcdee2;
+
+.icon4-container,
+.dropdown-logout,
+.dropdown-list,
+.nav-bar,
+.nav-search,
+.user,
+.profile-box {
+  display: flex;
+  align-items: center;
+}
+
+.user-content2,
+.user-content3,
+.profile-footer,
+.nav-bar,
+.nav-icon,
+.profile-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.dropdown-list,
+.profile-footer {
+  justify-content: center;
+}
+
 .filler-nav {
   width: 100%;
   height: 75px;
-  border-bottom: 1px solid #dcdee2;
+  border-bottom: 1px solid $border-color;
   background: white;
   position: sticky;
   position: -webkit-sticky;
@@ -13,19 +42,12 @@
 }
 
 .nav-bar {
-  display: flex;
   width: 100%;
   height: inherit;
   justify-content: space-evenly;
-  flex-direction: row;
-  align-items: center;
 }
 
 .nav-main {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   margin-right: 30px;
   min-width: 244px;
 }
@@ -39,12 +61,10 @@
 .nav-search {
   width: 199px;
   height: 24px;
-  background: #fafafa;
+  background: $background-color;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  border: 1px solid #dcdee2;
-  display: flex;
-  align-items: center;
+  border: 1px solid $border-color;
 }
 
 .search-span {
@@ -63,10 +83,6 @@ input.nav-search[type="text"] {
   font-family: "Grand Hotel", cursive;
 }
 
-.nav-icon {
-  display: flex;
-  flex-direction: row;
-}
 .icon {
   margin: 0 10px;
   font-size: 35px;
@@ -80,34 +96,25 @@ input.nav-search[type="text"] {
 
 .icon3 {
   width: 18px;
-  display: flex;
   font-size: 14px;
-  align-items: center;
-  justify-content: center;
   height: 24px;
-  background: #fafafa;
-  border-bottom: 1px solid #dcdee2;
-  border-left: 1px solid #dcdee2;
-  border-top: 1px solid #dcdee2;
+  background: $background-color;
+  border-bottom: 1px solid $border-color;
+  border-left: 1px solid $border-color;
+  border-top: 1px solid $border-color;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
 .user {
   width: 100%;
-  // overflow-y: scroll;
-  display: flex;
-  align-items: center;
   flex-direction: column;
   background: #fafafa;
   font-family: sans-serif;
 }
 
 .profile-box {
-  display: flex;
   width: 70%;
-  align-items: center;
-  flex-direction: row;
   height: 300px;
 }
 
@@ -155,7 +162,7 @@ input.nav-search[type="text"] {
   margin: 5px 0 0 0;
   height: 27px;
   width: 124px;
-  border: 1px solid #dcdee2;
+  border: 1px solid $border-color;
   text-align: center;
   border-radius: 4px;
   padding-top: 0.5px;
@@ -170,19 +177,8 @@ input.nav-search[type="text"] {
   cursor: pointer;
 }
 
-.icon4-container,
-.dropdown-logout,
-.dropdown-list {
-  display: flex;
-  align-items: center;
-}
-
 .dropdown-logout {
   list-style: none;
-}
-
-.dropdown-list {
-  justify-content: center;
 }
 
 .arrow-left {
@@ -190,22 +186,16 @@ input.nav-search[type="text"] {
   height: 0;
   border-top: 13px solid transparent;
   border-bottom: 15px solid transparent;
-  border-right: 13px solid #dcdee2;
+  border-right: 13px solid $border-color;
   margin-left: 10px;
   margin-top: 5px;
-}
-
-.user-content2,
-.user-content3 {
-  display: flex;
-  flex-direction: row;
 }
 
 .add-photo {
   margin-top: 15px;
   height: 27px;
   width: 124px;
-  border: 1px solid #dcdee2;
+  border: 1px solid $border-color;
   text-align: center;
   border-radius: 4px;
 }
@@ -216,10 +206,7 @@ input.nav-search[type="text"] {
 
 .profile-footer {
   width: 70%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border-top: 1px solid #dcdee2;
+  border-top: 1px solid $border-color;
   height: 51px;
 }
 

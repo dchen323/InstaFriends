@@ -58,7 +58,7 @@ export default class SearchIndex extends React.Component {
     return (
       <div>
         <span className="search-span">
-          <i className="fas fa-search icon3" />
+          <i className="fas fa-search icon3 flex-row-center-center" />
           <form>
             <input
               type="text"

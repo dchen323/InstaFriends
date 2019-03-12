@@ -23,3 +23,10 @@ body {
   height: 100%;
   overflow: auto;
 }
+
+.flex-row-center-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
