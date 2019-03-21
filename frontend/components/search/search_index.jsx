@@ -39,7 +39,7 @@ export default class SearchIndex extends React.Component {
   }
 
   handleBlur() {
-    setTimeout(() => this.setState({ focus: false }), 150);
+    // setTimeout(() => this.setState({ focus: false }), 150);
   }
 
   render() {
@@ -56,7 +56,7 @@ export default class SearchIndex extends React.Component {
       />
     ));
     return (
-      <div>
+      <div className="search-div">
         <span className="search-span">
           <i className="fas fa-search icon3 flex-row-center-center" />
           <form>

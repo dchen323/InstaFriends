@@ -48,7 +48,13 @@ export default class FollowPicture extends React.Component {
         />
       );
     });
-
+    if (!pictures.length) {
+      pictures = (
+        <span className="empty-feed">
+          Follow some users to see their pictures!
+        </span>
+      );
+    }
     return (
       <div className="feed-post-container">
         <ul className="feed-ul">{pictures}</ul>

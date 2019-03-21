@@ -33,25 +33,26 @@
   border-bottom: 2px solid #dcdee2;
   background: #fafafa;
   margin-top: 70px;
-  // margin-right: 188px;
   display: flex;
   justify-content: center;
 }
 
-.picture-feed-container {
-  margin-bottom: 50px;
-  background: white;
-  border: 2px solid #dcdee2;
+.picture-feed-container,
+.empty-feed {
   width: 600px;
+  margin-bottom: 50px;
 }
 
-// ::-webkit-scrollbar {
-//   width: 0px; /* remove scrollbar space */
-//   background: transparent;
-// }
+.picture-feed-container {
+  background: white;
+  border: 2px solid #dcdee2;
+}
+
+.empty-feed {
+  text-align: center;
+}
 
 .comment-feed {
-  // overflow-y: auto;
   max-height: 100px;
   margin: 10px 0;
   height: auto;
@@ -144,7 +145,8 @@
 }
 
 @media only screen and (max-width: 630px) {
-  .picture-feed-container {
+  .picture-feed-container,
+  .empty-feed {
     width: 400px;
   }
 }

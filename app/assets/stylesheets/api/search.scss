@@ -1,9 +1,9 @@
 .search-list-container {
-  z-index: 2;
+  z-index: 5;
   position: absolute;
   max-height: 200px;
   overflow: auto;
-  top: 8%;
+  top: 100%;
   width: 230px;
   background: white;
 }
@@ -19,4 +19,8 @@
   margin: 10px;
   z-index: 100;
   object-fit: cover;
+}
+
+.search-div {
+  position: relative;
 }
