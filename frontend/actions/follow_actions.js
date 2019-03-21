@@ -22,13 +22,15 @@ const receiveFollowers = ({
   followed
 });
 
-const receiveFollow = ({ followed }) => ({
+const receiveFollow = ({ followed, follower }) => ({
   type: RECEIVE_FOLLOW,
-  followed
+  followed,
+  follower
 });
-const removeFollow = ({ followed }) => ({
+const removeFollow = ({ followed, follower }) => ({
   type: REMOVE_FOLLOW,
-  followed
+  followed,
+  follower
 });
 
 export const fetchFollowers = id => dispatch =>

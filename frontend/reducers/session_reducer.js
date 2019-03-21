@@ -7,9 +7,8 @@ import { RECEIVE_FOLLOWERS } from "../actions/follow_actions";
 import { merge } from "lodash";
 
 const _nullUser = Object.freeze({
-  user: null,
-  followed: {},
-  follows: {}
+  user: null
+  // followed: {}
 });
 
 const sessionReducer = (state = _nullUser, action) => {
@@ -24,10 +23,10 @@ const sessionReducer = (state = _nullUser, action) => {
         imgUrl: user.img_url
       };
       return merge({}, state, { user: data });
-    case RECEIVE_FOLLOWERS:
-      return merge({}, state, {
-        followed: action.followed
-      });
+    // case RECEIVE_FOLLOWERS:
+    //   return merge({}, state, {
+    //     followed: action.followed
+    //   });
     case LOGOUT_CURRENT_USER:
       return _nullUser;
     default:
