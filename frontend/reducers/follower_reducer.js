@@ -9,7 +9,7 @@ const followerReducer = (state = {}, action) => {
     case RECEIVE_USER:
       return action.followers || {};
     case RECEIVE_FOLLOW:
-      newState = {...newState, [action.follower.id]: action.follower });
+      newState = merge(newState, { [action.follower.id]: action.follower });
       return newState;
     case REMOVE_FOLLOW:
       delete newState[action.follower.id];
