@@ -26,8 +26,7 @@ const sessionReducer = (state = _nullUser, action) => {
       return merge({}, state, { user: data });
     case RECEIVE_FOLLOWERS:
       return merge({}, state, {
-        followed: action.followed,
-        follows: action.follows
+        followed: action.followed
       });
     case LOGOUT_CURRENT_USER:
       return _nullUser;

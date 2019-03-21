@@ -1,25 +1,3 @@
-# json.users do
-#   json.set! @user.id do
-#     json.partial! 'api/users/user', user: @user
-#   end
-# end
-
-# json.users do
-#   @user.following.each do |follower|
-#     json.set! follower.id do
-#       json.partial! 'api/users/user', user: follower
-#     end
-#   end
-# end
-
-json.follows do
-  @user.follows.each do |follow|
-    json.set! follow.id do
-      json.partial! 'api/follows/follows', follow: follow
-    end
-  end
-end
-
 json.followed do
   @user.followed.each do |follow|
     json.set! follow.id do

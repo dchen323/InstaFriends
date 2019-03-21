@@ -39,7 +39,7 @@ export default class SearchIndex extends React.Component {
   }
 
   handleBlur() {
-    // setTimeout(() => this.setState({ focus: false }), 150);
+    setTimeout(() => this.setState({ focus: false }), 150);
   }
 
   render() {
